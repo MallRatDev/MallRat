@@ -1,0 +1,14 @@
+:: Store[nobr]
+	The clerk waits at the register.<br>
+	"<span id="shopkeeper">Hello, Sir. Would you like to purchase something?</span>"<br>
+	<ul>
+	<<for _i = 0; _i < $itemsForSale.length; _i++>>
+	 		<li>
+		<<print $itemsForSale[_i] + " costs " + $itemsForSaleCosts[_i]>>. 
+		
+		
+	 	<<buyButton $itemsForSale[_i] $itemsForSaleCosts[_i]>>
+		</li>
+	<</for>>
+
+	</ul>

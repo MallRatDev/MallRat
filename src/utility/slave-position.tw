@@ -1,0 +1,13 @@
+:: Slave Position[TimeNone]
+<<nobr>>
+
+<br><br>
+<<if $slaves[$csi].position == 0>>She is standing.<</if>>
+<<if $slaves[$csi].position == 1>>She is kneeling, with her knees spread wide and tits thrust out.  <<if $slaves[$csi].clothingRevealing>>Her <<if $slaves[$csi].lust>15>>wet <</if>>cunt is exposed.<</if>><</if>>
+<<if $slaves[$csi].position == 2>>She is on all fours, her knees spread wide and her <<if $slaves[$csi].lust >20>>dripping <</if>>cunt and her asshole visible from behind.<</if>>
+<<if $slaves[$csi].position == 3>>She is face down and ass up, with her face and tits pressed to the floor and her knees spread wide.  Her slave holes are open and ready for use.<</if>>
+<<if $slaves[$csi].position == 4>>She is bent over your knees, her ass on your lap ready for spanking and her holes ready for use.<</if>>
+<<if $slaves[$csi].position == 5>>She is standing with her legs spread wide and her hands behind her kneck.  She is thrusing out her tits.<</if>>
+<<if $slaves[$csi].position == 6>>She is bent over with her hands flat on the floor and her feet far apart.  Her cunt and asshole are available and at a convenient height.<</if>>
+
+<</nobr>>

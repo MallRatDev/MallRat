@@ -1,0 +1,27 @@
+:: WidgetEnslave[widget nobr]
+<<widget enslave>>
+ 	<<set _name = $args[0]>>
+	<<set _charIndex = Game.getCharIndex(_name)>>
+	<<set _slave = $characters.splice(_charIndex, 1)>>
+	<<set $slaves.push(_slave[0])>>
+	<<set _slaveIndex = Game.getSlaveIndex(_name)>>
+ 	<<set $slaves[_slaveIndex].enslaved = 1>>
+	<<set $slaves[_slaveIndex].clothingCollar = 0>>
+	<<set $slaves[_slaveIndex].relationship = -50>>
+	
+	<<run $pc.clothingTopOwned.push(_slave.clothingTop)>>
+	<<run $pc.clothingBottomOwned.push(_slave.clothingBottom)>>
+	<<run $pc.clothingWristsOwned.push(_slave.clothingWrists)>>
+	<<run $pc.clothingAnklesOwned.push(_slave.clothingAnkles)>>
+	<<run $pc.clothingShoesOwned.push(_slave.clothingShoes)>>
+	
+	<<if $args.length > 1>>
+		<<set $slaves[_slaveIndex].obedience += $args[1]>>
+	<</if>>
+	
+	
+	<<if $debugging>>
+		<br><br>
+		<<run UI.alert("Name: " + _name + ", CharIndex: " + _charIndex + ", Slave index: " + _slaveIndex)>>
+	<</if>>
+<</widget>>

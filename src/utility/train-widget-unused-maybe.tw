@@ -1,0 +1,14 @@
+:: Widget Train[widget TimeNone nobr]
+<<widget train1>>
+	<<for _i = 0; _i < $slaves.length; _i++>>
+		<<if $slaves[_i].name == _char>>
+			<<set $currentCharacter = $slaves[_i]>>
+			<<set $csi = _i>>
+			<<if $args.length == 2>>
+				<<print "[[" + $args[1] + "|Train Character]]">>
+			<<else>>
+				<<print "[[Train " + _char + "|Train Character]]">>
+			<</if>>
+		<</if>>
+	<</for>>
+<</widget>>

@@ -1,0 +1,30 @@
+:: WidgetDescribe[widget nobr]
+<<widget describe>>
+	<<set _char = $args[0]>>
+	<<for _i = 0; _i < $characters.length; _i++>>
+		<<if $characters[_i].name == _char>>
+			<<set $currentCharacter = $characters[_i]>>
+			
+			<<if $args.length == 2>>
+				<<print "[[" + $args[1] + "|Describe Character]]">>
+			<<else>>
+				<<print "[[Describe " + _char + "|Describe Character]]">>
+			<</if>>
+		<</if>>
+	<</for>>
+
+	/* if not found in characters, search slaves */
+	<<for _i = 0; _i < $slaves.length; _i++>>
+		<<if $slaves[_i].name == _char>>
+			<<set $currentCharacter = $slaves[_i]>>
+			
+			<<if $args.length == 2>>
+				<<print "[[" + $args[1] + "|Describe Character]]">>
+			<<else>>
+				<<print "[[Describe " + _char + "|Describe Character]]">>
+			<</if>>
+		<</if>>
+	<</for>>
+
+<</widget>>
+

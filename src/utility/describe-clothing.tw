@@ -1,0 +1,43 @@
+:: Describe Clothing[TimeNone nobr]
+<<set _wearingSomething == 0>>
+
+<<He>> 
+
+is wearing 
+<<if $currentCharacter.clothingTop != -1>>
+	<<set _wearingSomething += 1>>
+	a <<=$clothingTop[$currentCharacter.clothingTop]>>
+<<else>>
+	nothing above the waist 
+<</if>>
+
+<<if $currentCharacter.clothingBottom != -1>>
+	<<if _wearingSomething>> and <</if>>
+	<<set _wearingSomething += 1>>
+	a <<=$clothingBottom[$currentCharacter.clothingBottom]>>
+<<else>>
+	and nothing below the waist 
+<</if>>.
+
+
+
+<<if $currentCharacter.clothingWrists != -1>>
+<<He>> has <<=$clothingWrists[$currentCharacter.clothingWrists]>> on <<her>> wrists.
+<</if>>
+
+<<if $currentCharacter.clothingAnkles != -1>>
+<<He>> has <<=$clothingAnkles[$currentCharacter.clothingAnkles]>> on <<her>> ankles.
+<</if>>
+
+<<if $currentCharacter.clothingCollar != -1>>
+<<He>> has a <<=$clothingCollar[$currentCharacter.clothingCollar]>> on around <<her>> neck. 
+<<if $currentCharacter.clothingCollar == 0>>
+The magical collar makes <<her>> compliant and <span class="good">makes it possible to train <<her>></span>.
+<</if>>
+<</if>>
+
+<<if $currentCharacter.clothingShoes == -1>>
+	She is barefoot. 
+<<else>>
+	She is wearing <<=$clothingShoes[$currentCharacter.clothingShoes]>>.
+<</if>>

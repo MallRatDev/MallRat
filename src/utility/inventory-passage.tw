@@ -1,0 +1,16 @@
+:: Inventory[TimeNone]
+You currently possess:
+<<nobr>>
+<ul>
+<<set _inv = Game.inventoryAll()>>
+<<if _inv.length == 0>>Nothing<</if>>
+<<for _i = 0; _i < _inv.length; _i++>>
+	<li><<if _inv[_i].quantity > 1>><<=_inv[_i].quantity>> <</if>><<=_inv[_i].name>></li>
+<</for>>
+
+</ul>
+<</nobr>>
+
+You have $<<=$money>>.
+
+<<return>>

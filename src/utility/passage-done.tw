@@ -1,0 +1,65 @@
+:: PassageDone[nobr TimeNone]
+
+<<if tags().contains("TimeFast") > 0>>
+	<<run Game.passTime(3)>>
+<<elseif tags().contains("TimeSlow") > 0>>
+	<<run Game.passTime(20)>>
+<<elseif tags().contains("TimeNone") > 0>>
+	/* do nothing, free action */
+<<else>>
+	/* default is TimeFast */
+	<<run Game.passTime(3)>>
+<</if>>
+
+/* Bed Time */
+<<if ($hour >= 24)>>
+	<<replace "#passages">>Wow, it's late.  Where does the time go?<br><br>[[Go to sleep|Dream]]<</replace>>
+<<elseif passage() === "Training">>
+	<<display $act>>
+<</if>>
+
+/* Mall Closing */
+<<if tags().contains("mall") && ($hour > 20)>>
+	<<replace "#passages">>The mall is closed.  Guess it's time to go home. <br><br>[[Head Home|Mall Entrance]]<</replace>>
+<</if>>
+
+
+/* First Baba Yaga Event */
+<<if tags().contains("foodcourt") && $day >= 4 && !$flags.defeatedMajor>>
+<<goto "Meet Baba Yaga">>
+<</if>>
+
+/* Kicked out of the mall */
+<<if tags().contains("mall") && $pc.isKickedOut>>
+	<<goto "Arrested at the Mall">>
+<</if>>
+
+/* corrupted food court vendors */
+<<if tags().contains("vendor") && $pc.magicLevel >= 2>>
+	<<if $corruptedPc.indexOf(passage()) != -1>>
+		<<set _pass = "PC " + $pc.path + " Corrupted " + passage()>>
+		<<set $originalPassage = passage()>>
+		<<goto _pass>>
+	<<elseif $corruptedBabaYaga.indexOf(passage()) != -1>>
+		<<set _pass = "Baba Yaga Corrupted " + passage()>>
+		<<set $originalPassage = passage()>>
+		<<goto _pass>>	
+	<</if>>
+<<else>>
+	<<set $originalPassage = passage()>>
+<</if>>
+
+<<if tags().contains("vendor") && $pc.magicLevel > 2 && !Game.isCorrupted($originalPassage) && $pc.power > 25>>\
+	<<prepend ".passage">>\
+		<span id="corrupt-vendor">\
+			@@.virility;You could corrupt this vendor for power and money.@@ \
+			<<link "Corrupt Vendor">>\
+				<<run $corruptedPc.push(passage())>>\
+				<<set $pc.power -= 25>>\
+				<<remove "#corrupt-vendor">>\
+			<</link>>\
+			<br><br>\
+		</span>\
+	<</prepend>>\
+<</if>>
+	

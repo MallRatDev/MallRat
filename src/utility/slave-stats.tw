@@ -1,0 +1,130 @@
+:: Slave Stats[TimeNone nobr]
+/* Obedience */
+<<if $slaves[$csi].obedience < 10>>She is <span class="obedience_very_bad">disobedient</span> and will not do anything the collar doesn't force her to. 
+<<elseif $slaves[$csi].obedience < 20>>She is <span class="obedience_bad">very resistant</span> to your orders.
+<<elseif $slaves[$csi].obedience < 30>>She is <span class="obedience_good">resistant</span> to your orders, but is willing to do some things for you if only to avoid punishment.
+<<elseif $slaves[$csi].obedience < 40>>She is <span class="obedience_good">somewhat obedient</span> and will cooperate with some things you want her to do.
+<<elseif $slaves[$csi].obedience < 50>>She is <span class="obedience_good">fairly obedient</span> and is willing to go out of her comfort zone a little to please you.
+<<elseif $slaves[$csi].obedience < 60>>She is <span class="obedience_very_good">obedient</span> to you and tries to please as long as it's not too frightening for her.
+<<elseif $slaves[$csi].obedience < 70>>She is <span class="obedience_very_good">quite obedient</span> and is beginning to accept you as an owner.
+<<elseif $slaves[$csi].obedience < 80>>She is <span class="excellent">very obedient</span> and is willing to do almost anything for you.
+<<elseif $slaves[$csi].obedience < 100>>She is <span class="obedience_excellent">extremely obedient</span> and happily serves your pleasure and even cooperates in painful or humiliating situations.
+<<else>>She is <span class="obedience_perfect">completely obedient</span> and obeys you without question.  You can use her in any way you like and she enthusiastically cooperates.  It's now <span class="good">safe for you to remove the collar</span> and she will continue to serve you.
+<</if>>
+
+/* Hatred (relationship) */
+<<if $slaves[$csi].relationship < -40>>She is filled with <span class="very_bad">hatred</span> for you.
+<<elseif $slaves[$csi].relationship < -40>>She <span class="very_bad">hates</span> you.
+<<elseif $slaves[$csi].relationship < -22>>She <span class="bad">resents</span> you.
+<<elseif $slaves[$csi].relationship < -5>>She <span class="bad">dislikes</span> you.
+<<elseif $slaves[$csi].relationship < 15>>She is ambivalent to you.
+<<elseif $slaves[$csi].relationship < 40>>She <span class="good">likes</span> you.
+<<elseif $slaves[$csi].relationship < 75>>She <span class="very_good">adores</span> you.
+<<else>>She <span class="very_good">holds you in awe.</span>
+<</if>>
+
+/* Fear */
+<<if $slaves[$csi].fear < 10>>She is <span class="fear_very_low">completely unafraid</span> of you.
+<<elseif $slaves[$csi].fear < 20>>She is <span class="fear_low">unafraid</span> of you.
+<<elseif $slaves[$csi].fear < 40>>She is <span class="fear_low">mostly unafraid</span> of you and will only rarely obey out of fear.
+<<elseif $slaves[$csi].fear < 60>>She is <span class="fear_moderate>somewhat afraid</span> of you and will obey some commands to avoid punishment.
+<<elseif $slaves[$csi].fear < 70>>She is <span class="fear_high">fearful</span> of you and obeys to avoid more suffering.
+<<elseif $slaves[$csi].fear < 80>>She is <span class="fear_high">frightened</span> of you and doesn't know what you'll do to her next.
+<<elseif $slaves[$csi].fear < 90>>She is <span class="fear_very_high">very frightened</span> of you and shakes when you're near.  She'll do almost anything to stop you from hurting her more.
+<<else>>She is <span class="fear_very_high">terrified</span> of you and obeys to avoid the next torture you inflict on her.
+<</if>>
+
+/* Sex Drive */
+<<if $slaves[$csi].sexDrive < 3>>She has <span class="bad">no sex drive</span> to speak of.
+<<elseif $slaves[$csi].sexDrive < 8>>She has a <span class="good">low sex drive</span> and gets aroused when being trained.
+<<elseif $slaves[$csi].sexDrive < 14>>She has a <span class="good">healthy sex drive</span> and finds herself getting horny despite herself.
+<<elseif $slaves[$csi].sexDrive < 20>>She has a <span class="very_good">high sex drive</span> and gets wet when you play with her.
+<<else>>She has a <span class="very_good">low sex drive</span> and constantly wants to cum.
+<</if>>
+
+
+/* Lust */
+<<if $slaves[$csi].lust < 10>>She is unaroused.
+<<elseif $slaves[$csi].lust < 25>>She is <span class="good">aroused</span> by your training<<if $slaves[$csi].relationship < 20>> despite herself.<<else>>.<</if>>
+<<elseif $slaves[$csi].lust < 60>>She is <span class="good">very aroused</span> by your perverted acts<<if $slaves[$csi].relationship < 20>> despite herself.<<else>>.<</if>>
+<<elseif $slaves[$csi].lust < 85>>She is <span class="very_good">wet and horny</span> and wants you to make her cum<<if $slaves[$csi].relationship < 20>> despite herself.<<else>>.<</if>>
+<<else>>She is on the <span class="excellent">verge of orgasm</span> and dripping wet.  She would do almost anything for you to make her cum<<if $slaves[$csi].relationship < 20>> despite herself.<<else>>.<</if>>
+<</if>>
+
+/* Pain */
+<<if $slaves[$csi].pain < 20>>
+<<elseif $slaves[$csi].pain < 40>>She is in <span class="pain_low">some pain</span> from your treatment of her.
+<<elseif $slaves[$csi].pain < 70>>She is in <span class="pain_moderate">pain</span> from her bruises.
+<<elseif $slaves[$csi].pain < 85>>She is in <span class="pain_high">severe pain</span> from being mercilessly tortured and her bruises are purple and hot.
+<<else>>She's in <span class="pain_very_high">severe suffering</span> from your attentions.  She's covered in welts and dark bruises and is crying helplessly.
+<</if>>
+
+/* counters */
+She has been fucked <<=$slaves[$csi].hasPussyFucked>> times, sucked cock <<=$slaves[$csi].hasSucked>> times, been assfucked <<=$slaves[$csi].hasAssFucked>> times, and swallowed <<=$slaves[$csi].hasSwallowedCum>> loads of cum. 
+
+
+<<if $slaves[$csi].oral < 0>>She <<KIbad "hates sucking">> cock. 
+<<elseif $slaves[$csi].oral == 1>>She loves to <span class="pervert_good">suck cock</span> and feels driven into submission when she does it.<</if>>
+<<if $slaves[$csi].oral == 2>>She is a <span class="pervert_very_good">enthusiastic cocksucker</span> and just having a cock in her mouth gets her wet.<</if>>
+<<if $slaves[$csi].oral == 3>>She's a <span class="pervert_excellent">mouth slut</span> and just the thought of sucking cock has her mouth watering and her slave cunt dripping.<</if>>
+
+<<if $slaves[$csi].cum < 0>>She <<KIbad "hates swallowing">> cum.
+<<elseif $slaves[$csi].cum == 1>>She has learned to <span class="pervert_good">love cum</span> and swallows enthusiastically.<</if>>
+<<if $slaves[$csi].cum == 2>>She is a happy <span class="pervert_very_good">cum guzzler</span> and opens her mouth, tongue out, whenever she thinks you're about to cum.<</if>>
+<<if $slaves[$csi].cum == 3>>She's a <span class="pervert_excellent">cumslut</span> who lives for cum.  She wants you to cum as often as possible so she can lick it wherever it lands.<</if>>
+
+<<if $slaves[$csi].deepthroat < 0>>She <<KIbad "hates gagging">> on cock when it's jammed down her throat..
+<<elseif $slaves[$csi].deepthroat == 1>>She is now happy to have <span class="pervert_good">cock shoved down her throat</span> and has lost her gag reflex.<</if>>
+<<if $slaves[$csi].deepthroat == 2>>She loves to be <span class="pervert_very_good">deepthroated</span> and deliberately shoves cock down her throat to try to make herself gag.<</if>>
+<<if $slaves[$csi].deepthroat == 3>>She's a <span class="pervert_excellent">gagfuck queen</span> and loves it when you fuck her whore throat like a cunt.<</if>>
+
+<<if $slaves[$csi].anal < 0>>She <<KIbad "hates being buttfucked.">>
+<<elseif $slaves[$csi].anal == 1>>She loves <span class="pervert_good">anal sex</span> and loves cock in her ass, whether you're gentle or not.<</if>>
+<<if $slaves[$csi].anal == 2>>She is an <span class="pervert_very_good">anal fanatic</span> and cums like crazy when she's buttfucked.<</if>>
+<<if $slaves[$csi].anal == 3>>She's an <span class="pervert_excellent">anal whore</span> and prefers being assfucked to having cock in her cunt.<</if>>
+
+<<if $slaves[$csi].painal < 0>>She <<KIbad "hates anal pain">> and begs you to be careful when assfucking her.
+<<elseif $slaves[$csi].painal == 1>>She has learned to enjoy <span class="pervert_good">anal pain</span> and when you fuck her ass she always wants it harder.<</if>>
+<<if $slaves[$csi].painal == 2>>She loves <span class="pervert_very_good">brutal assfucking</span> and loves large cocks or toys rammed into her slave asshole.<</if>>
+<<if $slaves[$csi].painal == 3>>She's a <span class="pervert_excellent">painal queen</span>, loving any kind of suffering resulting from her asshole.  You actually have to hold back from her desires to keep her from permanent injury.<</if>>
+
+<<if $slaves[$csi].bondage < 0>>She <<KIbad "hates being helpless">> and avoids being bound.
+<<elseif $slaves[$csi].bondage == 1>>She is aroused by <span class="pervert_good">bondage</span> and when she feels helpless, she gets wet.<</if>>
+<<if $slaves[$csi].bondage == 2>>She gets wet when <span class="pervert_very_good">tightly bound</span> and any time she can't resist you she cums when any of her holes are brutally fucked.<</if>>
+<<if $slaves[$csi].bondage == 3>>She's a <span class="pervert_excellent">bondage slut</span> that whimpers when the rope touches her skin.  Once bound she gladly accepts any torture.<</if>>
+
+<<if $slaves[$csi].humiliation < 0>>She <<KIbad "doesn't like degrating">> or humiliating scenarios.
+<<elseif $slaves[$csi].humiliation == 1>>She finds herself arroused by being  <span class="pervert_good">humiliated</span> and gets wet whenever you call her names or tell her to spread.<</if>>
+<<if $slaves[$csi].humiliation == 2>>She gets off on <span class="pervert_very_good">degredation</span> whenever you put her on all fours and make her spread her ass or call herself a dirty cunt.<</if>>
+<<if $slaves[$csi].humiliation == 3>>She's a <span class="pervert_excellent">humiliation whore</span> whose fantasies all involve being tattooed, spat upon, and used as fuckmeat.<</if>>
+
+<<if $slaves[$csi].housekeeping < 0>>She's messy by nature and <<KIbad "hates cleaning">>, especially in the outfits you make her wear.
+<<elseif $slaves[$csi].housekeeping == 1>>She feels happy when <span class="pervert_good">cleaning or serving</span> you, and strangly gets wet when you watch her.<</if>>
+<<if $slaves[$csi].housekeeping == 2>><span class="pervert_very_good">Cleaning</span> makes her deeply aroused and she makes an effort to bend over and please you while doing so.<</if>>
+<<if $slaves[$csi].housekeeping == 3>>She's a <span class="pervert_excellent">maid fetishist</span> who always wears skimpy cleaning outfits and makes sure her holes are always available when mopping, dusting, or cleaning the toilet.<</if>>
+
+<<if $slaves[$csi].begging < 0>>She is proud and very <<KIbad "resistant to begging.">>
+<<elseif $slaves[$csi].begging == 1>>She loves <span class="pervert_good">begging</span>: her obedience rised and her cunt moistens when you make her ask you for her training.<</if>>
+<<if $slaves[$csi].begging == 2>>She <span class="pervert_very_good">begs you</span> even for things she doesn't want, and it makes her more obedient.<</if>>
+<<if $slaves[$csi].begging == 3>>She gets wet when she <span class="pervert_excellent">begs for suffering</span>, and as long as you make her beg for it she'll do almost anything.<</if>>
+
+<<if $slaves[$csi].masochism < 0>>Suffering <<KIbad "makes her angry.">>
+<<elseif $slaves[$csi].masochism == 1>>She is a <span class="pervert_good">masochist</span> and gets aroused by spanking and other light pain.<</if>>
+<<if $slaves[$csi].masochism == 2>>She is a <span class="pervert_very_good">serious masochist</span> and can't help being turned on when hurt.<</if>>
+<<if $slaves[$csi].masochism == 3>>She's a <span class="pervert_excellent">complete painslut</span> and cums when being severely beaten.<</if>>
+
+<<if $slaves[$csi].submission < 0>>She is proud and <<KIbad "loathes acting submissively.">>
+<<elseif $slaves[$csi].submission == 1>>She is a <span class="pervert_good">submissive</span> and becomes more obedient and aroused when dominated whether she likes it or not.<</if>>
+<<if $slaves[$csi].submission == 2>>She is a <span class="pervert_very_good">submissive slut</span> and falls into subspace with rough treatment, making her more obedient and wet.<</if>>
+<<if $slaves[$csi].submission == 3>>She's a <span class="pervert_excellent">submissive slut</span> who can have her mind fucked along with any of her holes or by being tortured.<</if>>
+
+<<if $slaves[$csi].penetration < 0>>She <<KIbad "hates having large objects">> in her holes.
+<<elseif $slaves[$csi].penetration == 1>>You've now <span class="pervert_good">stretched her slave cunt</span> enough that she's learned to enjoy it.<</if>>
+<<if $slaves[$csi].penetration == 2>>She <span class="pervert_excellent">loves having her holes pounded</span> and any time she can get a fist in her cunt she shakes and thanks you.<</if>>
+<<if $slaves[$csi].penetration == 3>>She loves having her <span class="pervert_very_good">holes fucked hard with large objects</span> in the most extreme and painful ways.<</if>>
+
+/* virginity */
+<<if $slaves[$csi].pussySize === 0>>She is a <<good "virgin.">><</if>>
+<<if $slaves[$csi].assholeSize === 0>>She is an <<good "anal virgin">><</if>>
+
+<<display "Slave Position">>

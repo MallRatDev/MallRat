@@ -1,0 +1,7 @@
+:: Describe Slave Pussy[TimeNone nobr]
+	<<set _orifaceSize = ["tight, virginal", "tight", "slightly used", "well-used", "loose, gaping", "stretched and permanently gaping"]>>
+	<<=_orifaceSize[$slaves[$csi].pussySize]>> pussy
+
+:: Describe Slave Asshole[TimeNone nobr]
+	<<set _orifaceSize = ["tight, virginal", "tight", "slightly used", "well-used", "loose, gaping", "stretched and permanently gaping"]>>
+	<<=_orifaceSize[$slaves[$csi].pussySize]>> asshole

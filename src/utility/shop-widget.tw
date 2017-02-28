@@ -1,0 +1,23 @@
+:: WidgetShop[widget nobr]
+	<<widget buyButton>>\
+		<<set _string = "<<click 'Buy It!'>>">>
+		<<set _string += "<<buy '">>
+		<<set _string += $args[0]>>
+		<<set _string += "' ">>
+		<<set _string += $args[1]>>
+		<<set _string += ">>" >>
+		<<set _string += "<</click>>">>
+		<<=_string>>
+	<</widget>>
+
+	<<widget buy>>
+		<<set _item = $args[0]>>
+		<<set _price = $args[1]>>
+		<<if _price > $money>>
+			<<replace "#shopkeeper">>You don't have enough money.<</replace>>
+		<<else>>
+			<<replace "#shopkeeper">>Bought one _item.<</replace>>
+			<<run Game.inventoryAdd(_item)>>
+			<<set $money -= _price>>
+		<</if>>
+	<</widget>>

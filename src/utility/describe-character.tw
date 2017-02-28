@@ -1,0 +1,157 @@
+
+
+:: Describe Character
+<<nobr>>
+<<=$currentCharacter.name>> is here.  
+
+/* relationship */
+<<He>> is 
+<<if $currentCharacter.relationship < 10>>
+	<span class="uninterested">
+	<<=either("apathethic to","uninterested in","unconcerned with")>>
+	</span>
+<<elseif $currentCharacter.relationship <= 20>>
+	<span class="interested">
+	<<=either("interested in","friendly to","welcoming to")>>
+	</span>
+<<elseif $currentCharacter.relationship <= 30>>
+	<span class="interested">
+	<<=either("excited to see","glad to see")>></span>
+<<elseif $currentCharacter.relationship > 30>>
+	<span class="excited">
+	<<=either("blushing to see","wet when she sees","stammering to talk to")>></span>
+<</if>>you.
+<</nobr>>
+
+<<nobr>>
+/* Face */
+<<He>> has a <<=$currentCharacter.face>>, <<=$currentCharacter.skin>> face
+<<if $currentCharacter.facialPiercings>>with <<=$currentCharacter.facialPiercings>>.<<else>>. <</if>>
+
+<<Her>> hair is <<=$currentCharacter.hairLength>>, <<=$currentCharacter.hairColor>>, and cut <<=$currentCharacter.hairCut>>.
+
+/* Body */
+<<He>> is 
+	<<if $currentCharacter.bodySize == 0>>emaciated
+	<<elseif $currentCharacter.bodySize == 1>>rail thin
+	<<elseif $currentCharacter.bodySize == 2>>thin
+	<<elseif $currentCharacter.bodySize == 3>>pleasantly curved
+	<<elseif $currentCharacter.bodySize == 4>>plush
+	<<elseif $currentCharacter.bodySize == 5>>overweight
+	<<elseif $currentCharacter.bodySize == 6>>fat
+	<<elseif $currentCharacter.bodySize == 7>>very fat
+	<</if>>
+	
+	with
+	<<if $currentCharacter.bodyTone == 0>>no body tone.
+	<<elseif $currentCharacter.bodyTone == 1>>slight muscles.
+	<<elseif $currentCharacter.bodyTone == 2>>firm muscles.
+	<<elseif $currentCharacter.bodyTone == 3>>solid muscles.
+	<<elseif $currentCharacter.bodyTone == 4>>a ripped body.
+	<</if>>
+	
+/* Tits */
+<<He>> has 
+<<if $currentCharacter.titsSize == 0>> a flat chest
+	<<elseif $currentCharacter.titsSize == 1>> small, barely rounded tits
+	<<elseif $currentCharacter.titsSize == 2>> small, <<=$currentCharacter.titsShape>> tits
+	<<elseif $currentCharacter.titsSize == 3>> <<=$currentCharacter.titsShape>>, B cup tits
+	<<elseif $currentCharacter.titsSize == 4>> <<=$currentCharacter.titsShape>>, C cup tits
+	<<elseif $currentCharacter.titsSize == 5>> <<=$currentCharacter.titsShape>>, full C cup tits	<<elseif $currentCharacter.titsSize == 6>> large <<=$currentCharacter.titsShape>> D cup tits
+	<<elseif $currentCharacter.titsSize == 7>> large pendulous <<=$currentCharacter.titsshape>> DD cup tits
+<</if>>
+	
+<<if $currentCharacter.clothingRevealing>>
+	 with $currentCharacter.nippleSize, $currentCharacter.nippleColor nipples with $currentCharacter.nippleAreolae areolae. 
+	 <<if $currentCharacter.nipplePeircings>> <<He>> has $currentCharacter.nipplePericings in <<her>> nipples. <</if>>
+<<else>>. 
+<</if>>
+
+/* Stomach */
+<<He>> has a 
+<<set _stomach = ["narrow","flat","sligtly rounded","rounded","fat","very fat"]>>
+<<=_stomach[$currentCharacter.bodySize]>> stomach with
+<<set _stomachMuscles = ["no muscles", "very little abs", "noticable abs", "firm abs", "six pack abs"]>>
+<<=_stomachMuscles[$currentCharacter.bodyTone]>>.
+
+/* Navel */
+<<if $currentCharacter.clothingRevealing>>
+<<if $currentCharacter.navelPiercings>><<He>> has a $currentCharacter.navelPiercings in <<his>> navel.<</if>>
+<</if>>
+
+/* Pussy */
+<<if $currentCharacter.clothingRevealing>>
+  <<if $currentCharacter.gender == "female">>
+	<<He>> has a 
+	<<set _orifaceSize = ["tight, virginal", "tight", "slightly used", "well-used", "loose, gaping", "stretched and permanently gaping"]>>
+	<<=_orifaceSize[$currentCharacter.pussySize]>> pussy
+
+	<<if $currentCharacter.pussyHairStyle neq 0>>
+		with a 
+		<<set _pubicHairStyle = ["shaved", "landing strip", "neatly trimmed patch", "full bush"]>>
+	<<=_pubicHairStyle[$currentCharacter.pussyHairStyle]>>
+	of $currentCharacter.pussyHairColor pubic hair.
+	<<else>>.  <<He>> is shaved.
+	<</if>>
+	
+	<<He>> has 
+	<<set _labiaSize = ["small", "protruding", "long", "large protruding"]>><<=_labiaSize[$currentCharacter.pussyLips]>> pussy lips and a 
+	<<set _clitSize = ["tiny", "small", "large", "engorged", "engorged, protruding"]>><<=_clitSize[$currentCharacter.pussyClit]>> clit.
+	
+	<<if $currentCharacter.pussyClitPeircing>>
+		<<He>> has a 
+		<<set _clitPeircing = ["", "small stud", "small ring", "small bar", "large, thick ring", "heavy bar", "magical heavy bar"]>>
+		<<=_clitPeircing[$currentCharacter.pussyClitPeircing]>> peircing <<his>> <<=_clitSize[$currentCharacter.pussyClit]>> clit.  
+		<<if $currentCharacter.pussyClitPeircing > 3>>The heavy peircing tugs at <<his>> clit, <span class="good">making <<him>> incredibly horny.</span>  <</if>>
+		<<if $currentCharacter.pussyClitPeircing == 6>>The magical bar delivers <span class="excellent">shocking pain or thrumming pleasure</span> to <<him>> at your whim, allowing you to <span class="excellent">train</span> <<him>> through her helpless slave cunt.  <</if>>
+	<</if>>
+	
+	<<if $currentCharacter.pussyLabiaStudsNumber>>
+	<<He>> has <<=$numeralsWithA[$currentCharacter.pussyLabiaStudsNumber]>> studs in <<his>> labia.
+	<</if>>
+	
+	<<if $currentCharacter.pussyLabiaRingsNumber>>
+	<<He>> has <<=$numeralsWithA[$currentCharacter.pussyLabiaRingsNumber]>> small metal rings in <<his>> labia.
+	<</if>>
+	
+	<<if $currentCharacter.pussyLabiaHeavyRingsNumber>>
+	<<He>> has <<=$numeralsWithA[$currentCharacter.pussyLabiaHeavyRingsNumber]>> heavy metal rings in <<his>> labia.
+	<<if  $currentCharacter.pussyLabiaHeavyRingsNumber > 2>>The heavy rings drag at her labia, and <span class="good">make her horny</span>.<</if>>
+	<</if>>
+
+	<<if $currentCharacter.pussyLabiaZipperNumber>>
+	<<He>> has <<his>> labia peircing fastened together with a chain and attached to her clit, preventing her from accessing her slave cunt and <span class="good">enforcing her awareness of your control</span> over her body.
+	<</if>>
+	
+  <</if>>
+<</if>>
+
+/* Asshole */
+<<if $currentCharacter.clothingRevealing>>
+	<<He>> has a 
+	<<set _assholeSize = ["tight, virginal", "tight", "slightly puckered", "used", "well-used and gaping", "heavilly used, gaping fuck hole of a"]>>
+	<<=_assholeSize[$currentCharacter.assholeSize]>> asshole.  
+	
+	<<if $currentCharacter.assholeStyle == 1>>It is bleached and prepared for use.<</if>>
+	
+	It is 
+	<<set _assholeColor = ["pink", "brown", "bleached"]>><<=_assholeColor[$currentCharacter.assholeColor]>>.
+	
+<</if>>
+	
+<</nobr>>
+
+<<nobr>>
+<<display "Describe Clothing">>
+<</nobr>>
+
+<<nobr>>
+<<=$currentCharacter.description>>
+<</nobr>>
+
+<<nobr>>
+<<if $currentCharacter.enslaved>>
+<<display "Slave Stats">>
+<</if>>
+<</nobr>>
+<<return>>

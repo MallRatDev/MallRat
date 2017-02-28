@@ -1,0 +1,41 @@
+:: WidgetHe[widget nobr]
+<<widget he>>
+	<<if $currentCharacter.gender eq "male">><<="he">>
+	<<elseif $currentCharacter.gender eq "female">><<="she">><</if>>
+<</widget>>
+
+<<widget her>>
+	<<if $currentCharacter.gender eq "male">><<="he">>
+	<<elseif $currentCharacter.gender eq "female">><<="she">><</if>>
+<</widget>>
+
+<<widget He>>
+	<<if $currentCharacter.gender eq "male">><<="He">>
+	<<elseif $currentCharacter.gender eq "female">><<="She">><</if>>
+<</widget>>
+
+<<widget Her>>
+	<<if $currentCharacter.gender eq "male">><<="He">>
+	<<elseif $currentCharacter.gender eq "female">><<="Her">><</if>>
+<</widget>>
+
+<<widget his>>
+	<<if $currentCharacter.gender eq "male">><<="his">>
+	<<elseif $currentCharacter.gender eq "female">><<="her">><</if>>
+<</widget>>
+
+<<widget her>>
+	<<if $currentCharacter.gender eq "male">><<="his">>
+	<<elseif $currentCharacter.gender eq "female">><<="her">><</if>>
+<</widget>>
+
+
+<<widget His>>
+	<<if $currentCharacter.gender eq "male">><<="His">>
+	<<elseif $currentCharacter.gender eq "female">><<="Her">><</if>>
+<</widget>>
+
+<<widget him>>
+	<<if $currentCharacter.gender eq "male">><<="him">>
+	<<elseif $currentCharacter.gender eq "female">><<="her">><</if>>
+<</widget>>

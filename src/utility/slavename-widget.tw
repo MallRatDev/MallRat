@@ -1,0 +1,5 @@
+:: WidgetSlaveName[widget nobr TimeNone]
+<<widget slavename>>
+<<=$slaves[$csi].name>>
+<</widget>>
+

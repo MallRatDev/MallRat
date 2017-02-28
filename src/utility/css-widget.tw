@@ -1,0 +1,105 @@
+
+:: WidgetCSS[widget nobr TimeNone]
+<<widget bad>>
+<span class="bad"><<=$args[0]>></span>
+<</widget>>
+
+<<widget good>>
+<span class="good"><<=$args[0]>></span>
+<</widget>>
+
+<<widget OBbad>>
+<span class="obedience_bad"><<=$args[0]>></span>
+<</widget>>
+
+<<widget OBverybad>>
+<span class="obedience_very_bad"><<=$args[0]>></span>
+<</widget>>
+
+<<widget OBgood>>
+<span class="obedience_good"><<=$args[0]>></span>
+<</widget>>
+
+<<widget OBverygood>>
+<span class="obedience_very_good"><<=$args[0]>></span>
+<</widget>>
+
+<<widget OBexcellent>>
+<span class="obedience_excellent"><<=$args[0]>></span>
+<</widget>>
+
+<<widget OBperfect>>
+<span class="obedience_perfect"><<=$args[0]>></span>
+<</widget>>
+
+<<widget PAverylow>>
+<span class="pain_very_low"><<=$args[0]>></span>
+<</widget>>
+
+<<widget PAlow>>
+<span class="pain_low"><<=$args[0]>></span>
+<</widget>>
+
+<<widget PAmod>>
+<span class="pain_moderate"><<=$args[0]>></span>
+<</widget>>
+
+<<widget PAhigh>>
+<span class="pain_high"><<=$args[0]>></span>
+<</widget>>
+
+<<widget PAveryhigh>>
+<span class="pain_very_high"><<=$args[0]>></span>
+<</widget>>
+
+<<widget FEverylow>>
+<span class="fear_very_low"><<=$args[0]>></span>
+<</widget>>
+
+<<widget FElow>>
+<span class="fear_low"><<=$args[0]>></span>
+<</widget>>
+
+<<widget FEmod>>
+<span class="fear_moderate"><<=$args[0]>></span>
+<</widget>>
+
+<<widget FEhigh>>
+<span class="fear_high"><<=$args[0]>></span>
+<</widget>>
+
+<<widget FEveryhigh>>
+<span class="fear_very_high"><<=$args[0]>></span>
+<</widget>>
+
+<<widget REgood>>
+<span class="relationship_good"><<=$args[0]>></span>
+<</widget>>
+
+<<widget REmod>>
+<span class="relationship_moderate"><<=$args[0]>></span>
+<</widget>>
+
+<<widget REbad>>
+<span class="relationship_bad"><<=$args[0]>></span>
+<</widget>>
+
+<<widget REverybad>>
+<span class="relationship_very_bad"><<=$args[0]>></span>
+<</widget>>
+
+<<widget REverygood>>
+<span class="relationship_very_good"><<=$args[0]>></span>
+<</widget>>
+
+<<widget KIbad>>
+<span class="kink_bad"><<=$args[0]>></span>
+<</widget>>
+
+<<widget KIgood>>
+<span class="kink_good"><<=$args[0]>></span>
+<</widget>>
+
+<<widget POgood>>
+<span class="good"><<=$args[0]>></span>
+<</widget>>
