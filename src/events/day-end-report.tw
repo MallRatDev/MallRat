@@ -21,7 +21,7 @@
 			/* dropdowns for currently available jobs */
 			/* currently don't do anything, will need a script to update vars, etc */
 			Assign to corrupted food court:<br>
-			<div class="styled-select slate">
+			<div>
 				<select>
 					<option value=0>(None)</option>
 					<<for _c = 0; _c < $isCorruptedPc.length; _c++>>
@@ -34,7 +34,7 @@
 
 		/* punishments */
 		Assign her to a punishment:<br>
-		<div class="styled-select slate">
+		<div>
 			<select>
 				<option value=0>(None)</option>
 				/* should be dynamically generated */
