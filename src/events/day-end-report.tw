@@ -1,0 +1,4 @@
+:: Day End Report[nobr TimeNone]
+	/* list each slave and allow assignment to tasks. */
+	
+	<<goto "Your Room">>
