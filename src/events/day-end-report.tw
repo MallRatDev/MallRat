@@ -2,7 +2,7 @@
 	/* list each slave and allow assignment to tasks. */
 	You can manage what your slaves are assigned to do during the day.
 	<br><br>
-	<<for _i = 0; _ < $slaves.length; _i++>>
+	<<for _i = 0; _i < $slaves.length; _i++>>
 		<<=$slaves[_i].name>> is 
 		<<if $slaves[_i].isBroken>> 
 			broken and available for assignment.
@@ -11,11 +11,38 @@
 		<<else>>
 			still in training and only available for punishment.
 		<</if>>
-
-		/* logic to show available jobs here. */
-
+		<<set $slaves[_i].isWorkingAt = "">>
+		<br>
 	<</for>>
+	
+	/* logic to show available jobs here. */
+	<<for _i = 0; _i < $slaves.length; _i++>>
+		<<if $slaves[_i].isInLove || $slaves[_i].isBroken>>
+			/* dropdowns for currently available jobs */
+			/* currently don't do anything, will need a script to update vars, etc */
+			Assign to corrupted food court:<br>
+			<div class="styled-select slate">
+				<select>
+					<option value=0>(None)</option>
+					<<for _c = 0; _c < $isCorruptedPc.length; _c++>>
+						<option value=<<=_c>>><<=$isCorruptedPc[_c]>></option>
+					<</for>>
+				</select>
+			</div>
+			<br>
+		<</if>>
 
+		/* punishments */
+		Assign her to a punishment:<br>
+		<div class="styled-select slate">
+			<select>
+				<option value=0>(None)</option>
+				/* should be dynamically generated */
+				<option value=1>Wooden Pony</option>
+				<option value=2>Caged</option>
+			</select>
+		</div>
+	<</for>>
 
 	<br><br>
 	[[Wake Up|Your Room]]

@@ -28,7 +28,6 @@ src\characters\tracy-first-training.tw
 src\characters\tracy-special-training.tw
 src\characters\tracy-stats.tw
 src\characters\tracy-talk-enslave.tw
-src\config\start (DESKTOP-E763QA9's conflicted copy 2017-02-22).tw
 src\config\sugarCubeConfig.tw
 src\events\arrested.tw
 src\events\bad-end-failed-to-enslave-eve.tw
@@ -39,6 +38,7 @@ src\events\bree-and-eva-introduction.tw
 src\events\completed-training.tw
 src\events\daily-training-results-new.tw
 src\events\daily-training-results.tw
+src\events\day-end-report.tw
 src\events\day-end.tw
 src\events\derek-teaches-ritual.tw
 src\events\fight-the-major.tw
