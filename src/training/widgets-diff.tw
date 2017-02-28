@@ -1,0 +1,36 @@
+:: WidgetDiff[nobr widget]
+<<widget "diff">>
+
+<<if $args[0] - $args[1] > 0>>
+@@.good;(+<<=$args[0] - $args[1]>>)@@
+<<elseif $args[0] - $args[1] < 0>>
+@@.bad;(<<=$args[0] - $args[1]>>)@@
+<</if>>
+
+<</widget>>
+
+<<widget "vaguediff">>
+
+<<if $args[0] - $args[1] > 0>>
+@@.good;(+)@@
+<<elseif $args[0] - $args[1] < 0>>
+@@.bad;(-)@@
+<</if>>
+
+<</widget>>
+
+<<widget "statdiff">>
+
+	<<set _stat = $args[0]>>
+	<<set _newstat = $slaves[$csi][_stat]>>
+	<<diff _newstat $o[_stat]>>
+	
+<</widget>>
+
+<<widget "vaguestatdiff">>
+
+	<<set _stat = $args[0]>>
+	<<set _newstat = $slaves[$csi][_stat]>>
+	<<vaguediff _newstat $o[_stat]>>	
+	
+<</widget>>

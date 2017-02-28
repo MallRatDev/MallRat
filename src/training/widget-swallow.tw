@@ -1,0 +1,13 @@
+:: WidgetSwallow[widget nobr]
+<<widget "swallow">>
+	<<set $slaves[$csi].hasSwallowedCum += 1>>
+	<<exercisekink "cum">>
+	<<if $slaves[$csi].cum > 0>>
+		<<= ["She @@.relationship-good;loves swallowing your cum@@ and is a bit @@.obedience-good;more submissive@@ when she does",
+			"She @@.relationship-good;happily@@ gulps down your cum and @@.obedience-good;thanks you@@ for coming in her mouth.",
+			"She licks @@.relationship-good;every drop of cum@@ off her lips and looks at you in @@.obedience-good;complete submission."][$slaves[$csi].cum]>>
+		<<set $slaves[$csi].obedience += random($slaves[$csi].cum, $slaves[$csi].cum * 5)>>
+		<<set $slaves[$csi].relationship += random($slaves[$csi].cum, $slaves[$csi].cum * 6)>>
+		<<set $slaves[$csi].lust += random($slaves[$csi].cum * 3)>>
+	<</if>>
+<</widget>>

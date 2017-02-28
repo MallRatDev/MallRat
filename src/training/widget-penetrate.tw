@@ -1,0 +1,143 @@
+:: WidgetPenetrate[nobr widget]
+<<widget "penetrate">>
+	<<set _hole = $args[0]>>
+	<<set _tool = $args[1] || "cock">>
+	<<if $args[2] == "force">>
+		<<set _force = true>>
+	<<else>>
+		<<set _force = false>>
+	<</if>>
+
+	<<set _size = 0>>
+	<<switch _tool>>
+		<<case "cock">>
+			<<set _size = $pc.cockLength>>
+		<<case "slave Eva">>
+			<<set _size = 12>> /* for first training scene with Bree when Eva is present. */
+		<<default>>
+			<<set _size = 5>>
+	<</switch>>
+
+	<<switch _hole>>
+		<<case "cunt" "pussy">>
+			<<set _pain = (_size + random(6)) * 2 / 3>>
+			<<set _pain -= 3 * $slaves[$csi].pussySize>>
+			<<if _pain < 0>>
+				Her cunt easilly accomodates your _tool.
+			<<elseif _pain < 5>>
+				Your _tool is large for such a tight hole, causing her @@.pain-low;some pain.@@
+			<<else>>
+				Your _tool is very large for her hole, causing her @@.pain-moderate;quite a bit of pain.@@
+			<</if>>				
+
+			/* check for virginity and stretching */
+			<<if $slaves[$csi].pussySize === 0 && _size > 5>>
+				<<losevirginity "pussy">>
+				<<stretchhole "pussy">>
+			<<elseif $slaves[$csi].pussySize != 0>>
+				<<if random(30) < _pain>>
+					<<stretchhole "pussy">>
+					<<set _pain += random(6)>>
+				<</if>>
+			<</if>>
+
+			/* add to counters */
+			<<if _size > 5>>
+				<<set $slaves[$csi].hasPussyFucked += 1>>
+			<</if>>
+
+			<<if $slaves[$csi].penetration > 0 && _pain > 0>>
+				She's a size queen, and the _tool in her cunt is large enough to hurt... just the way she likes it.  She's @@.lust-good;excited@@ and @@.relationship-good;happy@@ to have her cunt filled.
+				<<set $slaves[$csi].lust += random(_size) + _size>>
+				<<set $slaves[$csi].relationship += _size>>
+			<<elseif $slaves[$csi].penetration < 0 && _pain > 0>>
+				She hates large penetration of her holes, and your _tool is big enough to hurt.  She screeches in pain and is @@.fear-low;afraid@@ you'll keep stuffing her holes full.
+				<<set $slaves[$csi].fear += random(_size) + _size>>
+			<</if>>
+			
+			<<set _lust = _size + random(_size) + random(_pain)>>
+			<<if _lust > 12>>
+				She loves being fucked
+				<<if _pain  > 5 && $slaves[$csi].masochism > 0>>
+					in part because of the pain.
+				<<elseif _pain > 5>>
+					in spite of the pain.
+				<<else>>
+					in the pussy.
+				<</if>>
+				<<set $slaves[$csi].relationship += random(_lust) + 2>>
+			<</if>>
+			<<set $slaves[$csi].lust += _lust>>
+
+		
+		<<case "asshole">>
+			/* get the pain for large tools */
+		
+			<<set _pain = _size + random(6)>>
+			<<set _pain -= 3 * $slaves[$csi].assholeSize>>
+			<<if _pain < 0>>
+				<<set _pain = 0>>
+				Her asshole easily accomodates your _tool.
+			<<elseif _pain < 5>>
+				Your _tool is large for such a tight asshole, causing her @@.pain-low;some pain.@@
+			<<else>>
+				Your _tool is very large for her hole, causing her @@.pain-moderate;quite a bit of pain.@@
+			<</if>>
+			
+			/* check for virginity and stretching */
+			<<if $slaves[$csi].assholeSize === 0 && _size > 5>>
+				<<losevirginity "asshole">>
+				<<stretchhole "asshole">>
+			<<elseif $slaves[$csi].assholeSize != 0>>
+				<<if random(30) < _pain>>
+					<<stretchhole "asshole">>
+					<<set _pain += random(6)>>
+				<</if>>
+			<</if>>
+			
+
+			/* add to counters */
+			<<if _size > 5>>
+				<<set $slaves[$csi].hasAssFucked += 1>>
+			<</if>>
+
+			<<if $slaves[$csi].penetration > 0 && _pain > 0>>
+				She's a size queen, and the _tool in her ass is large enough to hurt... just the way she likes it.  She's @@.lust-good;excited@@ and @@.relationship-good;happy@@ to have her ass filled.
+				<<set $slaves[$csi].lust += random(_size) + _size>>
+				<<set $slaves[$csi].relationship += _size>>
+			<<elseif $slaves[$csi].penetration < 0 && _pain > 0>>
+				She hates large penetration of her holes, and your _tool is big enough to hurt.  She screeches in pain and is @@.fear-low;afraid@@ you'll keep stuffing her holes full.
+				<<set $slaves[$csi].fear += random(_size) + _size>>
+			<</if>>
+						
+			/* modify lust, pain */
+			<<if random(8) > _pain / ($slaves[$csi].anal + $slaves[$csi].painal * 2 + $slaves[$csi].masochism + 1)>>
+				She @@.lust-low;moans@@ as she takes <<=_tool === "cock" ? "your cock" : "the " + _tool>> up her ass.
+				<<set $slaves[$csi].lust += random(Math.floor(_pain / 2)) + random(7)>>
+				<<set $slaves[$csi].pain += Math.floor(_pain / ($slaves[$csi].anal + $slaves[$csi].painal * 2 + $slaves[$csi].masochism + 1))>>
+			<<else>>
+				She @@.pain-moderate;screeches@@ as you painfully thrust <<=_tool === "cock" ? "your cock" : "the " + _tool>> deep into her asshole, stretching her and making her suffer.
+				<<set $slaves[$csi].pain += Math.floor(_pain / ($slaves[$csi].anal + $slaves[$csi].painal * 2 + $slaves[$csi].masochism + 1)) + random(4)>>
+				<<set $slaves[$csi].lust += (random(12) - _pain)>>
+				<<if $slaves[$csi].lust - $o.lust > $slaves[$csi].pain - $o.pain>>
+					Even through the pain she @@.lust-moderate;enjoys@@ her hole being violated.
+				<</if>>
+			<</if>>
+			
+			<<if $slaves[$csi].anal < 0>>
+				<<set $slaves[$csi].relationship += random($slaves[$csi].anal * 5)>>
+				<<set $slaves[$csi].obedience += random($slaves[$csi].anal * 6)>>
+				She @@.relationship-bad;hates being buttfucked@@ and hates you a bit more, too.
+			<<elseif $slaves[$csi].anal > 0>>
+				<<set $slaves[$csi].relationship += random($slaves[$csi].anal * 5)>>
+				<<set $slaves[$csi].obedience += random($slaves[$csi].anal * 6)>>
+				She @@.relationship-good;loves your cock up her ass@@ and you a little more with it.
+			<</if>>
+			
+			
+		<<case "mouth">>
+		
+	<</switch>>
+<</widget>>
+
+

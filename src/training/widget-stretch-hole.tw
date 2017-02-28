@@ -1,0 +1,13 @@
+:: WidgetStretchhole[nobr widget]
+<<widget "stretchhole">>
+	<<set _hole = $args[0] || "cunt">>
+	
+	$slaves[$csi].name's _hole has been @@.good;stretched out.@@
+	
+	<<switch _hole>>
+		<<case "cunt">>
+			<<set $slaves[$csi].pussySize += 1>>
+		<<case "asshole">>
+			<<set $slaves[$csi].assholeSize += 1>>
+	<</switch>>
+<</widget>>
