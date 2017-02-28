@@ -1,0 +1,380 @@
+:: Fuck Her Pussy[nobr TimeNone]
+	<<replace "#training-text">>
+				/* Setup - define the act */
+		<<set _kinks = ["submission"]>>
+		<<set _holes = ["pussy"]>>
+
+			/*  Check if she'll do it */
+		<<set _result = Game.resolveSexAct($csi, _kinks, _holes)>>
+		<<if true>>  /* success block */
+			You prepare to fuck her pussy
+			<<if $slaves[$csi].pussySize === 0>>
+				for the first time.
+			<<else>>
+				.
+			<</if>>
+		<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Fuck her missionary">>
+			<<set $slaves[$csi].position = 0>>
+			<<display "Vag Missionary">>
+		<</link>><br>
+		<<link "Make her ride you">>
+			<<set $slaves[$csi].position = 0>>
+			<<display "Vag Ride">>
+		<</link>><br>
+		<<link "Take her from behind">>
+			<<set $slaves[$csi].position = 2>>
+			<<display "Vag Doggy">>
+		<</link>>
+	<</replace>>
+
+:: Vag Missionary[nobr TimeNone]
+	<<replace "#training-text">>
+		You push her down on her back on the pool table.  At a convenient height for your cock to enter her, you push her legs back and 
+		<<if $slaves[$csi].lust > 10>>
+			slide into her wet pussy. 
+			<<set $slaves[$csi].lust += random(5)>>
+		<<else>>
+			painfully shove into her cunt.
+			<<set $slaves[$csi].pain += random(5)>>
+		<</if>>
+		<<penetrate "pussy">>
+		You set up a steady rhythm, fucking her until both of you are breathing hard.
+	<</replace>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Be rough with her">>
+			<<display "Vag Missionary Rough Sex">>
+		<</link>><br>
+		<<link "Kiss her and fuck her well">>
+			<<display "Vag Good Fucking">>
+		<</link>><br>
+		<<link "Use her like a toy">>
+			<<display "Vag Missionary Use Her">>
+		<</link>>
+	<</replace>>
+
+:: Vag Missionary Rough Sex[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You push her legs back into her shoulders and trap her under your weight, then start pounding her hard, thrusting into her <<if $slaves[$csi].lust > 20>>wet<</if>> cunt.  You grab her throat and push down as you fuck her, then slap her tits, punctuating each slap with an extra hard thrust.  You tug at her nipples and slap, every few minutes choking her a little.
+		<<if $slaves[$csi].masochism + $slaves[$csi].submission > 1>>
+			She loves the rough treatment and pain, @@.lust-good;getting off@@ on it and @@.relationship-good;appreciating@@ your dominent way with her.
+			<<set $slaves[$csi].lust += random($slaves[$csi].masochism + $slaves[$csi].submission * 5) + 5>>
+			<<set $slaves[$csi].relationship += random($slaves[$csi].masochism + $slaves[$csi].submission * 4) + 3>>
+		<<elseif $slaves[$csi].masochism + $slaves[$csi].submission < 0>>
+			She @@.relationship-bad;hates@@ being treated roughly and hurt and is @@.fear-low;afraid@@ you're going to keep hurting her.
+			<<set $slaves[$csi].fear += random(4) + 1>>
+			<<set $slaves[$csi].relationship += random(4) * ($slaves[$csi].masochism + $slaves[$csi].submission * 4) - 3>>
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].lust > 30>>
+			<<link "Fuck her until she's ready to come">>
+				<<display "Vag Slave Orgasm">>
+			<</link>><br>
+		<</if>>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>
+
+:: Vag Good Fucking[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You bend in close and kiss her, slowly working your cock in and out of her pussy.  You fuck her slowly at first, kissing her neck and playing with her nipples, gradually increasing pace until your cock is sliding in and out of her quickly. 
+		<<set $slaves[$csi].lust += random(6 + $pc.cockLength)>>
+		<<if $slaves[$csi].lust > 30>>
+			When she starts moaning, you play harder with her nipples then rub her clit, fucking her harder as she responds.  She pushes into your thrusts as her orgasm approaches, @@.relationship-good;glad@@ that you took time for her pleasure.
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Fuck her until she's ready to come">>
+			<<display "Vag Slave Orgasm">>
+		<</link>><br>
+	<</replace>>	
+
+:: Vag Missionary Use Her[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You methodically fuck her, using her <<if $slaves[$csi].lust > 20>>wet<</if>> cunt to pleasure yourself with no concern for her pain or pleasure.  
+		<<if $slaves[$csi].humiliation + $slaves[$csi].submission > 1>>
+			Being used as a fucktoy makes her feel @@.obedience-good;submissive@@ and @@.relationship-good;happy.@@
+			<<set $slaves[$csi].lust += random($slaves[$csi].humiliation + $slaves[$csi].submission * 5) + 5>>
+			<<set $slaves[$csi].relationship += random($slaves[$csi].humiliation + $slaves[$csi].submission * 4) + 3>>
+		<<elseif $slaves[$csi].humiliation + $slaves[$csi].submission < 0>>
+			She @@.relationship-bad;hates@@ being used as a hole for fucking.
+			<<set $slaves[$csi].relationship += random(4) * ($slaves[$csi].humiliation + $slaves[$csi].submission * 4) - 3>>
+		<</if>>
+		<<exercisekink "humiliation">>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].lust > 30>>
+			<<link "Fuck her until she's ready to come">>
+				<<display "Vag Slave Orgasm">>
+			<</link>><br>
+		<</if>>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>
+
+:: Vag Slave Orgasm[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You've fucked her hard and she's at the very edge of an orgasm.
+		<<switch $slaves[$csi].rulesNoOrgasm>>
+			<<case 0>>
+				She start shrieking as your cock impales her.  You can feel her cunt clench around your member, and pound her hard as she comes.  You can feel her pussy soak as her orgasm rips through her, and you don't let up even as she gets sensitive until her sounds start to quiet down.
+				<<orgasm "cunt">>
+			<<case 1>>
+				She isn't allowed to come, so it's @@.fear-low;torture@@ to be fucked like this and have to resist.
+				<<if $slaves[$csi].obedience + ($slaves[$csi].fear + $slaves[$csi].relationsip) / 2 < random($slaves[$csi].lust)>>
+					She can't help it and comes, breaking your rule.  This makes her @@.obedience-bad;defiant@@ and @@.relationship-bad;angry@@ she isn't allowed to come.
+					<<set $slaves[$csi].obedience -= Math.floor($slaves[$csi].lust / 2)>>
+					<<set $slaves[$csi].relationship -= Math.floor($slaves[$csi].lust / 2)>>
+					<<orgasm "pussy">>
+				<<else>>
+					She resists, making her @@.obedience-good;more obedient.@@
+					<<set $slaves[$csi].obedience += Math.floor($slaves[$csi].lust / 4)>>
+				<</if>>
+			<<case 2>>
+				She desperately calls out, "Please, <<if $slaves[$csi].obedience > 10>>Master <</if>>may I come?"
+		<</switch>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].ruleNoOrgasm === 2>>
+			<<link "Tease her but let her come">>
+				<<display "Vag Tease">>
+			<</link>><br>
+			<<link "Refuse">>
+				<<display "Vag Orgasm Denial">>
+			<</link>><br>
+			<<link "Let her come">>
+				<<display "Vag Allowed Orgasm">>
+			<</link>>
+		<<else>>
+			<<link "Come in her cunt">>
+				<<display "Vag Come Inside">>
+			<</link>><br>
+			<<link "Pull out and come in her mouth">>
+				<<display "Vag Come Mouth">>
+			<</link>>
+		<</if>>
+	<</replace>>
+
+:: Vag Tease[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		"No, don't come!"<br>
+		She <<=either("whimpers", "moans", "glares", "sobs")>> but does her best. <br>
+		"Please, <<if $slaves[$csi].obedience > 10>>Master <</if>> let me come!"<br>
+		"No, you little slut." You pound her hard, and she's struggling.
+		"<<=either("Oh Fuck!", "Oh my God!", "Oh no! Oh!", "Oh shit!")>> Please, please, please Master! I can't hold off!"<br>
+		"Come for me, <<=$slaves[$csi].name>>! Come for your Master!"<br>
+		That does it.  She comes hard, screaming and struggling but you hold her in place while you pound her through it.  She's become @@.obedience-good;more obedient.@@
+		<<set $slaves[$csi].obedience += Math.floor($slaves[$csi].lust / 6)>>
+		<<orgasm "cunt">>
+		<<exercisekink "humiliation">>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>
+
+:: Vag Come Inside[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You roar and thrust deep inside her, pumping cum deep into her pussy.  
+		<<if $pc.path === "Virility">>
+			You feel the @@.virility;Mother's power@@ fuel your orgasm and her cunt fills to overflowing as you thrust a few more times, cum squirting out after each thrust.
+		<<else>>
+			After filling her, you pump a couple times lubricated by cum.
+		<</if>>
+		<<cum "pussy">>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Finish">>
+			<<display "Finish Vag">>
+		<</link>>
+	<</replace>>
+
+:: Vag Come Mouth[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You feel your orgasm approaching and pull out, moving over to her head and ordering to open her mouth.  You aim your cock at her mouth and cum fills her mouth.
+		<<if $pc.path === "Virility">>
+			Your @@.virility;patron@@ expands the volume of your cum, filling her mouth to overflowing.
+		<</if>>
+		<<cum "mouth">>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Finish">>
+			<<display "Finish Vag">>
+		<</link>>
+	<</replace>>
+
+:: Finish Vag[nobr TimeNone]
+	<<goto "Train Slave">>
+	
+
+
+:: Vag Ride[nobr TimeNone]
+	<<append "#training-text">>
+		You pull her on top of you, lowering her onto your dick
+		<<if $slaves[$csi].lust > 10>>
+			and she slides on to, moaning.
+			<<set $slaves[$csi].lust += random(5)>>
+		<<else>>
+			and she painfully lowers herself onto you.
+			<<set $slaves[$csi].pain += random(5)>>
+		<</if>>
+		<<penetrate "pussy">>
+		You order her to ride you, bouncing up and down and impaling herself onto your $pc.cockLength inch cock.  She slowly gets into it, breathing hard and moaning.
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Let her work it">>
+			<<display "Vag Ride Nice">>
+		<</link>><br>
+		<<link "Be Rough">>
+			<<display "Vag Ride Rough">>
+		<</link>><br>
+	<</replace>>
+
+:: Vag Ride Nice[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You let her set the pace, and she starts slowly fitting herself on your cock.  Once she's settled, she rocks her hips grinding her clit against your pubic bone.  You play with her nipples and grab her ass, spreading her cheeks and giving her an occasional little slap.
+		<<set $slaves[$csi].lust += random(6 + $pc.cockLength)>>
+		<<if $slaves[$csi].lust > 30>>
+			She starts bucking faster and you pull her to you, kissing her mouth and neck as you use your hips to slam your cock into her for a few thrusts then letting her grind again until she's panting and saying "Oh god!" over and over, then start slamming her again.
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Fuck her until she's ready to come">>
+			<<display "Vag Slave Orgasm">>
+		<</link>><br>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>
+	
+
+
+:: Vag Doggy[nobr TimeNone]
+	<<replace "#training-text">>
+		You put her on all fours.<br>
+		"I'm going to fuck you now.  Arch your back."<br>
+		<<if $slaves[$csi].obedience + $slaves[$csi].relationship > 10>>
+			"Yes, Master."<br>
+			She arches her back, giving easy access to her hole.
+		<<else>>
+			"No!  Please don't fuck me!"<br>
+			You grab her hair and line your cock up with her hole.  You're going to take her one way or another.<br>
+			<<set $slaves[$csi].fear += random(6) + 1>>
+			<<set $slaves[$csi].relationship -= random(8) + 3>>
+		<</if>>
+		One hand on her hip, you 
+		<<if $slaves[$csi].lust > 10>>
+			slide into her wet pussy. 
+			<<set $slaves[$csi].lust += random(5)>>
+		<<else>>
+			painfully shove into her cunt.
+			<<set $slaves[$csi].pain += random(5)>>
+		<</if>>
+		<<penetrate "pussy">>
+		You fuck her from behind, using her hips and shoulders to hold her while you take her hard.
+	<</replace>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Be rough with her">>
+			<<display "Vag Doggy Rough Sex">>
+		<</link>><br>
+		<<link "Try to make her come">>
+			<<display "Vag Good Doggy">>
+		<</link>><br>
+	<</replace>>
+
+:: Vag Doggy Rough Sex[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You grab her hair, shove deep into her pussy, and land a hard spank on her ass.  Using her hair to control her, you pull almost all the way out, pull her back onto your cock hard, and spank her again.  You keep it up while she gasps at each hard SMACK! on her ass until her cheek is a deep red.  You let go of her hair with your left hand and grab a nipple with your right, and resume yanking her to you with her nipple and spanking her other ass cheek.  Finally you shove her face and tits to the ground and hold her hip while you 
+		<<=either(
+			"take your thumb and slide it into her asshole, thumb fucking that hole while you pound her cunt.",
+			"roughly yank on her nipples, pulling until she sqeals in pain.",
+			"slap her tits and grab them hard enough to leave bruises.",
+			"reach under her and play hard with her clit, yanking on her clit and labia enough to hurt."
+		)>>
+
+		<<if $slaves[$csi].masochism + $slaves[$csi].submission > 1>>
+			She loves the rough treatment and pain, @@.lust-good;getting off@@ on it and @@.relationship-good;appreciating@@ your dominent way with her.
+			<<set $slaves[$csi].lust += random($slaves[$csi].masochism + $slaves[$csi].submission * 5) + 5>>
+			<<set $slaves[$csi].relationship += random($slaves[$csi].masochism + $slaves[$csi].submission * 4) + 3>>
+		<<elseif $slaves[$csi].masochism + $slaves[$csi].submission < 0>>
+			She @@.relationship-bad;hates@@ being treated roughly and hurt and is @@.fear-low;afraid@@ you're going to keep hurting her.
+			<<set $slaves[$csi].fear += random(4) + 1>>
+			<<set $slaves[$csi].relationship += random(4) * ($slaves[$csi].masochism + $slaves[$csi].submission * 4) - 3>>
+		<</if>>
+		<<exercisekink "submission">>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].lust > 30>>
+			<<link "Fuck her until she's ready to come">>
+				<<display "Vag Slave Orgasm">>
+			<</link>><br>
+		<</if>>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>
+
+:: Vag Good Doggy[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You slowly push your cock in her, filling her up, while you run your hands against her back.  When she starts to push back into you, you reach forward and play with her tits and nipples, occasionally lightly pulling her hair while you give her an extra hard thrust.
+		<<set $slaves[$csi].lust += random(6 + $pc.cockLength)>>
+		<<if $slaves[$csi].lust > 30>>
+			She start to frantically shove back into you, trying to get your cock in her pussy as deep and hard as she can.  Soon she's moan and whimpering.
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Fuck her until she's ready to come">>
+			<<display "Vag Slave Orgasm">>
+		<</link>><br>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>

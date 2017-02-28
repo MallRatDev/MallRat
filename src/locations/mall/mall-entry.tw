@@ -1,0 +1,45 @@
+:: Mall Entrance
+	This is the main entrance of the mall.  It makes an attempt a grandeur, and manages tacky.  A set of glass doors lead into the mall proper.  A dingy corner has a doorway to the service entrance behind the food court which is shielded by a stinking dumpster.
+
+	<<if !$flags.shownBreeAndEva>><<goto "Bree and Eva">><</if>>\
+	[[The Mall!|East Wing]]
+	[[Stinking dumpster?  What's not to like?|Smoking Area]]
+	[[Back towards your house|Outside House]]
+
+:: East Wing[mall]
+	You're in the east wing of the mall.  Random people wander about, usually in your way.  JC Penny's anchors this wing, and there's a Spencer's Gifts, Engraving Now!, and Radio Shat along with some other stupid stores.  A stairway leads up to the second level.  Boooooring.
+
+	Go to a different area of the mall?
+	[[East Food Court]]
+	[[Upstairs East Wing]]
+
+	Visit a store?
+	[[JC Penny's]]
+	[[Spencer's Gifts]]
+	[[Engraving Now!]]
+	[[Radio Shat]]
+
+	Leave the mall?
+	[[Mall Entrance]] 
+
+:: Smoking Area
+	Behind a stinking dumpster, the young people (and occasional decrepit old person) smoke in miserable circumstances.  A set of clear plastic strips hang from the top of a doorway into a narrow hallway behind the food court "restaurants", and an old bowl overflowing with butts serves as an ashtray.  The reek from the dumpster permeates the area.  A few bits of desultary grafitti mar the walls, amongst them "Eva's a poser" and "I did the bar whore."
+
+	<<nobr>>
+	<<if Game.getCharIndex("Eva") != -1>>
+		<<if 0 == 0>>
+			<<describe "Eva" "Eva">> is here.  She's smoking a cigarette behind the dumpster, and gazes at you cooly.  [[Talk to Eva]]
+		<</if>>
+	<</if>>
+	<</nobr>>
+
+	[[Go to the main entrance|Mall Entrance]]
+	[[Head down the service passage|Service Passageway]]
+	<<if $flags.knowsAboutSecretEntrance>>[[Secret Passageway]]<</if>>
+
+:: Service Passageway[mall hidden]
+	This stinking corridor runs behind some of the food court merchants to the dumpster.  It lets out by some bathrooms into the food court.
+
+	[[Smoking Area]] 
+	[[East Food Court]] 
+

@@ -1,0 +1,39 @@
+:: East Wing[mall]
+	You're in the east wing of the mall.  Random people wander about, usually in your way.  JC Penny's anchors this wing, and there's a Spencer's Gifts, Engraving Now!, and Radio Shat along with some other stupid stores.  A stairway leads up to the second floor, which is currently closed for renovations.
+
+	Go to a different area of the mall?
+	[[East Food Court]]
+
+	Visit a store?
+	[[Spencer's Gifts]]
+	[[Engraving Now!]]
+	[[Radio Shat]]
+	[[JC Penny's]]
+
+	Leave the mall?
+	[[Mall Entrance]]
+
+:: JC Penny's[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Spencer's Gifts[mall]
+	This is a "funny", "kinky", store for "alternative" youths.
+
+	<<set $itemsForSale = ["Black Lipstick", "Topless Poster"]>>\
+	<<set $itemsForSaleCosts = [12, 35]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Engraving Now![mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Radio Shat[mall]
+	Closed for construction?  Really?  WTF?
+
+	<<return>>
+

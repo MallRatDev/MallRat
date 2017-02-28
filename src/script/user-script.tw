@@ -1,0 +1,322 @@
+:: UserScript[script]
+window.Game = {
+	inventory:[],
+
+	inventoryAdd:function(item)
+		{
+			if (this.inventoryQuantity(item) === 0)
+			{
+				if (arguments.length === 2)
+				{
+					this.inventory.push({name:item, quantity:arguments[1]});
+				}
+				else
+				{
+					this.inventory.push({name:item, quantity:1});
+				}
+			}
+			else
+			{
+				for (var i = 0; i < this.inventory.length; i++)
+				{
+					if (this.inventory[i].name === item)
+					{
+						this.inventory[i].quantity += (arguments.length > 1 ? arguments[1] : 1);
+					}
+				}
+			}
+		},
+
+	inventoryRemove:function(item)
+		{
+			var qty;
+			
+			if (arguments.length == 2)
+			{
+				qty = arguments[1];
+			}
+			else
+			{
+				qty = -1;  
+			}
+
+			for (var i = 0; i < this.inventory.length; i++)
+			{
+				if (this.inventory[i].name == item)
+				{
+					this.inventory[i].quantity -= qty;
+					if (this.inventory[i].quantity < 1 || qty === -1)
+					{
+						this.inventory.splice(i, 1);
+					}
+				}
+			}
+		},
+
+	inventoryQuantity:function(item)
+		{
+			for (var i = 0; i < this.inventory.length; i++)
+			{
+				if (this.inventory[i].name == item)
+				{
+					return this.inventory[i].quantity;
+				}
+			}
+			return 0;
+		},
+
+	inventoryEmpty:function()
+		{
+			this.inventory = [];
+		},
+
+	inventoryAll:function()
+		{
+			return this.inventory;
+		},
+
+
+	getCharIndex:function(name)
+	{
+		
+		for (var index = 0; index < state.variables.characters.length; index++)
+		{
+			if (state.variables.characters[index].name == name)
+			{
+				return index;
+			}
+		}
+		
+		return -1;  /* not found */
+	},
+
+	getSlaveIndex:function(name)
+	{
+		var charArray = state.variables.slaves;
+		
+		for (var index = 0; index < charArray.length; index++)
+		{
+			if (charArray[index].name == name)
+			{
+				return index;
+			}
+		}
+		
+		return -1;  /* not found */
+	},
+
+	getSlaveWorkingLocation:function(passageTitle)
+	{
+		var result;
+		if (result = state.variables.slaves.find(function(slave, passageTitle){
+				return slave.isWorkingAt === passageTitle;
+			}))
+		{
+			return result.name;
+		} else {
+			return undefined;
+		}
+	},
+
+	isCorrupted:function(passageTitle)
+	{
+		var sv = state.variables;
+
+
+		if (sv.corruptedPc.indexOf(passageTitle) != -1)
+		{
+			return true;
+		}
+		if (sv.corruptedBabaYaga.indexOf(passageTitle) != -1)
+		{
+			return true;
+		}
+
+
+		return false;	
+	},
+	
+	isSlave:function(name)
+	{
+		if (this.getSlaveIndex != -1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	},
+	
+	setCsi:function(name)
+	{
+		state.variables.csi = this.getSlaveIndex(name);
+	},
+	
+	setClothing:function(index, clothing, clothingType)
+	{
+		var sv = state.variables;
+		
+		sv.slaves[index]["clothing" + clothingType] = clothing;
+		if (sv.slaves[index].clothingTop === -1 || sv.slaves[index].clothingBottom === -1)
+		{
+			sv.slaves[index].clothingRevealing = true;
+		}
+		else
+		{
+			sv.slaves[index].clothingRevealing = false;
+		}
+		
+	},
+	
+	
+
+	displayTime:function()
+	{
+		
+		var hourString = "";
+		if  (state.variables.hour > 12)
+		{
+			hourString = "" + (state.variables.hour % 12);
+		} else {
+			hourString = "" + (state.variables.hour);
+		}
+		
+		var minuteString = "00" + (state.variables.minute);
+		var amPMString = ((state.variables.hour >= 12) ? "PM" : "AM");
+		minuteString = minuteString.substr(minuteString.length-2);
+		return (hourString + ":" + minuteString + " " + amPMString);
+	},
+
+	passTime:function(numMinutes)
+	{
+		state.variables.minute += numMinutes;
+		if (state.variables.minute >= 60)
+		{
+			while (state.variables.minute >= 60)
+			{
+				state.variables.minute -= 60;
+				state.variables.hour += 1;
+			}
+		}
+	},
+
+
+	rollDice:function(min, max)
+	{
+	    min = Math.ceil(min);
+	    max = Math.floor(max);
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	},
+
+	toTitleCase:function(str)
+	{
+	    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	},
+
+	resolveSexAct:function(id, kinks, holes)
+	{
+	    /* returns how much the roll was *under* the required score.  0 or higher means success, with higher
+	       numbers being greater success.  Negative means failure with greater absval meaning worse failure. */
+
+	    var odds = Game.calculateSexOdds(id, kinks, holes);
+	    var odds = Math.floor(odds * 10);
+	    var roll = Game.rollDice(1, 6) + Game.rollDice(1, 6) + Game.rollDice(1, 6);
+			console.log("resolveSexAct got odds=" + odds +" and roll 3d6=" + roll + " so it's returning " + (-1 * (roll - odds)));
+	    return (-1 * (roll - odds));
+	},
+
+	calculateSexOdds:function(id, kinks, holes)
+	{
+	    /* -----------------------
+	     *    resolve training related sex act resistance.
+	     *     higher numbers mean more success.  Return is ratio of difficulty
+	     *
+	     *    parameters:
+	     *        id - $slaves[] index
+	     *        kinks - array of involved kinks
+	     *        holes - array of holes that will be penetrated enough to break virginity
+
+	     -------------------------- */
+
+	    /*  Save reference to slave */
+	    var slave = state.variables.slaves[id];
+
+
+
+	    /*  first calculate numerator */
+	    var numerator = slave.obedience + (2 * slave.lust / 3) + (slave.fear / 2);
+
+	    /* next calculate denominator */
+	    /* first, hatred (negative relationship) */
+	    var denominator = slave.relationship * -1;
+
+
+
+	    /* next, base resistance to the act passed in by the kinks array and modified by the kink or hatred of the act */
+	    for (var i = 0; i < kinks.length; i++)
+	    {
+	        var kink = kinks[i];
+	        var resistName = "resist" + Game.toTitleCase(kink);
+	    
+
+	        if (slave[kink] > 0)
+	        {
+	            denominator += slave[resistName] / (slave[kink] + .5);  
+	        }
+	        else if (slave[kink] < 0)  // hates the kink
+	        {
+	            denominator += slave[resistName] + (10 * slave[kink]);
+	        }
+	    }
+
+
+
+
+
+	        /* now add a fixed (high) penalty for fucking a virgin hole */
+	    for (var i = 0; i < holes.length; i++)
+	    {
+	        if (holes[i] == "pussy" && slave.pussySize == 0)
+	        {
+	            denominator += 25;
+	        }
+	        if (holes[i] == "asshole" && slave.assholeSize == 0)
+	        {
+	            denominator += 25;
+	        }        
+	    }
+
+	    if (denominator > 0)
+	    {
+	        return (numerator / denominator);
+	    }
+	    else
+	    {
+	        return 3;  // very high value;  she'd probably do it anyway.
+	    }
+
+	},
+
+	cloneSlave:function(obj) {
+	    if (null == obj || "object" != typeof obj) return obj;
+	    var copy = obj.constructor();
+	    for (var attr in obj) {
+	        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+	    }
+	    return copy;
+	},
+}
+
+
+/* self-invoking function to create the $characters and $slaves story variables, so they'll be ready when characters are .push()ed onto them */
+
+/*
+(function(){
+ 	var sv = state.variables; 
+ 	sv.slaves = [];
+ 	sv.characters = [];
+
+})();
+
+*/

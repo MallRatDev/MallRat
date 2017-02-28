@@ -1,0 +1,118 @@
+:: Eva Stats[widget]
+	<<if typeof $characters === 'undefined'>>
+		<<set $characters = []>>
+	<</if>>
+
+	<<run $characters.push(
+	{
+		name:"Eva",
+		gender:"female",
+		relationship:0,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		description:"She oozes teenage angst.",
+		bodySize:2,
+		bodyTone:1,
+		face:"pretty",
+		skin:"pale",
+		facialPeircings:"a septum ring in her nose",
+		hairColor:"midnight black",
+		hairLength:"short",
+		hairCut:"with bangs",
+		titsSize:5,
+		titsShape:"perky",
+		nippleSize:"small",
+		nippleColor:"pink",
+		nippleAreolae:"small",
+		nipplePeircings:"",
+		navelPiercings:"a small stud",
+		pussySize:0,
+		pussyHairStyle:2,
+		pussyHairColor:"black",
+		pussyLips:0,
+		pussyClit:1,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:0,
+		assholeStyle:0,
+		assholeColor:0,
+		
+			/* eva's starting clothes */
+		clothingRevealing:false,
+		clothingTop:0,  	
+		clothingBottom:0,
+		clothingWrists:0,
+		clothingAnkles:0,
+		clothingCollar:-1,
+		clothingShoes:0,
+
+		plugToy:0,
+		dildoToy:0,
+		nippleToy:0,
+		waistToy:0,
+		breastToy:0,
+		crotchToy:0,
+		gagToy:0,		
+		
+		/* slave training stats */
+		obedience:0,
+		fear:0,
+		sexDrive:12,
+		
+		/* sex training accumulation */
+		pain:0,
+		lust:0,
+		position:0,  /*  standing, all fours, ass up, etc. */
+		
+		/* sex trainings progress */
+		oral:0,
+		cum:0,
+		deepthroat:0,
+		penetration:0,  // large objects, painful pounding
+		anal:0,
+		painal:0,
+		
+		begging:0,
+		humiliation:0,
+		bondage:0,
+		masochism:1,
+		housework:0,
+		submission:1,
+		
+		resistOral:15,
+		resistCum:20,
+		resistDeepthroat:35,
+		resistPenetration:50,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:12,
+		resistHumiliation:35,
+		resistBondage:40,
+		resistMasochism:55,
+		resistHousework:25,
+		resistSubmission:40,
+		
+		/*  Flags and stuff related to sex training */
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,
+		
+		/* Counters for various events */
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		/* Rules */
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	})>>

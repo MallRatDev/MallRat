@@ -1,0 +1,66 @@
+:: End of the Road[TimeSlow]
+	This is the seedy end of town.  There's a gas station with a couple hobos lounging outside, a tattoo parlor, and an adult "book and movie" store.
+
+	[[Zeke's Fuel and Snacks]]
+	[[No Ragerts Tattoos]]
+	[[Zeke's Literate Retreat]]
+
+
+	[[Go back towards your house|Outside House]]
+
+:: Zeke's Fuel and Snacks
+	You walk into the parking lot of an extra-seedy looking gas station.  An old man with a dirty beard is lying against the wall covered in what look like torn army blankets, while a tall man dressed in dirty clothes leans against the dumpster wall.  You're not sure if the miasmic odors come from the dumpster or the tall man... maybe that's his strategy. 
+
+	<<if !$pc.mageSight && ($day > 1)>>\
+	[["Psst... kid!  Over here!"|Talk to Derek]]
+	<</if>>\
+	[[Enter the store|Inside Gas Station]]
+	[[Return to the road|End of the Road]]
+
+
+:: No Ragerts Tattoos
+	This is a pretty dirty looking tattoo parlor... it's currently closed.
+
+	<<return>>
+
+:: Zeke's Literate Retreat
+	Despite the name, this looks like it's an adult bookstore and theater.  Rows of DVDs showing busty porn stars taking cocks and eating pussy fill the left side of the store.  The walls are covered with racks of sex toys of every description.  The right side of the store is a little niche with a bookshelf.
+
+	<<set $itemsForSale = ["Set of Dildos", "Set of Anal Toys", "Riding Crop", "Wand Vibrator", "Nipple Clamps", "Saddle Mounted Floor Vibrator", "Fifty Shades of Darkness Book", "Bondage 101 Book"]>>\
+	<<set $itemsForSaleCosts = [29, 39, 14, 89, 14, 1399, 129, 24]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Inside Gas Station
+	This is a dingy place, with rows of old groceries and potato chips in the middle and cases of beer and soda along the walls.  A counter at the front has the register and shelves of cigarettes.  A "Help Wanted" sign is on the wall behind the counter.
+
+	<<set $itemsForSale = ["Cigarettes", "Glass Pipe"]>>\
+	<<set $itemsForSaleCosts = [7, 25]>>\
+	<<display "Store">>
+
+	[[Return to the road|End of the Road]]
+	<<if !$flags.hiredGasStation>>[[Ask about a job|Gas Station Job]]<<elseif $hour < 20>>[[Work at the gas station]]<</if>>
+
+:: Gas Station Job[TimeNone]
+	"Hey, are you still hiring?" The guy behind the counter is pretty old, as old as your grandfather probably.
+	"Well, it ain't a real serious job.  Just need some help doin' inventory and stocking and such." His voice is a harsh gravelly drone.
+	"That sounds fine for me."
+	"Can ya count?"
+	"Sure.  Got all my algebra, I've always been good at math.  How much does it pay?"
+	"Ten dollars an hour.  Just stop by during the day if you want to work."
+	"Great, thanks!"
+	From now on, you can come to the gas station during the day to work until the store closes at nine. <<set $flags.hiredGasStation = true>>
+
+	[[Back to the store|Inside Gas Station]]
+	<<if $hour < 20>>[[Work at the gas station]]<</if>>
+
+:: Work at the gas station[nobr TimeNone]
+	<<set _hours = 21 - $hour + (60 - $minute) / 60>>
+	<<set _pay = (Math.floor(_hours * 100) / 100) * 10>>
+	You work for a little over <<=Math.floor(_hours)>> hours and earn $<<=Math.floor(_pay)>>.
+	<<set $money += Math.floor(_pay)>>
+	<<set $hour = 21>>
+	<<set $minute = 0>>
+	<br><br>
+	[[Leave the store|End of the Road]]

@@ -1,0 +1,527 @@
+:: StoryInit
+<<set $version = "0.2.2">>
+
+
+<<set $day = 0>>
+<<set $hour = 0>>
+<<set $minute = 0>>
+
+
+
+<<set $flags = {
+	defeatedMajor:false,
+	shownBreeAndEva:false,
+	visitedDungeon:false,
+	knowsAboutSecretEntrance:false,
+	evaIsTaggingAlong:false,
+	publicDominence:0,
+	hiredGasStation:false,
+	
+}>>
+
+<<set $corruptedPc = []>>
+<<set $corruptedBabaYaga = []>>
+
+<<set $pc = 
+{
+	readNote:0,
+	mageSight:0,
+	ritual:"",
+	path:"Normal",
+	magicLevel:0,
+	power:0,
+	isKickedOut:false,
+	beenArrested:0,
+	
+	name:"Anonymous",
+	cockLength:6,
+	
+	
+	
+	
+	clothingTopOwned:[],
+	clothingBottomOwned:[],
+	clothingWristsOwned:[],
+	clothingAnklesOwned:[],
+	clothingShoesOwned:[],
+
+	
+}>>
+
+<<if $debugging>>
+	<<set $money = 2000>>
+	<<set $pc.power = 100>>
+	<<set $flags.visitedDungeon = true>>
+	<<set $pc.path = "Virility">>
+	<<set $pc.mageSight = true>>
+<<else>>
+	<<set $money = 0>>
+<</if>>
+
+ <<set $slaves = []>> 
+
+
+
+<<set $csi = 0>>  /* current slave index */
+<<set $cci = 0>>  /* current character index */
+<<set $o = {}>> /* for changes in stats */
+
+	<<set $characters = [
+	{
+		name:"Eva",
+		gender:"female",
+		relationship:0,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		description:"She oozes teenage angst.",
+		bodySize:2,
+		bodyTone:1,
+		face:"pretty",
+		skin:"pale",
+		facialPeircings:"a septum ring in her nose",
+		hairColor:"midnight black",
+		hairLength:"short",
+		hairCut:"with bangs",
+		titsSize:5,
+		titsShape:"perky",
+		nippleSize:"small",
+		nippleColor:"pink",
+		nippleAreolae:"small",
+		nipplePeircings:"",
+		navelPiercings:"a small stud",
+		pussySize:0,
+		pussyHairStyle:2,
+		pussyHairColor:"black",
+		pussyLips:0,
+		pussyClit:1,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:0,
+		assholeStyle:0,
+		assholeColor:0,
+		
+			/* eva's starting clothes */
+		clothingRevealing:false,
+		clothingTop:0,  	
+		clothingBottom:0,
+		clothingWrists:0,
+		clothingAnkles:0,
+		clothingCollar:-1,
+		clothingShoes:0,
+		
+		/* slave training stats */
+		obedience:0,
+		fear:0,
+		sexDrive:12,
+		
+		/* sex training accumulation */
+		pain:0,
+		lust:0,
+		position:0,  /*  standing, all fours, ass up, etc. */
+		
+		/* sex trainings progress */
+		oral:0,
+		cum:0,
+		deepthroat:0,
+		penetration:0,  // large objects, painful pounding
+		anal:0,
+		painal:0,
+		
+		begging:0,
+		humiliation:0,
+		bondage:0,
+		masochism:1,
+		housework:0,
+		submission:1,
+		
+		resistOral:15,
+		resistCum:20,
+		resistDeepthroat:35,
+		resistPenetration:50,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:12,
+		resistHumiliation:35,
+		resistBondage:40,
+		resistMasochism:55,
+		resistHousework:25,
+		resistSubmission:40,
+		
+		/*  Flags and stuff related to sex training */
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,
+		
+		/* Counters for various events */
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		/* Rules */
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	},
+
+	{
+		name:"Bree",
+		gender:"female",
+		relationship:-25,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		description:"She is the queen of high school and has a platinum credit card.",
+		bodySize:1,
+		bodyTone:2,
+		face:"gorgeous",
+		skin:"tanned",
+		facialPeircings:"",
+		hairColor:"blonde with highlights",
+		hairLength:"shoulder length",
+		hairCut:"beautifully",
+		titsSize:7,
+		titsShape:"perky",
+		nippleSize:"large",
+		nippleColor:"brown",
+		nippleAreolae:"large",
+		nipplePeircings:"",
+		navelPiercings:"a ruby with a small chain",
+		pussySize:1,
+		pussyHairStyle:1,
+		pussyHairColor:"blonde",
+		pussyLips:1,
+		pussyClit:2,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:0,
+		assholeStyle:0,
+		assholeColor:0,
+		
+			/* eva's starting clothes */
+		clothingRevealing:0,
+		clothingTop:1,  	
+		clothingBottom:1,
+		clothingWrists:1,
+		clothingAnkles:-1,
+		clothingCollar:-1,
+		clothingShoes:1,
+		
+		/* slave training stats */
+		obedience:-25,
+		fear:0,
+		sexDrive:6,
+		
+		/* sex training accumulation */
+		pain:0,
+		lust:0,
+		position:0,  /*  standing, all fours, ass up, etc. */
+		
+		/* sex trainings progress */
+		oral:0,
+		cum:0,
+		deepthroat:0,
+		penetration:0,  // large objects, painful pounding
+		anal:-2,
+		painal:-2,
+		
+		begging:0,
+		humiliation:0,
+		bondage:0,
+		masochism:0,
+		housework:0,
+		submission:-1,
+		
+		resistOral:15,
+		resistCum:30,
+		resistDeepthroat:35,
+		resistPenetration:50,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:30,
+		resistHumiliation:35,
+		resistBondage:55,
+		resistMasochism:55,
+		resistHousework:35,
+		resistSubmission:40,
+		
+		/*  Flags and stuff related to sex training */
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,
+				
+		/* Counters for various events */
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		/* Rules */
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	},
+	
+	{
+		name:"Tracy",
+		gender:"female",
+		relationship:0,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		description:"She simultaneously appears studious and wanton; while 18, she looks much younger although well developed.  She wears librarian glasses.",
+		bodySize:2,
+		bodyTone:1,
+		face:"cute and young-looking",
+		skin:"pale",
+		facialPeircings:"a nose stud",
+		hairColor:"red",
+		hairLength:"long",
+		hairCut:"casual but attractive",
+		titsSize:7,
+		titsShape:"full",
+		nippleSize:"large and protruding",
+		nippleColor:"brown",
+		nippleAreolae:"large",
+		nipplePeircings:"",
+		navelPiercings:"a small stud",
+		pussySize:3,
+		pussyHairStyle:1,
+		pussyHairColor:"red",
+		pussyLips:2,
+		pussyClit:3,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:3,
+		assholeStyle:0,
+		assholeColor:0,
+		
+		
+		clothingRevealing:false,
+		clothingTop:2,  	
+		clothingBottom:2,
+		clothingWrists:2,
+		clothingAnkles:-1,
+		clothingCollar:-1,
+		clothingShoes:2,
+		
+		
+		obedience:0,
+		fear:0,
+		sexDrive:18,
+		
+		
+		pain:0,
+		lust:0,
+		position:0, 
+		
+	
+		oral:0,
+		cum:0,
+		deepthroat:0,
+		penetration:1,  
+		anal:1,
+		painal:0,
+		
+		begging:1,
+		humiliation:1,
+		bondage:0,
+		masochism:0,
+		housework:0,
+		submission:1,
+		
+		resistOral:15,
+		resistCum:20,
+		resistDeepthroat:35,
+		resistPenetration:50,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:12,
+		resistHumiliation:35,
+		resistBondage:40,
+		resistMasochism:55,
+		resistHousework:25,
+		resistSubmission:40,
+		
+		
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,		
+		
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	},
+
+	{
+		name:"Su",
+		gender:"female",
+		relationship:0,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		description:"A petite and nerdy-looking asian girl, she's very thin but completely filled out.",
+		bodySize:1,
+		bodyTone:1,
+		face:"exotic and attractive",
+		skin:"light brown",
+		facialPeircings:"a lip ring",
+		hairColor:"black",
+		hairLength:"short",
+		hairCut:"with bangs",
+		titsSize:3,
+		titsShape:"perky",
+		nippleSize:"small",
+		nippleColor:"brown",
+		nippleAreolae:"small",
+		nipplePeircings:"bars",
+		navelPiercings:"",
+		pussySize:1,
+		pussyHairStyle:0,
+		pussyHairColor:"black",
+		pussyLips:1,
+		pussyClit:3,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:0,
+		assholeStyle:0,
+		assholeColor:0,
+		
+		
+		clothingRevealing:false,
+		clothingTop:3,  	
+		clothingBottom:3,
+		clothingWrists:3,
+		clothingAnkles:-1,
+		clothingCollar:-1,
+		clothingShoes:2,
+		
+		dayLastSpokenTo: -1,
+		
+		obedience:0,
+		fear:0,
+		sexDrive:8,
+		
+		
+		pain:0,
+		lust:0,
+		position:0, 
+		
+	
+		oral:1,
+		cum:0,
+		deepthroat:0,
+		penetration:0,  
+		anal:0,
+		painal:0,
+		
+		begging:0,
+		humiliation:1,
+		bondage:1,
+		masochism:0,
+		housework:1,
+		submission:1,
+		
+		resistOral:5,
+		resistCum:10,
+		resistDeepthroat:15,
+		resistPenetration:30,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:5,
+		resistHumiliation:15,
+		resistBondage:25,
+		resistMasochism:55,
+		resistHousework:10,
+		resistSubmission:20,
+		
+		
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,		
+		
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	}]>>
+
+
+
+
+<<set $numeralsWithA = ["no", "a", "two", "three", "four", "five", "six"]>>
+
+<<set $clothingTop = ["black blouse, low-cut and reavealing some cleavage", "silk flowing, revealing but tasteful, expensive blouse", "tight t-shirt with a Venn diagram of sexual preferences", "cute anime character t-shirt"]>>
+
+<<set $clothingBottom = ["short, black and gray plaid skirt fastened with a heavy leather belt dotted with metal studs and with a chain running between the hips", "just longer than slutty navy skirt slit up the side to show a just shorter than scandalous amount of thigh", "tight form-fitting jeans", "plaid skirt"]>>
+
+<<set $clothingWrists = ["black leather cuffs set with studs and a heavy metal ring", "a diamond and gold bracelet"]>>
+
+<<set $clothingAnkles = ["black leather cuffs set with studs and a heavy metal ring"]>>
+
+<<set $clothingCollar = ["magical leather collar given to you by your uncle with a heavy buckle and solid metal ring in front"]>>
+
+<<set $clothingShoes = ["black combat boots", "expensive-looking heels", "tennis shoes"]>>
+
+<<set $dreams = [
+	"You dream about a willowy goth girl, naked, crawling in front of you at your orders.  You order her to paint her fingernails.  Black, of course.",
+	"You have a dream of a goth girl painting her fingernails black and smoking.",
+	"Just before you wake up you have a fleeting vision of a black-haired young woman blowing smoke in your face.",
+]>>
+
+<<set $positions = ["standing", "kneeling, with her knees spread wide and tits thrust out", "on all fours, her knees spread wide", "face down and ass up, with her face and tits pressed to the floor and her knees spread wide", "bent over your knees", "standing with her legs spread wide and her hands behind her kneck thrusing out her tits", "bent over with her hands flat on the floor and her feet far apart, her cunt and asshole available and at a convenient height"]>>
+
+<<set $rulesNoMasturbateText = ["allowed to masturbate","not allowed to masturbate"]>>
+<<set $rulesNoOrgasmText = ["allow to orgasm","not allowed to orgasm at all","allowed to orgasm only with permission"]>>
+<<set $rulesSwallowCumText = ["only if you cum in her mouth","always swallow your cum"]>>
+
+<<set $keypadQuestions = ["Is Eva's navel pierced?", "What's Bree's bra size?", "Bree: Do the carpets match the drapes?", "How many guys has Tara slept with to date?", "What's Su's favorite porn?", "Who is Morgan's crush?", "What does Angie give up for weed?", "What kind of pills are Bree taking?"]>>
+
+<<set $keypadAnswers = ["yes", "36dd", "yes", "19", "tentacle", "bree", "anal", "diet"]>>
+
+<<set $keypad = []>>
+
+
+
+
+

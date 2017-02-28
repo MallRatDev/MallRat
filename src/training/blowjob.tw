@@ -1,0 +1,65 @@
+:: Blowjob Training[nobr]
+	<<replace "#training-text">>
+
+	/* Setup - define the act */
+	<<set _kinks = ["oral", "submission","cum"]>>
+	<<set _holes = ["mouth"]>>
+
+	/*  Conditions - things that must be true to do this at all */
+	<<if !$slaves[$csi].position == 1 >>
+	 	In order to train her blowjob skills, she must be kneeling.
+	<<else>>
+
+		/*  Check if she'll do it */
+		<<set _result = Game.resolveSexAct($csi, _kinks, _holes)>>
+		<<if true>>
+
+		/*  If so, describe what's done to her */
+
+			/* base text */
+				Every sex slave should be an expert cocksucker, and you'll be damned if $slaves[$csi].name is going to be the exception.  You order her to place her hands behind her back and open her mouth wide with tongue out.
+				<br><br>
+				You stand in front of her and pull out your cock.  You grab her hair and pull her forward and make her lick your balls and make eye contact, then pull her back and order her to open again.  By now she knows that means wide open with her tongue out.  You move her cock to her wet mouth, and order her to lick up and down your shaft, <<OBgood "instructing her">> in how to use her tongue for your best pleasure.  Finally you slide your cock in her mouth and slowly but relentlessly slide it in until <<if $slaves[$csi].oral || $slaves[$csi].deepThroat>>you feel it start to slide down her throat<<else>>she starts to gag<</if>> then pull back.  You order her to make eye contact and repeat the process a few times, then pull out, order her to open again and slap her face with your cock.  Then you go in for more training, pushing against the back of her throat and speeding up your thrusting.  You keep at it with patience, pumping in and out of her mouth and occasionally slapping her face, until the pressure in your balls reaches a critical point.
+				<br><br>
+				<<if $slaves[$csi].rulesSwallowCum>>You pull out, order her to open, then cum straight in her mouth and on her tongue, until she has a big mouthful.  You order her to show you, then swallow.
+				<<else>>When you pull out you order her to open, and cum all over her face, making sure plenty lands in her mouth and on her tongue. 
+				<</if>>
+				<<cum "mouth">>
+				
+				<<set $slaves[$csi].obedience += 3>>
+				<<if $slaves[$csi].relationship > 0>><<set $slaves[$csi].relationship += 4>><br><br>She's <<REgood "happy">> she was able to serve you.<<elseif $slaves[$csi].relationship < -15>><br><br>She doesn't like you, so she glares at you, the taste of your cum still in her mouth, <<REbad "angry">> that you are training her mouth for your use.<</if>>
+				
+				/* effects of barely succeeding */
+				
+				/* effects of a big win */
+			
+			/* effects from kinks */
+			<<if $slaves[$csi].submission > 0>>Because she's a submissive, being on her knees and serving you with her mouth makes her <<OBgood "more willing">> and she's a little surprised that the foul taste in her mouth makes her <<REgood "happy.">><<set $slaves[$csi].relationship += $slaves[$csi].submission * 3>><<set $slaves[$csi].obedience += $slaves[$csi].submission * 3>><</if>>
+			
+			<<if $slaves[$csi].lust > random(60) + 60>>
+				<br><br>
+				She's so turned on she has an orgasm just from having your cock down her throat.
+				<<orgasm "mouth">>
+			<</if>>
+			
+
+		/*  If not, describe penalties */
+		<<else>> /* result */
+			/* base text */
+			She isn't willing to suck your cock.  When you grab her hair to pull her mouth to your erection she shoves at your thighs and shuts her mouth.  She'll need some more training before you can fuck that sweet mouth.
+		<</if>>
+
+	
+
+		/* Spend time */
+
+
+	/* End of Conditions block */
+	<</if>>
+
+
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>

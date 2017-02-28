@@ -1,0 +1,14 @@
+:: Major Bad End[TimeNone]
+	Uh. Oh.
+
+	The Major grabs you, and you're tossed in the holding cell.  You wait for hours, enough time that you're thirsty and even nap a little.  When you wake up, it's because the door is opening to the dank little cell.  An emaciated crone enters, thrumming with power.  
+
+	"This is it?" she asks, looking behind her.
+	"Yes, Mistress."
+	"That's all?  That's what you've been worrying about?"
+	"I... Yes."
+	"I'll deal with you later.  You!"  she's looking at you, and you stand. "Come with me."  You follow, helplessly, as she takes you to the food court and straps you into a diabolical machine.  This isn't great.  You're strapped into a strange contraption in the food court along with all the other mall rats, teenagers who go to the local school, parents, cops, and everyone else.  Strange creatures stroll the hallways and blink through glowing portals, occasionally taking a moment to shop in one of the bizarre "stores" or to penetrate an oriface for a little refreshment at the "food" court.  Often one of your orifaces.
+
+	Your adventure ends here.
+
+	<<click "Try again?">><<run UI.restart()>><</click>>

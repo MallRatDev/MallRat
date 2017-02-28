@@ -1,0 +1,8 @@
+:: Out of Time[BadEnd]
+You aren't able to do anything about the situation at the mall.  By the time your parents get back, it's too late... some crazy ass witch has taken over the mall, and then the town, and now the news is bizarre from all over the world as strange political and natural disasters strike foreign and domestic cities.
+
+You don't have a lot of time to watch the news though.  You're strapped into a strange contraption in the food court along with all the other mall rats, teenagers who go to the local school, parents, cops, and everyone else.  Strange creatures stroll the hallways and blink through glowing portals, occasionally taking a moment to shop in one of the bizarre "stores" or to penetrate an oriface for a little refreshment at the "food" court.  Often one of your orifaces.
+
+Your adventure ends here.
+
+<<click "Try Again">><<run UI.restart()>><</click>>

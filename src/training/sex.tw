@@ -1,0 +1,96 @@
+:: Fuck Her Pussy old[TimeNone nobr]
+	<<replace "#training-text">>
+
+		/* Setup - define the act */
+		<<set _kinks = ["submission"]>>
+		<<set _holes = ["pussy"]>>
+
+		/*  Check if she'll do it */
+		<<set _result = Game.resolveSexAct($csi, _kinks, _holes)>>
+		<<if true>>  /* success block */
+
+		/*  If so, describe what's done to her */
+			/* base text */
+			<<set $slaves[$csi].relationship += random(10)>>
+			<<set $slaves[$csi].lust += random(10)>>
+			<<if ($slaves[$csi].position==0 || $slaves[$csi].position == 5)>>
+				You step up behind her and grab her wrists, holding them behind her back.  You whisper, "I'm going to fuck your <<display "Describe Slave Pussy">> now," then bite lightly on her neck.  You rub your cock against her slit from behind, then place it at the opening of her hole.  
+			<<else>>
+				Her <<display "Describe Slave Pussy">> is nicely exposed from behind.  You get behind her, smack her tight ass, rub her asshole for luck, then put your head against her lips.  
+			<</if>>
+			You ram it home, making sure she knows she's been taken, and grab her hip, then start pounding her pussy, keeping up 
+			
+			<<if $slaves[$csi].lust > 95 && $slaves[$csi].rulesNoOrgasm == 0>>
+				until she comes, screaming and you thrust into her.  She's <<REgood "glad she's allowed to come, ">>and feels like she could <<OBgood "get used to this.">><<orgasm "pussy">>
+			<<elseif $slaves[$csi].lust > 95 && $slaves[$csi].rulesNoOrgasm == 1>>
+				until she starts to grunt and moan, then shriek, asking you to let her come.  You refuse, and she whimpers in frustration.  
+				<<if $slaves[$csi].relationship > 20>>
+					Being made to control herself improves <<OBgood "her obedience.">><<set $slaves[$csi].obedience += random(3,12)>>
+					<<elseif random(1,4) == 1>>She comes anyway, rather out of an inability to control herself or an <<OBbad "unwillingness,">> you don't know.  <<set $slaves[$csi].obedience -= 16>><<set $slaves[$csi].brokeRule = 1>>
+				<<else>>
+					She controls herself but is <<REbad "frustrated and angry">> with you.<<set $slaves[$csi].relationship -= random(4, 14)>>
+				<</if>>
+			<<elseif $slaves[$csi].lust > 95 && $slaves[$csi].rulesNoOrgasm == 2>>
+				until she's bucking and screaming.  
+				<<if $slaves[$csi].relationship < 10>>
+					She fights it but eventually gives in and screams out, "Please... Master... can I come?" 
+				<<else>>
+					She enthusiasticalls screams, "Please, Master, may this little slut come on your cock?"
+				<</if>>
+				<<if random(1,4) == 1>>
+					Just to fuck with her, you say "No!  Don't come while I use you!"  She's <<REbad "hurt">> and <<OBbad "frustrated>> with you.  
+						<<if random(1,16) == 1>>
+							The degradation of asking for and being denied an orgasm has made her crave <<KIgood "humiliation.">><<set $slaves[$csi].humiliation += 1>>
+						<</if>>
+						<<set $slaves[$csi].relationship -= random(3,10)>><<set $slaves[$csi].obedience += random(1,8)>>
+				<<else>>
+					You tell her to wait a few times, then give in and let her come.  She's <<OBgood "grateful">> and <<REgood "happy">> you let her orgasm. <<set $slaves[$csi].relationship += random(1,6)>><<set $slaves[$csi].obedience += random(1,6)>><<orgasm "pussy">>
+				<</if>>
+			<</if>>
+			
+					/* Losing virginity */
+				<<if $slaves[$csi].pussySize == 0>>
+					You're now her "first" and have <<good "taken her virginity.">>  She is <span class="obedience_good">more cooperative</span> to you and fucking her has <span class="good">stretched her hole</span> out for future use.<<set $slaves[$csi].pussySize = 1>><<set $slaves[$csi].obedience += 2>>
+				<<else>>
+					<<if $pc.cockLength > $slaves[$csi].pussySize * 3 + random(0,10)>><<stretchcunt>><</if>>
+				<</if>>
+				/* effects of barely succeeding */
+				
+				/* effects of a big win */
+			
+			/* effects from kinks */
+			/* effects from position */
+			<<if $slaves[$csi].submission > 0 && ($slaves[$csi].posision == 0 || $slaves[$csi].position == 5)>>
+				Being submissive, she <<REgood "enjoys being taken">> like a toy. 
+				<<set $slaves[$csi].relationship += 3 * $slaves[$csi].submission>>
+			<<elseif $slaves[$csi].submission > 0>>
+				Being taken like a dog or animal from behind really makes her <<OBgood "feel submissive">> and <<REgood "makes her happy.">>
+				<<set $slaves[$csi].relationship += 3* $slaves[$csi].submission>><<set $slaves[$csi].obedience += $slaves[$csi].submission * 2>>
+			<</if>>
+			/* effects from bodywear */
+			
+			/* effects from furniture */
+			
+			<<set $slaves[$csi].relationship += 5>>
+			<<set $slaves[$csi].obedience += 1>>
+
+		/*  If not, describe penalties */
+		<<else>>
+			/* base text */
+			She won't let you enter her.  She must need to be trained more.
+
+
+		/* Spend time */
+		
+
+		/* End of Conditions block */
+		<</if>>
+
+		/* success block */
+		<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	/* links out */
+	<br><br>
+	[[Continue her training|Train Character]]
+	<</replace>>

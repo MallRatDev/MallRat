@@ -1,0 +1,72 @@
+::SettingsDialog[script]
+
+/* Settings dialog */
+Setting.addHeader("Appearance");
+
+
+var settingThemeNames = ["(none)", "Amaranth", "Architects Daughter", "Acme", "Bree Serif", "Kalam", "Merriweather Sans"];
+var settingThemeHandler = function () {
+    // cache the jQuery-wrapped <html> element
+    var $html = $("html");
+
+    // remove any existing theme class
+    $html.removeClass("theme-amaranth theme-architects-daughter theme-acme theme-bree-serif theme-kalam theme-merriweather-sans");
+
+    // switch on the theme name to add the requested theme class
+    switch (settings.theme) {
+    case "Amaranth":
+        $html.addClass("theme-amaranth");
+        break;
+    case "Architects Daughter":
+        $html.addClass("theme-architects-daughter");
+        break;
+    case "Acme":
+        $html.addClass("theme-acme");
+        break;
+    case "Bree Serif":
+        $html.addClass("theme-bree-serif");
+        break;
+    case "Kalam":
+        $html.addClass("theme-kalam");
+        break;
+    case "Merriweather Sans":
+        $html.addClass("theme-merriweather-sans");
+        break;													
+		}
+};
+
+Setting.addList("theme", {
+    label    : "Choose a theme.",
+    list     : settingThemeNames,
+    onInit   : settingThemeHandler,
+    onChange : settingThemeHandler
+}); // default value not defined, so the first array member "(none)" is used
+	
+Setting.addHeader("Gameplay");
+
+var settingCheatModeHandler = function() {
+	if (settings.cheat) {
+		state.variables.debugging = true;
+	}
+	else {
+		state.variables.debugging = false;
+	}
+};
+
+Setting.addToggle("cheat", {
+		label		: "Cheat Mode?",
+
+		onInit: settingCheatModeHandler,
+		onChange: settingCheatModeHandler
+	
+});
+
+
+if (!settings.cheat)
+{	Config.history.controls = false; }
+
+
+
+
+
+

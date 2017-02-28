@@ -1,0 +1,39 @@
+:: WidgetOrgasm[nobr widget]
+<<widget "orgasm">>
+	<<set _hole = $args[0] || "cunt">>
+	<<switch _hole>>
+		<<case "cunt" "pussy">>
+			<<if $slaves[$csi].lust > 60>>
+				The powerful orgasm makes her @@.relationship-good;like you@@ more and makes her @@.obedience-good;more submissive.@@
+				<<set $slaves[$csi].relationship += random(4,16)>>
+				<<set $slaves[$csi].obedience += random(1,4)>>
+			<</if>>
+			<<set $slaves[$csi].lust = Math.floor($slaves[$csi]. lust * 2 / 3)>>
+			<<set $slaves[$csi].relationship += random(6)>>
+
+		<<case "mouth">>
+			Coming just from having her mouth fucked makes her @@.relationship-good;like you@@ more and makes her @@.obedience-good;obey you.@@
+			<<if $slaves[$csi].lust > 60>>
+				<<set $slaves[$csi].relationship += random(3,12)>>
+				<<set $slaves[$csi].obedience += random(2,8)>>
+			<</if>>
+			<<set $slaves[$csi].lust = Math.floor($slaves[$csi]. lust * 2 / 3)>>
+			<<set $slaves[$csi].relationship += random(6)>>
+			<<exercisekink "oral">>
+		<<case "asshole" "ass">>
+			<<exercisekink "anal">>
+			<<if $slaves[$csi].pain - $o.pain > 8>>
+				<<exercisekink "painal">>
+			<</if>>
+			<<if $slaves[$csi].lust > 60>>
+				The powerful anal orgasm makes her @@.relationship-good;like you@@ more and makes her @@.obedience-good;much more submissive.@@
+				<<set $slaves[$csi].relationship += random(2,8)>>
+				<<set $slaves[$csi].obedience += random(3,12)>>
+				<<exercisekink "anal">>
+			<</if>>
+			<<set $slaves[$csi].lust = Math.floor($slaves[$csi]. lust * 2 / 3)>>
+		
+			
+	<</switch>>
+	
+<</widget>>

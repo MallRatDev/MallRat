@@ -1,0 +1,57 @@
+::Enslave Su
+	"Um... hey." Su looks a bit ashamed to see you, and comes over to meet you when you walk in the store.
+	"Hey, cocksucker." She blushes but doesn't look angry.
+	"Yeah.  Uh, I guess I am."
+	"And a good one."  She glances over to the table where her little fanboys are staring and snickering to each other.
+	"Gee... thanks, I guess."
+	"It's a real skill.  One I could make a lot of use of."
+	"Really?  You want to go again?"
+	"No.  I mean, I want something a little more permanent."
+	"Like be your girlfriend?"
+	"No, like be my slave fucktoy."
+	"Woah, man... that's crazy."
+	<<if Game.inventoryQuantity("Leather Collar")>>\
+		"Want to try on my collar?  Just for fun?"
+		"Well..."  She glances over to the table, then decides to ignore them.
+		"Fine, but we're going to have to talk about anything more."
+		"Sure thing.  Here." You hand her the collar.
+		She slips it on her neck.  The end of the collar slides by itself into the buckle, and fastens itself.
+		"Hey!  What the fuck!"
+		"Keep it down."  She quiets down immediately.
+		"What is this?!?"
+		"It's a magic collar.  It makes you obey me."
+		"That's... that's fucking impossible!"
+		"What, don't believe in magic?"
+		"No... well, maybe a little.  I always wanted to."
+		"Now you can.  I'll give you some proof.  Take your panties off."
+		Her eyes open wide as she crouches down, reaches under her skirt, and pulls her panties down her legs.  She steps out of them.
+		"Hand them here." She does, still looking completely shocked.
+		"Now do you believe in magic?"
+		"Yeah, I guess I have to.  What are you going to do to me?"
+		"Oh you know.  Make you crawl around naked, beg for my cock in all your holes, lick cum off the floor.  Basically anything degrading I can think of."
+		"Oh... fuck..." Her voice makes it plain that what you said, while unexpected, is not unwelcome.
+		"Now open up." She opens her mouth and you shove her (still damp) panties in.
+		<<if Game.inventoryQuantity("Leash")>>\
+			You clip the leash to the ring on her collar.  Giving it a little tug, you lead to out of the comic store under the astounded gazes of the nerds.
+			"Cross your arms behind your back."
+			She complies, grasping her upper arms behind her back.  Her tits are thrust out against her t-shirt, and her panties are still visible in her mouth.  Satisfied, you lead her through the mall with the occasional tug on the leash.  \
+			<<if $characters[Game.getCharIndex("Tracy")] != -1>>\
+				You notice that young girl with the notebook watching and making notes as you walk past. \
+			<</if>>
+			<<set $flags.publicDominence += 3>>\
+		<</if>>\
+		You reach the mall entrance, go to your house, and enter the basement dungeon.  You order Su to strip, think a moment, and order her on all fours, fingering her ass and cunt while you're gone.
+		<<if $slaves.length === 2>>\
+			You tell her she has to beg <<=$slaves[0].name>> for permission to come.
+		<<elseif $slaves.length > 2>>\
+			You tell her she has to get permission from all your other slaves to come, and if one of them say no, she can't.
+		<</if>>\
+		<<enslave "su">>\
+		<<run Save.autoslave.save("Enslaved Su")>>\
+	<<else>>\
+		"Come on... I know you want to see what I can make you do."
+		"Yeah..." she bites her lip. "Let me think about it, ok?"
+		"I guess."  You don't have time for that.  You'd better come back with the collar.
+	<</if>>\
+	
+	[[Mall Entrance]]	

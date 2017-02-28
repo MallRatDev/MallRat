@@ -1,0 +1,37 @@
+:: West Wing[mall]
+	Ah, the swanky area.  The wealthy folks slide by like ripples in melted butter.  They're also kind fat, yo.  The stores are nice, and some of the chicks are hot.  
+
+	The anchor store here is Dillard's.  Of course, why wouldn't it be?
+
+	Go to a different area of the mall?
+	[[West Food Court]] 
+
+	Visit a store?
+	[["Pet" Store]]
+	[[Ambercrombie and Bitch]]
+	[[Forever "18"]]
+	[[Dillard's]]
+
+:: "Pet" Store[mall]
+	A pet store.  What a wonderful place!  Also smells like poop.
+
+	<<set $itemsForSale = ["Leash", "Cow Bell", "Large Cage"]>>\
+	<<set $itemsForSaleCosts = [12, 60, 185]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Ambercrombie and Bitch[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Forever "18"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Dillard's[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>

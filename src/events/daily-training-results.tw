@@ -1,0 +1,38 @@
+:: Daily Training Results[nobr TimeNone]
+	<<for _i = 0; _i < $slaves.length; _i++>>
+
+	<br>
+	At the end of the day, $slaves[_i].name is recovering from her training.  
+
+	/* First daily effects she's still in training.  */
+
+
+
+	/* check if slave is in love or broken */
+
+
+	<<if $slaves[_i].relationship > 100 && $slaves[_i].obedience > 100 && !$slaves[_i].isBroken && !$slaves[_i].isInLove>>
+		<<set $slaves[_i].isInLove = true>>
+		<<set $enslavedPassageString = $slaves[_i].name + " In Love">>
+		<<if tale.has($enslavedPassageString)>>
+			<<display $enslavedPassageString>>
+			
+		<<else>>
+			<<set $csi = Game.getSlaveIndex($slaves[_i].name)>>
+			<<display "Generic Slave In Love">>
+		<</if>>
+	<<elseif $slaves[_i].fear > 100 && $slaves[_i].obedience > 100 &&  !$slaves[_i].isBroken && !$slaves[_i].isInLove>>
+		<<set $slaves[_i].isBroken = true>>
+		<<set $enslavedPassageString = $slaves[_i].name + " Is Broken">>
+		<<if tale.has($enslavedPassageString)>>
+			<<display $enslavedPassageString)>>
+		<<else>>
+			<<set $csi = Game.getSlaveIndex($slaves[_i].name)>>
+			<<display "Generic Slave Is Broken">>
+		<</if>>
+	<</if>>
+
+
+
+		
+	<</for>>

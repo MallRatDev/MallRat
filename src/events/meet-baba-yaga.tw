@@ -1,0 +1,9 @@
+:: Meet Baba Yaga
+<<set $isKickedOut = true>>\
+You step up to the food court.   Weird, there's a stage set up over the fountain.  Fountain?  Has that always been there?
+
+Anyway, you see local celebrity Barbara Yagarisky <<if $pc.mageSight>> (is that her real name?) <</if>> step onto the stage and introduce her wildly popular show, So You Want to be The Weakest Link?  It's some kind of stupid dating show, where women who might want to be stupid sluts instead get to date guys get to... date guys?  Shit.  It makes no sense.  That's local access TV for you.  You are about to walk away, when you and Barbara make eye contact, and for a second <<if $pc.mageSight>>you see her as a shining emaciated figure<<else>>she gazes malevolently at you<</if>>, then gestures, and a couple security guards grab you and take you away.  
+
+Shit.  That's not cool.
+
+[[Arrested at the Mall]] 

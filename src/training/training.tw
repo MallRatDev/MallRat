@@ -1,0 +1,92 @@
+:: Train Character[nobr]
+	<<set $o = JSON.parse(JSON.stringify($slaves[$csi]))>>
+	<<if !$slaves[$csi].hasBeenTrained>>
+		<<set $slaves[$csi].hasBeenTrained = 1>>
+		<<set $slavetrain = $slaves[$csi].name + " First Training">>
+		<<goto $slavetrain>>
+	<<else>>
+		<<if $hour < 21>>
+			<<goto "Too Early">>
+		<<else>>
+			<<goto "Train Slave">>
+		<</if>>
+	<</if>>
+
+:: Too Early[nobr TimeNone]
+	It's only <<=$hour % 12>> o'clock!  The mall is still open! You can always have sex with <<=$slaves[$csi].name>> later... for now you just want to hang out. <br>
+	<br>
+	<br>
+	[[Dungeon]]<br>
+	<<if $debugging>>[[Cheat and train her anyway|Train Slave]]<</if>>
+
+:: First Training[TimeNone]
+	<<=$firstTraining[$slaves[$csi].name]>>
+
+	<<return>>
+
+:: Train Slave[nobr]
+	<<display "Slave Stats">>
+	<br>
+	<br>
+	Obedience: $slaves[$csi].obedience <<statdiff "obedience">><br>
+	Relationship: $slaves[$csi].relationship <<statdiff "relationship">><br>
+	Lust: $slaves[$csi].lust <<statdiff "lust">><br>
+	Fear: $slaves[$csi].fear <<statdiff "fear">><br>
+	Pain: $slaves[$csi].pain <<statdiff "pain">><br>
+	<br>
+	<<if $slaves[$csi].oral > 0>>Oral Fetish: $slaves[$csi].oral <<statdiff "oral">><br><</if>>
+	<<if $slaves[$csi].cum > 0>>Cum Fetish: $slaves[$csi].cum <<statdiff "cum">><br><</if>>
+	<<if $slaves[$csi].bondage > 0>>Bondage Fetish: $slaves[$csi].bondage <<statdiff "bondage">><br><</if>>
+	<<if $slaves[$csi].deepthroat > 0>>Deepthroat Fetish: $slaves[$csi].deepthroat <<statdiff "deepthroat">><br><</if>>
+	<<if $slaves[$csi].anal > 0>>Anal Fetish: $slaves[$csi].anal <<statdiff "anal">><br><</if>>
+	<<if $slaves[$csi].painal > 0>>Painal Fetish: $slaves[$csi].painal <<statdiff "painal">><br><</if>>
+	<<if $slaves[$csi].begging > 0>>Begging Fetish: $slaves[$csi].begging <<statdiff "begging">><br><</if>>
+	<<if $slaves[$csi].humiliation > 0>>Humiliation Fetish: $slaves[$csi].humiliation <<statdiff "humiliation">><br><</if>>
+	<<if $slaves[$csi].masochism > 0>>Pain Fetish: $slaves[$csi].masochism <<statdiff "masochism">><br><</if>>
+	<<if $slaves[$csi].housework > 0>>Maid Fetish: $slaves[$csi].housework <<statdiff "housework">><br><</if>>
+	<<if $slaves[$csi].submission > 0>>Submissive Fetish: $slaves[$csi].submission <<statdiff "submission">><br><</if>>
+	<br>
+	<<if $slaves[$csi].brokeRule>>She has broken a rule.<br><</if>>
+	<<if $slaves[$csi].refused>>She has refused you.<br><</if>>
+	<br>
+	<<if $slaves[$csi].rulesNoMasturbate>>She is not allowed to masturbate.<</if>> 
+	<<if $slaves[$csi].rulesNoOrgasm === 1>>She is not allowed to come at all.<<elseif $slaves[$csi].rulesNoOrgasm === 2>>She is only allowed to come with permission.<</if>>
+	<<if $slaves[$csi].rulesSwallowCum === 0>>She only has to swallow if you cum in her mouth.<<else>>She always has to swallow your cum.<</if>>
+
+	<<set $o = $slaves[$csi]>>
+	<br>
+	<br>
+	<<if Story.has($slaves[$csi].name + " Special Training") && !$slaves[$csi].doneSpecialTraining>>
+		Do her special training:<br>
+		[[Special Training|Training][$act=$slaves[$csi].name + " Special Training"]]<br>
+	<</if>>
+
+	Punish her:<br>
+	[[Spank her|Training][$act="Spank Her"]]
+	<br>Use her holes:<br>
+	[[Fuck her ass|Training][$act="Fuck Her Ass"]] | 
+	[[Fuck her mouth|Training][$act="Blowjob Training"]] | 
+	[[Fuck her pussy|Training][$act="Fuck Her Pussy"]]
+	<br>Train her:<br>
+	[[Set rules for her|Training][$act="Set Rules for Her"]] | [[Dress Her|Training][$act="Dress Her"]]
+	<br>Make her take a position:<br>
+	[[Stand|Training][$act="Position Stand"]] |
+	[[Kneeling|Training][$act="Position Kneel"]] | 
+	[[All Fours|Training][$act="Position All Fours"]] |
+	[[Face Down Ass Up|Training][$act="Position Ass Up"]] | 
+	[[Over Knee|Training][$act="Position Over Knee"]] | 
+	[[Inspection|Training][$act="Position Inspection"]] |
+	[[Bent Over|Training][$act="Position Bent Over"]]<br>
+	<br><br>
+	[[Dungeon]]
+
+
+:: Training[nobr]
+	<<run Game.passTime(15)>>
+	<div id="training-text">
+		
+	</div>
+	<div id="links-text">
+
+	</div><br>
+

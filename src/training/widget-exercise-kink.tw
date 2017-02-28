@@ -1,0 +1,49 @@
+:: WidgetExercisekink[widget nobr]
+<<widget "exercisekink">>
+	<<set _kink = $args[0]>>
+	<<if $args.length > 1>>
+		<<set _strength = $args[1]>>
+	<<else>>
+		<<set _strength = 1>>
+	<</if>>
+	
+	<<if random(300) - (_strength * 10) < ($slaves[$csi].obedience + $slaves[$csi].lust + $slaves[$csi].relationship)>>
+		<<switch _kink>>
+			<<case "cum">>
+				@@.good;<<=["She's started to get a taste for cum.","She loves cum even more now that she's had so much of yours fucked down her throat.","She's a total cum whore now that you've filled her belly with your seed."][$slaves[$csi].cum]>>@@
+				<<if $slaves[$csi].cum >= 0>>
+					She's becoming <<if $slaves[$csi].cum == 0 >>a cumslut.<<else>>more of a cumslut.<</if>>
+					<<set $slaves[$csi].cum += 1>>
+					<<if $slaves[$csi].cum > 3>>
+						<<set $slaves[$csi].cum = 3>>
+					<</if>>
+				<<else>>
+					She's lost her hatred of cum.
+					<<set $slaves[$csi].cum = 0>>
+				<</if>>
+				<<set $slaves[$csi].obedience += random(6) + 1>>
+				<<set $slaves[$csi].relationship += random(4)>>
+			<<case "anal">>
+				<<if $slaves[$csi].anal === 0>>
+					@@.good;She begins to fetishize getting a cock up her ass.@@
+					<<set $slaves[$csi].anal += 1>>
+				<<elseif $slaves[$csi].anal < 0>>
+					@@.good;Having your cock up her ass has made her lose her hatred of anal sex.@@
+					<<set $slaves[$csi].anal = 0>>
+				<<elseif $slaves[$csi].anal < 2>>
+					@@.good;Being buttfucked increases her love of hard cocks in her asshole.@@
+					<<set $slaves[$csi].anal += 1>>
+				<<elseif $slaves[$csi].anal === 2>>
+					@@.good;She's become a total buttslut and prefers a cock in her ass to any other hole.@@
+					<<set $slaves[$csi].anal = 3>>
+				<<else>>
+					@@.good;She loves being assfucked so much she becomes more obedient and loving to you.@@
+					<<set $slaves[$csi].anal = 3>>
+					<<set $slaves[$csi].obedience += random(3,7)>>
+					<<set $slaves[$csi].relationship += random(2,10)>>
+				<</if>>
+			
+			<<case "painal">>
+		<</switch>>
+	<</if>>
+<</widget>>

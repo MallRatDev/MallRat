@@ -1,0 +1,371 @@
+:: Mall Entrance
+	This is the main entrance of the mall.  It makes an attempt a grandeur, and manages tacky.  A set of glass doors lead into the mall proper.  A dingy corner has a doorway to the service entrance behind the food court which is shielded by a stinking dumpster.
+
+	<<if !$flags.shownBreeAndEva>><<goto "Bree and Eva">><</if>>\
+	[[The Mall!|East Wing]]
+	[[Stinking dumpster?  What's not to like?|Smoking Area]]
+	[[Back towards your house|Outside House]]
+
+:: East Wing[mall]
+	You're in the east wing of the mall.  Random people wander about, usually in your way.  JC Penny's anchors this wing, and there's a Spencer's Gifts, Engraving Now!, and Radio Shat along with some other stupid stores.  A stairway leads up to the second level.  Boooooring.
+
+	Go to a different area of the mall?
+	[[East Food Court]]
+	[[Upstairs East Wing]]
+
+	Visit a store?
+	[[JC Penny's]]
+	[[Spencer's Gifts]]
+	[[Engraving Now!]]
+	[[Radio Shat]]
+
+	Leave the mall?
+	[[Mall Entrance]] 
+
+:: Smoking Area
+	Behind a stinking dumpster, the young people (and occasional decrepit old person) smoke in miserable circumstances.  A set of clear plastic strips hang from the top of a doorway into a narrow hallway behind the food court "restaurants", and an old bowl overflowing with butts serves as an ashtray.  The reek from the dumpster permeates the area.  A few bits of desultary grafitti mar the walls, amongst them "Eva's a poser" and "I did the bar whore."
+
+	<<nobr>>
+	<<if Game.getCharIndex("Eva") != -1>>
+		<<if 0 == 0>>
+			<<describe "Eva" "Eva">> is here.  She's smoking a cigarette behind the dumpster, and gazes at you cooly.  [[Talk to Eva]]
+		<</if>>
+	<</if>>
+	<</nobr>>
+
+	[[Go to the main entrance|Mall Entrance]]
+	[[Head down the service passage|Service Passageway]]
+	<<if $flags.knowsAboutSecretEntrance>>[[Secret Passageway]]<</if>>
+
+:: Service Passageway[mall hidden]
+	This stinking corridor runs behind some of the food court merchants to the dumpster.  It lets out by some bathrooms into the food court.
+
+	[[Smoking Area]] 
+	[[East Food Court]] 
+
+:: East Food Court[mall hidden foodcourt]
+	This is the east end of the food court, mostly inhabited by breeders.  Fucking oldies.
+
+	Go elsewhere in the food court?
+	[[North Food Court]]
+	[[West Food Court]]
+	[[South Food Court]]
+
+	Go to a different area of the mall?
+	[[East Wing]] 
+	[[Service Passageway]] 
+
+	Visit a food court vendor?
+	[[Terrible "Greek"]]
+	[[Terrible "Cinnamon" Buns]]
+	[[Terrible "Pizza"]]
+
+:: Upstairs East Wing[mall]
+	Yellow tape blocks off the escalator.
+
+	<<return>>
+
+:: JC Penny's[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Spencer's Gifts[mall]
+	This is a "funny", "kinky", store for "alternative" youths.
+
+	<<set $itemsForSale = ["Black Lipstick", "Topless Poster"]>>\
+	<<set $itemsForSaleCosts = [12, 35]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Engraving Now![mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Radio Shat[mall]
+	Closed for construction?  Really?  WTF?
+
+	<<return>>
+
+:: North Food Court[mall hidden foodcourt]
+	This is the north end of the food court.  All stoners, hippies, and people too cool for you, dude.
+
+	Go to a different part of the food court?
+	[[East Food Court]] 
+	[[West Food Court]] 
+	[[South Food Court]] 
+
+	Go to a different area of the mall?
+	[[North Wing]]
+
+	Visit a food court vendor?
+	[[Martha's "Vegan" Food]]
+	[["Organic" "Treats"]]
+	[[Ethical "Food"]]
+
+:: West Food Court[mall hidden foodcourt]
+	This is the preppy side of the food court.  Popped collars, pastel colors, and yoga pants abound.  Mmmm... yoga pants.  You get a few dirty glares in response to your dirty gazes.
+
+	<<nobr>>
+	<<if Game.getCharIndex("Bree") != -1>>
+		<<if 0 == 0>>
+			<<describe "Bree" "Bree">> is here.  She's hanging out with her friends, her little followers tittering at her every comment.  Seriously, that chick... those tits... yum...  [[Talk to Bree]]
+		<</if>>
+	<br><br>
+	Have a seat?
+	[[Sit Near the Popular People]]
+	<</if>>
+	<</nobr>>
+
+	Go to a different part of the food court?
+	[[North Food Court]]
+	[[East Food Court]]
+	[[South Food Court]]
+
+	Go to a different area of the mall?
+	[[West Wing]]
+
+	Visit a food court vendor?
+	[["Cajun" Cafe]]
+	[["Orange" Julio]]
+	[[Too Many Bucks "Coffee"]]
+
+:: South Food Court[mall hidden foodcourt]
+	The south section of the food court.  This is where the burnouts, losers, and druggies hang out.  Hell to the motherfucking yes!  Although they don't seem to recognize your coolness.  They will though, yes, they will.
+
+	<<nobr>>
+	<<if Game.getCharIndex("Tracy") != -1>>
+	<<describe "Tracy" "Tracy">> is here sitting at a table.  She seems to be watching people, especially couples, and making notes.  [[Talk to Tracy]]
+	<</if>>
+	<</nobr>>
+
+	Go to a different part of the food court?
+	[[East Food Court]]
+	[[North Food Court]] 
+	[[West Food Court]] 
+
+	Go to another area of the mall?
+	[[South Wing]]
+
+	Visit a shop?
+	[[Hot "Dogs"]]
+
+:: Terrible "Greek"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Terrible "Cinnamon" Buns[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Terrible "Pizza"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: North Wing[mall]
+	This is the north wing of the mall.  Old people linger on the benches and the one small fountain has a few unhealthy looking carp.  There's a Duller Image, Sky Mall, and Brain Reliant store here.  Or, you know, the stairs, or the anchor... Sears.  Why does anyone go to Sears, anyway?
+
+	Go to another area of the mall?
+	[[East Food Court]] 
+	[[West Food Court]] 
+	[[South Food Court]] 
+
+	Or visit a shop?
+	[[Duller Image]]
+	[["Tobacco" Smoke Shop]]
+	[[Brain Reliant]]
+	[[Sears... but why would you?|Sears]]
+
+:: Martha's "Vegan" Food[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: "Organic" "Treats"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Ethical "Food"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Duller Image[mall]
+	This is a "high end" personal gadget store.  There seems to be one in every mall... some of the items are more "interesting" although labelled things like "personal massager" to be discrete.  You don't feel any need to be discrete though.  
+
+	<<set $itemsForSale = ["Wand Vibrator", "T.E.N.S. Unit", "Blindfold"]>>\
+	<<set $itemsForSaleCosts = [79, 119, 24]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: "Tobacco" Smoke Shop[mall]
+	Completely "legal" "tobacco" smoking devices are sold here, along with actual tobacco.  
+
+	<<set $itemsForSale = ["Cigarettes", "Glass Pipe"]>>\
+	<<set $itemsForSaleCosts = [8, 22]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Brain Reliant[mall hidden]
+	Wait, wasn't this supposed to be Lane Bryant?  Weird.  This place is full of weird looking helmets, small vials, and other mad scientist looking stuff.  You definitely don't remember these products!  But damn, the prices!  Also, is pricing everything five bucks less really going to make you think they're cheap?
+
+	<<set $itemsForSale = ["Cumslut Potion", "Painslut Potion", "Submissiveness Elixer", "Buttslut Suppository (Baseball Sized)", "Cocksucker's Salve (With Applicator)"]>>\
+	<<set $itemsForSaleCosts = [395, 395, 895, 495, 595]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Sears[mall]
+	Ah, Sears.  That staple of shopping malls across America.  For the most part the mall rats don't have much use for the place.  Still, you could look around.  Who knows?  Maybe you'll find something useful.
+
+	Visit a department?
+	[[Hardware]]
+	[[Men's Wear]]
+	[[Women's Wear]]
+	[[Juniors]]
+	[[Kitchen Wares]]
+
+	Leave the store?
+	[[North Wing]] 
+
+:: "Cajun" Cafe[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: "Orange" Julio[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Too Many Bucks "Coffee"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: West Wing[mall]
+	Ah, the swanky area.  The wealthy folks slide by like ripples in melted butter.  They're also kind fat, yo.  The stores are nice, and some of the chicks are hot.  
+
+	The anchor store here is Dillar's.  Of course, why wouldn't it be?
+
+	Go to a different area of the mall?
+	[[West Food Court]] 
+
+	Visit a store?
+	[["Pet" Store]]
+	[[Ambercrombie and Bitch]]
+	[[Forever "18"]]
+	[[Dillard's]]
+
+:: "Pet" Store[mall]
+	A pet store.  What a wonderful place!  Also smells like poop.
+
+	<<set $itemsForSale = ["Leash", "Cow Bell", "Large Cage"]>>\
+	<<set $itemsForSaleCosts = [12, 60, 185]>>\
+	<<display "Store">>
+
+	<<return>>
+
+:: Ambercrombie and Bitch[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Forever "18"[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: South Wing[mall]
+	This is the "bad area" of the mall.  There's a shoe store here, and a... shoe store.  Oh, and some kind of crappy comic book store.  Great.
+
+	Go to a different area of the mall?
+	[[South Food Court]] 
+
+	Visit a shop?
+	[["Obligatory" Shoe Store]]
+	[[Cosmic Comics]]
+
+:: Hot "Dogs"[mall vendor]
+	This is a hot dog place that sells pretty bad hot dogs for the "low" price of $11, like every other "cheap" food option in the mall.  It's decorated oddly, with cartoonish pink phallic hot dogs the size of human bodies sliding into buns on every wall.  The poor employees are all wearing fake hot dog costumes and seem miserable.  You'd never eat here.
+
+	[[South Food Court]]
+
+:: "Obligatory" Shoe Store[mall]
+	There's always a shoe store.  Or more.  In fact, when malls are having trouble, more and more shoe stores move in until the mall is alternating closed store fronts and shoe stores.  They're like cancer in that way.
+
+	<<set $itemsForSale = ["High Heels", "Thigh High Latex Boots", "Stripper Heels"]>>\
+	<<set $itemsForSaleCosts = [18, 69, 59]>>\
+	<<display "Store">>
+
+:: Dillard's[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Hardware[mall]
+	The hardware section has everything you could need for home improvement, and even offers bulk supply delivery to your house for free!  Sweet!
+
+	<<set $itemsForSale = ["Rope", "Lumber", "Sawhorse", "Corner Moulding", "Pipe"]>>\
+	<<set $itemsForSaleCosts = [15, 95, 125, 65, 140]>>\
+	<<display "Store">>
+
+	[[Sears]]
+
+:: Men's Wear[mall]
+	That weird chain link thing is covering the front of this shop. Guess they're closed.
+
+	<<return>>
+
+:: Women's Wear[mall]
+	Women's clothing surrounds you, with several outfits displayed on mannekins.  
+
+	<<set $itemsForSale = ["Sturdy Bra", "Sun Dress", "Lingerie"]>>\
+	<<set $itemsForSaleCosts = [22, 35, 42]>>\
+	<<display "Store">>
+
+	[[Sears]]
+
+:: Juniors[mall]
+	This is the kid's clothing section... but there are a couple items...
+
+	<<set $itemsForSale = ["Plaid Schoolgirl Skirt", "Schoolgirl Blouse"]>>\
+	<<set $itemsForSaleCosts = [26, 28]>>\
+	<<display "Store">>
+
+	[[Sears]]
+
+:: Kitchen Wares[mall]
+	Somehow the items in here look more interesting than before.
+
+	<<set $itemsForSale = ["Spatula", "Clothespin", "Candle"]>>\
+	<<set $itemsForSaleCosts = [7, 1, 4]>>\
+	<<display "Store">>
+
+:: Cosmic Comics[mall]
+	Wow, you'e seen better comic book stores on your bookshelf.  This is a sad set of folding tables covered with long cardboard boxes of comics.  A few empty tables are set up in the back room with roleplayers huddled around one of them.  Racks of games and dice and shit are set up near the door, desultarily stocked with a few items in hopes of selling something to the nerds who play here, and they probably make most of their money selling Cokes and energy drinks to the people who play games.
+
+	Super lame.
+
+	Still, even though you're much, much, much cooler than the kind of losers that would patronize this kind of shop, you spend some time flipping through the boxes.  Wow!  They have some old Image comics here!  Those weren't dorky at all.
+
+	Taking a trip into the back room, you check out the nerds.  Lol.  Sitting around a table and talking to each other?   Nerds!  It's a group of geeky-looking guys and one pretty cute Asian girl.  The guys are all obviously infatuated with her.
+
+	<<nobr>>
+		<<if Game.getCharIndex("Su") != -1 && $characters[Game.getCharIndex("Su")].dayLastSpokenTo < $day>>
+			<<if 0 == 0>>
+				<<describe "Su" "Su">> is seated at the table gaming with the nerds. [[Talk to Su]]
+			<</if>>
+		<</if>>
+	<</nobr>>
+
+	<<return>>
+

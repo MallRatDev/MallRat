@@ -1,0 +1,36 @@
+:: South Wing[mall]
+	This is the "bad area" of the mall.  There's a shoe store here, and a... shoe store.  Oh, and some kind of crappy comic book store.  Great.
+
+	Go to a different area of the mall?
+	[[South Food Court]] 
+
+	Visit a shop?
+	[["Obligatory" Shoe Store]]
+	[[Cosmic Comics]]
+
+:: "Obligatory" Shoe Store[mall]
+	There's always a shoe store.  Or more.  In fact, when malls are having trouble, more and more shoe stores move in until the mall is alternating closed store fronts and shoe stores.  They're like cancer in that way.
+
+	<<set $itemsForSale = ["High Heels", "Thigh High Latex Boots", "Stripper Heels"]>>\
+	<<set $itemsForSaleCosts = [18, 69, 59]>>\
+	<<display "Store">>
+
+:: Cosmic Comics[mall]
+	Wow, you'e seen better comic book stores on your bookshelf.  This is a sad set of folding tables covered with long cardboard boxes of comics.  A few empty tables are set up in the back room with roleplayers huddled around one of them.  Racks of games and dice and shit are set up near the door, desultarily stocked with a few items in hopes of selling something to the nerds who play here, and they probably make most of their money selling Cokes and energy drinks to the people who play games.
+
+	Super lame.
+
+	Still, even though you're much, much, much cooler than the kind of losers that would patronize this kind of shop, you spend some time flipping through the boxes.  Wow!  They have some old Image comics here!  Those weren't dorky at all.
+
+	Taking a trip into the back room, you check out the nerds.  Lol.  Sitting around a table and talking to each other?   Nerds!  It's a group of geeky-looking guys and one pretty cute Asian girl.  The guys are all obviously infatuated with her.
+
+	<<nobr>>
+		<<if Game.getCharIndex("Su") != -1 && $characters[Game.getCharIndex("Su")].dayLastSpokenTo < $day>>
+			<<if 0 == 0>>
+				<<describe "Su" "Su">> is seated at the table gaming with the nerds. [[Talk to Su]]
+			<</if>>
+		<</if>>
+	<</nobr>>
+
+	[[South Wing]]
+

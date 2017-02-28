@@ -1,0 +1,27 @@
+:: WidgetLoseVirginity[nobr widget]
+<<widget "losevirginity">>
+	<<set _hole = $args[0] || "cunt">>
+	<<switch _hole>>
+		<<case "pussy" "cunt">>
+			$slaves[$csi].name has been @@.good;fucked in the _hole for the first time.@@
+			<<set $slaves[$csi].pussySize = 1>>
+			<<if $slaves[$csi].relationship > 20 || $slaves[$csi].lust - $o.lust > 5>>
+				She's @@.relationship-good;happy@@ you've taken her virginity.
+				<<set $slaves[$csi].relationship += random(4) + 4>>
+			<<else>>
+				She's @@.fear-low;afraid@@ of you using her cunt.
+				<<set $slaves[$csi].fear += random(4) + 4>>
+			<</if>>
+		<<case "ass" "asshole">>
+			$slaves[$csi].name has been @@.good;fucked in the _hole for the first time.@@
+			<<set $slaves[$csi].assholeSize = 1>>
+			<<if $slaves[$csi].relationship > 20 || $slaves[$csi].lust - $o.lust > 5>>
+				She's @@.relationship-good;happy@@ you've taken her anal virginity.
+				<<set $slaves[$csi].relationship += random(4) + 4>>
+			<<else>>
+				She's @@.fear-low;afraid@@ of you using her ass.
+				<<set $slaves[$csi].fear += random(4) + 4>>
+			<</if>>
+	<</switch>>
+<</widget>>
+

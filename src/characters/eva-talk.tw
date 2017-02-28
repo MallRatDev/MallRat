@@ -1,0 +1,33 @@
+:: Talk to Eva[nobr]
+	<<if $characters[Game.getCharIndex("Eva")].relationship < 10>>
+		Eva says, "Fuck off, breeder.  Unless you have smokes or makeup or something cool, I don't have anything to say to you."
+		<br><br>
+		<span id="smokes">
+		<<if Game.inventoryQuantity("Cigarettes")>>
+			<<click "Give her some smokes">>
+				<<run Game.inventoryRemove("Black Lipstick", 1)>>
+				<<set $characters[Game.getCharIndex("Eva")].relationship += 7>>
+				<<replace "#smokes">>"Gee, thanks!"<br><br><</replace>>
+			<</click>>
+			<br><br>
+		<</if>>
+		</span>
+		
+		<span id="lipstick">
+		<<if Game.inventoryQuantity("Black Lipstick")>>
+			<<click "Give her the black lipstick">>
+				<<run Game.inventoryRemove("Black Lipstick", 1)>>
+				<<set $characters[Game.getCharIndex("Eva")].relationship += 4>>
+				<<replace "#lipstick">>"Gee, thanks!"<br><br><</replace>>
+			<</click>>
+			<br><br>
+		<</if>>
+		</span>
+		
+	<<else>>
+		<<display "Enslave Eva">>
+		<<enslave "Eva">>\
+	<</if>>
+
+	<br><br>
+	<<return>>

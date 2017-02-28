@@ -1,0 +1,26 @@
+:: Talk to Charlotte[TimeNone]
+"Hey, are you ok?"
+"No... What the fuck?!  The Major just raped me!"
+"I know.  Look, weird stuff has been going on."
+"You see it too?"  She looks hopeful.
+"Yep.  I've got all this weird magical shit going on, and... well, slaves and stuff..."
+<<if $pc.beenArrested > 0>>"Oh yeah.  I remember you.  You tried to get me to wear a collar."<<else>>"God.  Although the Major kept talking about being a slave."<</if>>
+"Yeah.  And there's something going on in the mall... weird shit and I might be the only one who can do something about it."
+"You know, that's crazy as shit."
+"I know, but..."
+"I believe you.  Come look at these monitors." She's seemingly forgotten about being assraped.  She takes you to the bank of monitors and shows you footage of the hot dog place... you watch as she runs the recording forward as the workers prep the food and open the door... then there's a burst of static, and the time skips to closing time, 9pm.  
+"Weird. Can you do frame by frame?"  You have a weird feeling about this.
+"Sure.  Hang on."  She turns a dial and the film rewinds in skips and starts.  Then she turns it the other way, just a little.  The workers are again opening the store.
+"Nothing weird..." she says.
+The screen skips and the time stamp jumps 11 hours.
+"There!  Walk it back a little." You're sure you saw something.
+"Ok, a minute..."  She manipulates the controls and just as the static starts she pauses and walks forward frame by frame.
+The next frame shows a very different scene... there's a woman bound very tightly over a stool.  Her arms are bound behind her back and her legs and torso to the stool she's bent over.  Men, seeming unaware of what they're doing, walk up and shove their cocks in her mouth, pussy, or asshole and order at the counter.  They receive their food, then pump whichever hole they're in a few times, drop some money on the counter, and leave.
+What.  The.  Fuck. That's weird. 
+Then the screen slips again, and it's just a hot dog place.  
+"So, I think you should check out the food court vendors."
+"Yeah. Yeah, maybe I should, at that."
+"I hope you can fix this.  As weird as it seems, I think you're the only one who can help."
+<<if $flags.evaIsTaggingAlong>><<display "Eva Steps Up">><<else>>"I'll do my best.  At least I can take care of your trespass warning."<</if>>
+
+[[Go home|Outside House][$hour = 25]]

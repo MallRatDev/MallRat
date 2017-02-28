@@ -1,0 +1,29 @@
+:: Completed Training[nobr TimeNone]
+<<=$slaves[$csi].name>> is now fully trained.  The collar is no longer neccesary, and you tell her so.  You have her kneel in front of you.
+
+"Do you know why you're here?"
+"No, Sir."
+"Do you want to obey me?"
+"Yes, Sir!"
+"That's why.  Because you want to be here."
+"...?"
+"Let me put it this way.  Do you want to serve me?"
+"Yes."
+"Then you will.  I'm going to take the collar off, and let you serve me because you want to."
+<<=$slaves[$csi].name>> says, "Really?  I can serve you because I want to?"
+"Yes.  From now on, you're mine because you want to be."
+"Thank you, ... Sir?"
+"Call me Master."
+"Thank you, Master!"
+"Good girl."
+<<if $slaves[$csi].name == "Eva">>\
+"Hey, you got kicked out of the mall, right?"
+"Well, yeah."
+"I know how to get in there at night."
+"Really?"
+"Yep.  Just head to the dumpsters, and hang a right."
+"You're going to need to go with me."
+"Yes, Master!"
+<</if>>
+
+[[Game Room]] 

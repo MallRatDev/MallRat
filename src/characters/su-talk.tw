@@ -1,0 +1,77 @@
+::Talk to Su
+	<<set $su = $characters[Game.getCharIndex("Su")]>>\
+	<<set $su.dayLastSpokenTo = $day>>\
+	<<if $su.relationship === 0>>\
+		"Hey! What are you guys up to?" You're just looking at Su, though.
+		"Playing Dragon Knights." She seems pretty nice, really.
+		<<if $pc.mageSight>>\
+			You take a look at her with your mage sight.  She's a really kinky girl!  Into humilliation and with a serious oral fetish.  What's more, somehow you can see she's sucked off most of the boys at this table.  With a glance at them, though, you can see none of them understand her... or any girls at all, really.
+		<<else>>\
+			Using the weird coin sight, you take a look at her.  She's into some kinky stuff... sucking cock and being humiliated, apparently.  Maybe that'll be useful.
+		<</if>>\
+		"Mind if I play?" You have no idea what Dragon Knights is, but your dick isn't going to suck itself.
+		"Well, we're in the middle of something, but if you don't mind playing a pregenerated character."
+		"Sure."
+		You spend about an hour lost in weird rules and rolling dice when people tell you to.  You keep stealing glances at Su... she is really attractive in her element.  The game wraps up and you take your character sheet with you.
+		"What did you think of the game?" Su's smiling and looking a little shy as you walk out of the store together.
+		"Super fun!  I'd like to play again."
+		"Any time!" She blushes and hurries away.
+		<<set $su.relationship += 10>>
+		[[South Wing]]
+	<<elseif $su.relationship === 10>>\
+		You join back with the group, knighting dragons, or slaying knights, or whatever.  You don't really remember.
+		"Oh shit!"
+		You start paying attention as Su looks upset.
+		"A fucking Dragon Lord?!? How are we supposed to survive this?" She's almost yelling at the GM, or whatever he's called.
+		"Well... I mean, it's in the adventure." His voice cracks as he's questioned by the Asian girl.
+		"Oh man, we're all going to die."
+		"What can we do?" You're interested despite yourself.
+		"Nothing.  It's just too powerful.  Man, I'd blow someone for a little divine intervention right about now."
+		"Really?  I'll give it a shot." She was joking, but you stare right at her and raise an eyebrow.
+		"Oh! Uh... hey, I mean, I uh..." She blushing furiously but you can also tell turned on.
+		"Let's make a deal.  If I can handle the dragon thingy, you blow me."
+		She flushes more, but in a (fake) belligerent voice, says, "No way you can do that! Deal!"
+		Score!  Now, what the fuck is a Dragon Lord?  And how does one deal with one?
+		<span id='dragon-game'>
+
+			<<link "Pull out your musket and shoot!">>\
+				<<replace "#dragon-game">>\
+					You try rolling all the dice, but you're eaten by Lord Dragon or whatever it is.  On the plus side, the rest of the party escapes.
+					"Tough break, guess you don't win." Su seems disappointed and embarrassed.
+					"We'll see."
+					<<set $su.relationship = 20>>\
+
+					[[Cosmic Comics]]
+				<</replace>>\
+			<</link>>
+			<<if $pc.path === "Virility">>\
+				@@.virility;<<link "Use the power of Virility to win this thing!">>@@\
+					<<replace "#dragon-game">>\
+						You call on the Mother of Virility.  You're not sure she's ever been asked to fudge die rolls before, but given that it's so you can come in a girl's mouth, you don't think she'll mind.  She comes through, and you're rolling crits, maxing damage, and all the other geeky stuff you wish you didn't know about.  Finally the Dragon Lord dies.  The table falls quiet.  You look at Su, but she won't make eye contact.
+						"Well, a bet's a bet.  Pay up."
+						"Well... um... I didn't think you'd do it."
+						"I know.  That's why you bet."
+						"Well..."
+						"Look, I won.  You suck.  That's the deal." The group is just staring in shock, astounded to hear you talk to her like that.
+
+						<<set $su.relationsip = 30>>\
+						[["Ok, I guess..."|Blowjob from Su]]
+					<</replace>>\
+				<</link>>\
+			<</if>>\
+		</span>
+	<<elseif $su.relationship === 20>>
+		You settle into your seat at the table and roll up another character.  Su keeps stealing glances then looking away; she blushes every time you catch her.  You spend a couple hours playing. When you pack up to walk out, Su walks up to you.
+		"That was really brave, last week."
+		"There was a blowjob on the line." She blushes but smiles.
+		"Yeah, about that.  You still want it?"
+		"Of course!"
+
+		<<set $su.relationship = 30>>
+		[[Blowjob from Su]]
+	<<elseif $su.relationship === 30>>
+		<<goto "Enslave Su">>
+	<</if>>
+
+
+ 

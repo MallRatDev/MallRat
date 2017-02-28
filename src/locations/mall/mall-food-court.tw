@@ -1,0 +1,70 @@
+:: East Food Court[mall hidden foodcourt]
+	This is the east end of the food court, mostly inhabited by breeders.  Fucking oldies.
+
+	Go elsewhere in the food court?
+	[[North Food Court]]
+	[[West Food Court]]
+	[[South Food Court]]
+
+	Go to a different area of the mall?
+	[[East Wing]] 
+	[[Service Passageway]] 
+
+	Visit a food court vendor?
+	[[Terrible "Greek"]]
+
+:: North Food Court[mall hidden foodcourt]
+	This is the north end of the food court.  All stoners, hippies, and people too cool for you, dude.
+
+	Go to a different part of the food court?
+	[[East Food Court]] 
+	[[West Food Court]] 
+	[[South Food Court]] 
+
+	Go to a different area of the mall?
+	[[North Wing]]
+
+	Visit a food court vendor?
+	[[Milkshakes to the Yard]]
+
+:: West Food Court[mall hidden foodcourt]
+	This is the preppy side of the food court.  Popped collars, pastel colors, and yoga pants abound.  Mmmm... yoga pants.  You get a few dirty glares in response to your dirty gazes.
+
+	<<nobr>>
+	<<if Game.getCharIndex("Bree") != -1>>
+		<<if 0 == 0>>
+			<<describe "Bree" "Bree">> is here.  She's hanging out with her friends, her little followers tittering at her every comment.  Seriously, that chick... those tits... yum...  [[Talk to Bree]]
+		<</if>>
+	<br><br>
+	Have a seat?
+	[[Sit Near the Popular People]]
+	<</if>>
+	<</nobr>>
+
+	Go to a different part of the food court?
+	[[North Food Court]]
+	[[East Food Court]]
+	[[South Food Court]]
+
+	Go to a different area of the mall?
+	[[West Wing]]
+
+:: South Food Court[mall hidden foodcourt]
+	The south section of the food court.  This is where the burnouts, losers, and druggies hang out.  Hell to the motherfucking yes!  Although they don't seem to recognize your coolness.  They will though, yes, they will.
+
+	<<nobr>>
+	<<if Game.getCharIndex("Tracy") != -1>>
+	<<describe "Tracy" "Tracy">> is here sitting at a table.  She seems to be watching people, especially couples, and making notes.  [[Talk to Tracy]]
+	<</if>>
+	<</nobr>>
+
+	Go to a different part of the food court?
+	[[East Food Court]]
+	[[North Food Court]] 
+	[[West Food Court]] 
+
+	Go to another area of the mall?
+	[[South Wing]]
+
+	Visit a shop?
+	[[Hot "Dogs"]]

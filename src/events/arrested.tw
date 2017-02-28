@@ -1,0 +1,35 @@
+
+:: Arrested at the Mall[TimeNone]
+You set foot in the mall, and like clockwork, two security guards grab you, manhandle you into a service passageway, and lead you to an elevator.  They shove you in, step in, and push the button labeled "P3".  
+
+When the doors open, you're lead down a concrete hallway.  Stark white flourescent lights punctuate your walk down a hallway.   At one point an open doorway reveals a hulking man in a blue uniform sitting in front of a bank of security monitors and pressing controls on a panel in front of him.
+
+Finally, you reach a small cell.  Your captors push you in and one of them enters.  The door is shut.  The guard, a young-looking woman, sits on the bench facing you.  Her name tag reads "Charlotte."
+
+"Look, I don't know why you're here, and the boss has been acting weird.  But we're calling the police, and you're about to be arrested.  Seriously, you can't come back to the mall.  I doubt the police will want to charge you."
+
+"Ok.  I know you're following orders."
+
+<<if Game.inventoryQuantity("Leather Collar") != -1>>\
+You have an idea.  "Hey, have you ever tried wearing one of these?"  You pull out the collar and show it to her.
+
+"What the fuck, you perverted little shit?  Try that on one of the God damned mall rats.  Jesus.  I don't even know why I try."
+<</if>>
+<<nobr>>
+
+<<if $pc.beenArrested < 2>>
+She steps out, and you wait for a couple hours, then some cops show up, make you sign a trespassing notice, and take you to jail.  You end up having to stay all night and talk in front of a camera to a judge who lets you go.  Ugh.  At least you don't drop the soap.
+<<set $day +=1>>
+<<set $hour = 10>>
+<<set $minute = 0>>
+<<set $pc.beenArrested += 1>>
+<<set $pc.isKickedOut = 1>>
+<br><br>
+[[Your Room]] 
+
+<<else>>
+The judge isn't having it.  You really ought to have avoided seeing him <<=$pc.beenArrested>> in <<=$day>> days.  He sets your bond at $500, which may as well be a million for all the good it does you.  #wizardlivesmatter.  
+<br><br>
+[[Out of Time]]
+<</if>>
+<</nobr>>

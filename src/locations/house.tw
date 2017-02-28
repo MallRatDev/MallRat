@@ -1,0 +1,179 @@
+:: Your Room
+	You're in the basement bedroom of your parent's house. The walls have been finished and there's a carpet.  It's not so bad, really.  The only way to tell it's a basement is the windows are high up on the walls.
+
+	There are a few posters of sci-fi shows and half naked women on the walls.  Your rumpled bed lies in the corner, a dresser against the wall, and dirty clothes are strewn across the floor.
+
+	A narrow door leads to your bathroom and a hallway leads to the game room.
+
+	[[Game Room]]
+	<<if $hour > 14>>\
+	[[Go to sleep|Your Room][$hour=25]]
+	<</if>>\
+	<<if $debugging>>\
+	<<click "Enslave Bree">><<enslave "Bree">><</click>>\
+	<<click "Go to Major fight">>\
+		<<set $flags.knowsAboutSecretEntrance = true>>\
+		<<goto "Smoking Area">>\
+	<</click>>
+	<<click "Add corrupted store">><<run $corruptedBabaYaga.push('Hot "Dogs"')>><</click>>
+	<</if>>
+	
+
+:: Game Room[TimeNone]
+	<<if $slaves.length > 0 && $flags.visitedDungeon>>\
+		<<goto "Dungeon">>\
+	<<elseif $slaves.length > 0>>\
+		<<set $flags.visitedDungeon = true>>\
+		<<goto "Dungeon Introduction">>\
+	<<else>>\
+	You're in the game room of your parent's house.  It's a large room, makeing up most of the basement.  It used to be a basement workshop and still mostly looks like it.  A row of tables sits against the long wall, and hooks, pulleys, and nails to hold tools are placed seemingly at random on every wall.  
+
+	A pool table is in one half of the room while a foosball table and card table are at the other end.  A bookshelf against one wall holds several board games, poker chips, and choose-your-own-adventure books. 
+
+	A door leads to your room, while a short hallway leads to a staircase to the main house.  A door leads outside.
+	<</if>>
+	[[Your Room]] 
+	[[Head upstairs|Kitchen]] 
+	[[Go outside|Outside House]] 
+
+
+
+
+
+
+:: Kitchen[hidden]
+	You're in a small kitchen with a dining area adjacent.  Cupboards and cabinets line the room, a small pantry is next to the back door of the house.  The dining area has a table with four chairs.
+
+	<<if !$pc.readNote>>\
+	A small chest, about two feet by one foot by one foot, is on the table.  It's made of a light wood and bound by what looks like tarnished steel.  It's dinged up but sturdy.  It's open and contains a note, a piece of leather with a buckle, and a gold chain with what looks like a coin on it.
+
+	A half empty bottle of whisky is on the table next to an envelope of cash your parents left you.
+
+	[[Read the note|The Note]]
+	<<else>>\
+	An empty small chest is on the table.
+
+	<</if>>\
+	[[Go outside|Outside House]]
+	[[Head downstairs|Game Room]]
+	[[Go to the living room|Living Room]]
+
+
+:: Dungeon[TimeNone nobr]
+	Since the game room is so well suited for the purpose, this is where you'll train your slaves.  Here are the slaves you've collected:
+	<br><br>
+	<<if $debugging>>Number of slaves: <<=$slaves.length>><br><</if>>
+
+	<<for $i = 0; $i < $slaves.length; $i++>>
+		<<if $debugging>><<=$i>><</if>>
+		<<= '
+		[[$slaves[' + $i + '].name|Describe Character][$currentCharacter = $slaves[' + $i + ']]]
+		
+		'>>
+		
+		is <<=$positions[$slaves[$i].position]>> here. 
+		
+		<<= '
+		<<click "Train ' + $slaves[$i].name + '">>
+			<<run Game.setCsi("' + $slaves[$i].name + '")>>
+			<<goto "Train Character">>
+		<</click>>
+		'>>
+
+		<br>
+	<</for>>
+	<br><br>
+	Currently, your dungeon has no customizations.
+	<br><br>
+	[[Your Room]] <br>
+	[[Head upstairs|Kitchen]] <br>
+	[[Go outside|Outside House]] <br>
+
+
+:: The Note
+	You pick up the note and read it.  It's from your uncle Bob ("The Great Majesto!").
+
+	<blockquote>Dear Nephew, I hope this package finds you well.  I've always considered you my closest relation, and as I have no children of my own, I've decided you should be my beneficiary.  Don't worry, I'm alive and well, but I'm headed on a journey and don't know when or if I'll be back.  In any case, I'll have no use of these items and I feel you might have the gift to use them.  Keep the coin on you and it'll help guide you.  Whatever you do, don't put on the collar!  Reserve that for people you choose to assist you.  Be aware that once removed anyone you've put it on will be free again, so spend some time making sure they remain loyal.  As a teenage boy, I suppose you don't need much guidance there, and in any case I'm almost out of time.  Perhaps I'll see you again, your loving uncle, Bob.</blockquote>
+	\
+	<span id="update"></span>
+	<<nobr>>
+	<span id="link"><<click "Whatever.  Grab the coin and collar.">></span>
+		<<set $pc.readNote = 1>>
+		<<run Game.inventoryAdd("Magical Coin")>>
+		<<run Game.inventoryAdd("Leather Collar")>>
+		<<run Game.inventoryAdd("Half a Bottle of Whisky")>>
+		<<set $money += 120>>
+		<<replace "#update">><<="You grab the collar, put the coin around your neck, and scoop up the money your parents left you.  What the hell, you tuck the remaining whisky in a pocket.">><</replace>>
+		 <<replace "#link">><br><br>[[The Kitchen|Kitchen]]<</replace>>
+	<</click>>
+
+	<</nobr>>
+
+:: Outside House[TimeSlow]
+	<<if $pc.readNote == 0>>\
+	You feel like there's something you should look into before leaving... whisky?  Blugh... no, not whisky. Still, something.
+
+	<<return "Oh Yeah!">>
+	<<else>>\
+	This is the road in front of your house.  You're not too far from the mall.  Just head west.  If you go East, there's a few sketchy shops.
+
+	[[Mall Entrance]]
+	[[End of the Road]]
+
+	Or, enter your house.
+	[[Front door|Living Room]]
+	[[Back door, baby!|Game Room]]
+	<</if>>
+
+:: Living Room[hidden nobr]
+
+
+	<<if $pc.magicLevel < 1>>
+		<<display "Normal Living Room">>
+		<br><br>
+	<<else>>
+		<<set $livingroom = $pc.path + " Living Room">>
+		<<display $livingroom>>
+		<br><br>
+	<</if>>
+
+	/*  TODO:  items for rituals and fill out the rituals.  This is just a placeholder */
+	<<if $pc.ritual == "Darkness">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.ritual = "">>
+		<<set $pc.path = "Darkness">>
+		You summon up a slut, stick a couple fingers in her ass, and draw out some patterns. 
+	<<elseif $pc.ritual == "Soul">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.ritual = "">>
+		<<set $pc.path = "Soul">>
+		You light the proper candles, draw the diagrams on the floor, and chant the correct words.  
+	<<elseif $pc.ritual == "Virility">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.path="Virility">>
+		<<set $pc.ritual = "">>
+		<<set $pc.cockLength=9>>
+		<<goto "Virility Ritual">>
+	<<elseif $pc.ritual == "Change">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.ritual = "">>
+		<<set $pc.path = "Change">>
+		You light the proper candles, draw the diagrams on the floor, and chant the correct words.  Your cock grows, then grows some more... damn.  You were pretty average, but now, well, is 9" average? 
+	<</if>>
+
+
+		
+
+	<br><br>
+	[[Kitchen]]
+	<br>
+	[[Outside|Outside House]]
+
+:: Dungeon Introduction[TimeNone]
+	You return to your game room.  Now that you have a slave of your very own, you need a place to keep and train her, and this place is perfect!  It's got unfinished walls with hooks and rings, likewise with the ceiling.  The tables and benches are good sized and sturdy.  And there's a ton of room.  
+
+	Come to think of it, with some basic instructions and some raw materials you ought to make this place into a real dungeon.  Maybe it's time to do some more focused shopping.
+
+	Of course you'll have to figure something else out when your parents return from Europe, but you've got some time. 
+
+	[[Time to try out this dungeon!|Game Room]]

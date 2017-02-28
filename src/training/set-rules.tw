@@ -1,0 +1,37 @@
+:: Set Rules for Her[nobr]
+<<replace "#training-text">>
+You can set rules for her.  In some cases she may be able to break them, and some may cause her to resent you over time.
+<br><br>
+
+Currently, she is <span id="masturbate" style="font-weight:bold"><<=$rulesNoMasturbateText[$slaves[$csi].rulesNoMasturbate]>></span>
+<br>
+Change it: 
+<<click "Allowed to masturbate">><<set $slaves[$csi].rulesNoMasturbate = 0>><<replace "#masturbate">>allowed to masturbate.<</replace>><</click>>
+ | 
+<<click "No masturbation">><<set $slaves[$csi].rulesNoMasturbate = 1>><<replace "#masturbate">>not allowed to masturbate.<</replace>><</click>>
+<br><br>
+
+
+Currently, she is <span id="orgasm" style="font-weight:bold"><<=$rulesNoOrgasmText[$slaves[$csi].rulesNoOrgasm]>></span>
+<br>
+Change it: 
+<<click "Allowed to orgasm">><<set $slaves[$csi].rulesNoOrgasm = 0>><<replace "#orgasm">><<=$rulesNoOrgasmText[$slaves[$csi].rulesNoOrgasm]>><</replace>><</click>>
+ |
+<<click "No orgasms">><<set $slaves[$csi].rulesNoOrgasm = 1>><<replace "#orgasm">><<=$rulesNoOrgasmText[$slaves[$csi].rulesNoOrgasm]>><</replace>><</click>>
+ | 
+<<click "Only with permission">><<set $slaves[$csi].rulesNoOrgasm = 2>><<replace "#orgasm">><<=$rulesNoOrgasmText[$slaves[$csi].rulesNoOrgasm]>><</replace>><</click>>
+<br><br>
+
+Currently, she must swallow your cum <span id="cum" style="font-weight:bold"><<=$rulesSwallowCumText[$slaves[$csi].rulesSwallowCum]>></span>
+<br>
+Change it:
+<<click $rulesSwallowCumText[0]>><<set $slaves[$csi].rulesSwallowCum = 0>><<replace "#cum">><<=$rulesSwallowCumText[0]>><</replace>><</click>>
+ | 
+ <<click $rulesSwallowCumText[1]>><<set $slaves[$csi].rulesSwallowCum = 1>><<replace "#cum">><<=$rulesSwallowCumText[1]>><</replace>><</click>>
+<br><br>
+<</replace>>
+<<replace "#links-text">>
+<<return>>
+<</replace>>
+
+

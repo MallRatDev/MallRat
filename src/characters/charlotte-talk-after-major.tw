@@ -1,0 +1,14 @@
+:: Talk to the Mall Cop[TimeNone]
+The poor woman that the Major was assraping and torturing with the taser, <<describe "Charlotte" "Charlotte">> is still huddling in the corner.
+
+<<set $pc.isKickedOut = false>>\
+<<if Game.inventoryQuantity("Leather Collar")>>[[Try to put the collar on her]]<</if>>
+[[Talk to her|Talk to Charlotte]]
+
+
+
+:: Try to put the collar on her[TimeNone]
+You know it's a dick move, but while she's weeping in the corner, you sneak up on her and slap the collar around her neck.  It fastens itself on, and you take her home.
+It's late, and you've had a long day.  You leave Charlotte in the dungeon and get ready to go to bed.
+
+[[Your Room][$hour=25]]

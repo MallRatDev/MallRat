@@ -1,0 +1,24 @@
+:: Enslave Eva
+	Eva says, "Hey, bro.  What's going on?"
+	"Not much.  Hey, I like your cuffs!"
+	"Oh yeah?  {she blushes} They kind of kick ass, I guess."
+	"I have a collar that looks a lot like those.  Want to see it?"
+	"Sure!"
+	You pull out the collar and show her the weird lettering.  She turns it over in her hands, obviously interested despite herself.
+	"Have you tried it on?" she asks.
+	"No, it looks like it's for a smaller neck.  Would you like to try it on?"
+	"Ok, I guess."
+	She puts on the collar, and when she goes to fasten the buckle, it threads through the loop and the bar fastens itself in a fraction of a second. 
+	"What the fuck!  It fastened itself!  Hey, I can't get it off!"
+	She looks pissed, and her voices ramps up to a shriek.  Nerous that you'll attract the wrong kind of attention, you bark out "Shut up!"
+	She instantly quiets down.  She's glaring at you furiously, and seems to be trying to work her mouth, but there's no sound.  Curious, you say "Raise you arms," and she does, looking even more angry.  
+	Huh... that's interesting.  You try something else... "Lift up your shirt and show me your tits," and with a furious glare, she does until you tell her to put them away.
+	<<if Game.inventoryQuantity("Leash")>>\
+	With a wicked smirk, you take out the leash.  You knew this would come in handy!  You click it to the ring set in the collar, and start to walk back to your house.  Angry but helpless, Eva resists but when you tug her along she stumbles after.  Furiously blushing, you lead her out of the mall and along the streets, while people start in amazement.  You install her in the game room.
+	"Stay!" She stands glaring at you as you unfasten the leash.  She'll keep here until tonight... and then you'll have some real fun with the goth... let's see if she's really a poser.
+	<<set $flags.publicDominence += 2>>\
+	<<else>>\
+	"Follow!" you tell her, and head home.  You put her in the game room for now and tell her to stay.  You can play with her after the mall closes... Priorities!
+	<<set $flags.publicDominence += 1>>\
+	<</if>>\
+	<<run Save.autosave.save("Enslave Eva")>>\

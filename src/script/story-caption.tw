@@ -1,0 +1,11 @@
+:: StoryCaption
+<<if $day && (!tags().contains("Training"))>>It's day $day, at <<=Game.displayTime()>><</if>>
+
+[[View Your Inventory|Inventory]]
+
+You have $<<=$money>>.
+<<if $pc.power > 0>>@@color:green;You have $pc.power power stored.@@<</if>>
+
+<<if $debugging>>\
+<<click "+1 hours">><<run Game.passTime(60)>><</click>> | <<click "+4 hours">><<run Game.passTime(240)>><</click>> | <<click "+8 hours">><<run Game.passTime(480)>><</click>> | <<click "+12 hours">><<run Game.passTime(720)>><</click>> | <<click "+1 day">><<set $day += 1>><</click>>\
+<</if>>\

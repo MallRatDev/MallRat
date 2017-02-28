@@ -1,0 +1,53 @@
+:: Try the security pad[TimeNone]
+	This door is different.  It's solid steel, and has a full keyboard fastened to the wall beside it.  The keypad is asking a... curious question.  Weird.
+
+	<<nobr>>
+	<<set $flags.keypadAttempts = 0>>
+	<<set $keypadCurrentQuestions = []>>
+	<<set $keypadCurrentAnswers = []>>
+
+	<<set _r = random(0,$keypadQuestions.length)>>
+		<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
+		<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
+
+		<<set _r = random(0,$keypadQuestions.length)>>
+		<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
+		<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
+
+		<<set _r = random(0,$keypadQuestions.length)>>
+		<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
+		<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
+
+	<</nobr>>
+	Try to answer?
+	[[The Keypad]]
+
+	Or, just walk away.
+	[[Central Security Hallway]] 
+
+:: The Keypad[TimeNone nobr]
+	/* success check */
+
+	<<if $flags.keypadAttempts === 0>>
+	/* automatic pass */
+	<<elseif $flags.keypadAttempts === 3>>
+		<<goto "The Major">>
+	<<elseif $keypadResponse.toLowerCase() === $keypadCurrentAnswers[$flags.keypadAttempts - 1]>>
+	/* pass */
+	<<else>>
+		<<goto "The Major">> //* TODO: this has been set so the player always succeeds due to faulty questions. */
+	<</if>>
+
+	<<if $debugging>><<click "Get 100 power">><<set $pc.power += 100>><</click>><</if>>
+
+	<<if $debugging>>keypadAttempts:  <<=$flags.keypadAttempts>><br>Question: <<=$keypadCurrentQuestions[$flags.keypadAttempts]>><br>Answer: <<=$keypadCurrentAnswers[$flags.keypadAttempts]>><br><br><</if>>
+
+	The keypad currently reads:  <<=$keypadCurrentQuestions[$flags.keypadAttempts]>><br>
+	Key Answer And Press Enter: <<textbox "$keypadResponse" "" "The Keypad" autofocus>>
+	<br><br>
+	[[Step Away|Central Security Hallway]]
+
+	<<set $flags.keypadAttempts += 1>>
+
+
+

@@ -1,0 +1,184 @@
+:: Secret Passageway
+	This passage runs through a hatch next to the dumpster down, through a couple turns and twists to a short stairway up to the mall proper or a door marked "Mechanical Room."  <<if $pc.isKickedOut>>You're sure they're patrolling the mall itself, but they probably won't just be hanging out in the offices. <</if>>
+	<<if $pc.isKickedOut && $slaves[Game.getSlaveIndex("Eva")].isInLove && !$flags.evaIsTaggingAlong>>"Hey, Master?"<br>"Yeah?"<br>"Can I come?  Please?  I want to help."<br>"Ok, I guess."<br>Eva tags along.  She's pretty smart, anyway, and it can't hurt.<<set $flags.evaIsTaggingAlong = true>><</if>>\
+
+	Head towards the security offices?
+	[[Mechnical Room]]
+
+	Go to the mall?
+	[[Service Passageway]] 
+
+:: Mechnical Room[TimeNone]
+	A set of controls for the elevator, what looks like a generator, and a large trash compactor leave little space free in this moderately large room.  The walls are bare concrete stained by leaks, and the ceiling has one fluorescent lighting fixture.  It flickers on and off.  Creepy.  
+
+	There's a door out to the secret passageway, and a door on the other wall is marked "Security Offices".
+
+	Into the lair of the beast?
+	[[West Security Hallway]]
+
+	Go to the service passageway?
+	[[Service Passageway]] 
+
+:: West Security Hallway[TimeNone]
+	The security offices are surprisingly modern and clean.  Stark whitewashed concrete and metal doorframes, clean institutional floors, and stark white fluorescent lights make the place look and smell somewhere between a morgue and a hospital.
+
+	<<if $pc.mageSight>>This place reeks of some kind of weird magical corruption.  Something is... wrong here.<<else>>You're not sure if you should be wandering around here.  What if you get in trouble?<</if>>
+
+	A door at the end of the hall is marked "East Wing", presumably leading into the mall proper.  <<if $pc.isKickedOut>>It's probably a bad idea to go out there, since they patrol the place.<</if>>  A side door reads "Mechanical Room", and across it is an open door into a room with a table, a few chairs, a fridge and microwave on a counter with a sink.
+
+	Go down the hallway?
+	[[Central Security Hallway]]
+
+	Go through a door?
+	[[Mechnical Room]] 
+	[[Break Room]]
+	[[East Wing]] 
+
+
+:: Break Room[TimeNone]
+	This is a typical, depressing break room for the poor wage slaves.  Suckers!  It's a cheap table surrounded by folding chairs, a fridge in the corner, linoleum floors, a microwave on a counter running the length of one of the short walls, and a trash bin in the corner.  A TV is on a stand in the other corner hooked up to a VCR.
+
+	Leave the room?
+	[[West Security Hallway]] 
+
+	Check out the room?
+	[[Rummage through the trash]]
+	[[Watch TV]]
+
+
+:: Rummage through the trash[TimeNone]
+	You dig through some old bannana peels and yogurt containers, yuck.  Wait, what's this?  A fax of a copy of one of Bree's receipts.  Shit, it's for a prescription... diet pills.  Why would they be getting faxes from pharmacies with prescriptions?  This is weird.  <<set $flags.knowBreeWeightIssues = true>>
+
+	[[Break Room]]
+
+:: Watch TV[nobr TimeNone]
+	You turn on the TV, but none of the channels seem to have anything.  You turn it to channel 3 and turn on the VCR though, and it's security cam footage.<br>
+	<br>
+	<span id="security-footage">
+	[[Booooring.|Break Room]] <br>
+	<<click "Press play">>
+		<<replace "#security-footage">>
+	The TV shows one of the out-of-the-way hallways outside, behind some of the partitions that shield the dark underside of the mall from the shoppers.  There doesn't seem to be any audio, but it shows that stoner chick... what's her name again?  Angie or something?  anyway, walking back behind the partition followed by a skinny, scruffy looking dude in a flannel and tattered sneakers.  She turns around, and reaches out, like she's expecting him to give her something.<br>
+	The camera zooms in... someone must have been watching this in real time.  He shakes his head, they exchange a few words.  He seems exasperated, but pulls a baggy out of his pocket and shows it to her.  She reaches but he puts it back in his pocket, and moves his hand in a circle, as though it indicate she should turn around.  She shakes her head, looking angry, but he repeats the gesture, and she sighs, turns around, and puts her hand against the wall leaning over so she's almost bent double.  <br>
+	The camera zooms in again.  Who the fuck is at the controls?<br>
+	The guy pulls up her denim skirt, yanks down her panties, pulls out his cock.  The zoom is good enough to tell he's lining up his cock with her asshole... wow.  She looks back over her shoulder with an angry look and he grabs her hair with one hand and her hip with the other, then shoves his cock into her.  He pumps his cock into her for a few minutes then quickens, shoving into her, then seems to finish. <br>
+	She turns around, still seemingly angry, and yanks her skirt down.  She holds out his hand and waits impatiently while he zips up and pulls the baggy out of his pocket.  She snatches it away and walks away. <br>
+	The camera quickly switches to another angle, letting you see her face as she walks around the partition.  It's zoomed in enough for you to read her lips.  She mouths "Why always my ass?"<br>
+	This is fucking weird.  What, the guards sit around watching the "best of" tapes of mall rats fucking?  This is fucking sick, not to mention a violation of privacy.  You start to press Rewind, then remember you have work to do.<br>
+	<br>
+	[[Quit watching|Break Room]]<br>
+	<<click "Keep watching">><br>
+	<<replace "#security-footage">>\
+	The next footage is from one of the women's bathroom stalls... wait, what?  Jesus, how many fucking cameras are there?  <br>
+	It shows that cheerleader, Morgan, sitting in a stall, her panties around her ankles with one hand on her clit and the other holding her phone.  She's furiously masturbating, watching a short clip of repeat of the big-breasted high school queen, Bree, aparently kissing one of her cute little followers in a crowd at what looks like a house party.  Man... Bree isn't even in college yet and already playing the lesbian thing to attract men.  It's obviously an act, you can tell Bree isn't into it, but it seems to do the trick for Morgan, who has what looks like an intense orgasm.  She's not faking it, for sure.<br>
+	That seems to be the end of the tape.<br>
+	<br>
+	[[Back to the break room|Break Room]]
+	<</replace>>
+	<</click>>
+	<</replace>>
+	<</click>>
+	</span>
+
+
+:: Central Security Hallway[TimeNone]
+	A stark, clean hallway.  There's a doorway on one side labeled "Storage," but more impressively, a high-tech security pad and solid-looking door on the other.  <<if $flags.defeatedMajor>>The keypad is inactive and the door is open.<</if>>
+
+	Head down the hallway?
+	[[West Security Hallway]]
+	[[East Security Hallway]]
+
+	Try a door?
+	 <<if $flags.defeatedMajor>>[[Surveillance Room]]<<else>>[[Try the security pad]]<</if>>
+	[[Storage Room]]
+
+
+::Surveillance Room[nobr]
+	You walk into the room.  It's surrounded by monitors, dozens of them.  This is where that pretty security guard, Charlotte, showed you the video after she was raped before the fight with the Mjor.  The room's clean now, and about half the monitors are dark.  You notice none of the ones on show dressing rooms, bathrooms, or the like.<br>
+	<br>
+	<<if Game.getCharIndex("Charlotte") != -1>>
+		"Oh, hey!  It's you.  I hope you're making some progress.  I can't swear it but I feel like more of the food court vendors are getting weird."  Charlotte's here.  <br>
+	<</if>>
+	<br>
+	[[Central Security Hallway]]
+
+:: Storage Room[TimeNone]
+	There's a few metal racks here.  They're loaded with boxes.  "Files," "First Aid," "Bree," "Records," "Su's Videos."
+
+	Why do Bree and Su have boxes here?  They're not security guards... they're mall rats!
+
+	Go back to the hall?
+	[[Central Security Hallway]]
+
+	Check out a box?  Hah!  You said box!
+	[[Open the Boxes]]
+ 
+:: East Security Hallway[TimeNone]
+	The hallway ends here.  There's a holding cell at the end.  Two doors are on the other walls.  One has a placard reading "Security Office" and the other is standing open revealing a row of lockers and short benches.
+
+	Or go back down the hall?
+	[[Central Security Hallway]] 
+
+	Check out a room?
+	[[Holding Cell]]
+	[[Locker Room]]
+	[[Security Office]]
+
+
+
+:: Holding Cell[nobr TimeNone]
+	<<if $pc.beenArrested>>Oh, yeah... you've been here.  <</if>>The mall holding cell.  A bench against a wall, a toilet, a door with reinforced window, graffiti on the walls.  The door doesn't *seem* like it shuts on it's own.<br><br>
+	<span id="writing">
+	<<click "Read what's written on the walls">><<replace "#writing">><br><br>
+	"Bree's carpet matches her drapes!"<br>
+	"Su loves the tentacle rape, lol"<br>
+	"Eva is a poser!"<br>
+	It's all crap... you don't know why you read this stuff... lol, Eva isn't a poser, now, at least! <br>
+	<br>
+	<</replace>>
+	<</click>>
+	</span><br>
+	[[Back to the hallway|East Security Hallway]]
+
+:: Locker Room[TimeNone]
+	You stroll into the locker room.  A dozen lockers, a low bench.
+
+	Check out the lockers?
+	[[Try the lockers]]
+
+	Go back to the hallway?
+	[[East Security Hallway]] 
+
+
+:: Security Office[TimeNone]
+	There's a dingy little desk here, cluttered with paper.  A wooden chair is the only other furnishing.
+
+	[[Search the Desk]]
+	[[East Security Hallway]] 
+
+
+:: Open the Boxes[TimeNone]
+	You open Bree's box (that just never stops being funny, BTW) and check out the contents.  There's a plastic bag labeled "Evidence:  Do Not Open", which you open, and contains a bra of impressive size with a tag that says "36DD.  Dry Clean Only." and a pink thong that still has a little bit of feminine musk clinging to it.  Perverts!  
+	Su's box (Ha!) seems to have whatever she ordered from the comic book store and never picked up:  "Tentacle Rape," "Tentacle Rape 2:  The Re-Rapening," and "A Tentacle Raped Me:  A Love Story."  Weird.
+
+	[[Storage Room]] 
+
+:: Try the lockers[TimeNone]
+	You try the lockers, one after another, finding each locked until you come to one labeled "Charlotte" that isn't quite latched.  You open it and find some surprisingly sexy thongs and a journal.  
+
+	You open the journal, and the most recent entry reads:
+	<blockquote>What the hell is happening?  The cameras have tons of glitches, the Major (and since when is he a major, anyway?) has been grabbing my ass and ordering us to gather information on the mall rats.  It's almost like he's trying to figure out their weaknesses.  And something just feels... off.  I don't know.  As soon as I get paid, I'm getting out of here and working as a clerk at a convenience store.  The pay's worse, but I'd rather be robbed and poor than deal with this place.  <<if $pc.beenArrested>>Some kid tried to get me to wear a BDSM collar or something the other day!  Jesus, take me out for dinner first, dude!<</if>> - <em>Charlotte<em> <blockquote>
+
+	[[Locker Room]] 
+
+
+:: Search the Desk[TimeNone]
+	You look through the clutter on the desk.  You find a couple weird items... for one, you find a memo:
+	<blockquote>To: Security Staff<br>Report any unusual activity on the part of our teenage regular customers.  Of particular interest are any actions that might be embarrassing or illegal.  Priority:  Highest.<br>The Major</blockquote><be>
+	And, in the Lost And Found box, there's a notebook with "Tracy Research Notes" and yesterday's date written on the front cover.  It's contents are cryptic:<br>
+	<blockquote>Subjects: 18 (vaginal), 20 (vaginal, oral finish), 21 (anal), 22 (anal), 23 (anal), 24 (vaginal, anal finish), 26 (oral only, refused anal), 27 (oral, anal, oral finish... that order), 28 29 and 30 (all oral only, in mouth), previous from college:  31, 33, 34, 35, 37, 39, 40, 41 (all oral, vaginal, anal with oral finish... pattern here?).  Total to date:  19.  Need more data on less represented interests.  Exhibition?  BDSM community?</blockquote><br>
+	It's strange... it's like they're seeking out the vulnerabilities of the mall rats.  You've seen that Tracy girl at the book store or the food court, always doing homework or something.<br>
+	<br>
+	[[East Security Hallway]] 
+
+

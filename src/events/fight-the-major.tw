@@ -1,0 +1,147 @@
+:: The Major[TimeNone]
+You enter the last answer on the keypad and the door clicks and slowly opens.  Holy. Shit.  There's a giant of a man, easily 7 feet tall and as wide as a house standing in front of a bank of a dozen security monitors.  The monitors are showing everything that happens at the mall... everything.  There are monitors showing dressing rooms and bathrooms, monitors looking up from steps and escalators, and other, weirder scenes.
+
+You only have a moment to take that in.  The huge man turns at the click of the door opening, his huge cock sliding out of the asshole of the girl in the security uniform bent over the desk.  She's been crying and pulls away, hiding in the corner in abject terror.  The man drops a taser... holy shit, he was assraping her, and threatening her with a taser!  That's pretty fucked up.
+
+"You!  Baba... Barbara said you'd try to interfere!"
+"Who?"
+"Fuck You."  He zips up his pants.  "I guess I'll have to clean out the garbage disposal after all."  He squares up and clenches his fists.
+<<if $pc.mageSight>>Now you see it... in his eyes.  There's a glow of... something.  Shit.  It's the same thing you see with your slaves.  He's been enslaved.  But where your energy is... well, perverted, his is dark.  Super dark.<</if>>
+Shit.  It looks like you're going to have to fight this guy... and he's huge.  There's no way you're going to win this.  <<if $pc.power > 50>>The power of the Mother surges through you... oh yeah.  Wizard.  Duh.<</if>>
+
+<<nobr>>
+<<set $majorHPs = $day * 10>>
+<<set $majorAttack = "charge">>
+<</nobr>>
+[[Fight the Major]]
+
+
+:: Fight the Major[TimeNone]
+
+<<set _attack = ["charge", "stand", "powerblow"]>><<set $majorAttack = _attack[random(0,2)]>>\
+You're fighting the Major of Security.
+
+<<if $majorResults>><<=$majorResults>><br><</if>>
+The Major is \
+<<nobr>>
+<<if $majorHPs > 50>>
+	glowing and crackling with power and strength.
+<<elseif $majorHPs > 35>>
+	glowing with power.
+<<elseif $majorHPs > 20>>
+	surrounded by a fading glow of power.
+<<elseif $majorHPs > 10>>
+	faintly glowing and looking hurt.
+<<else>>
+	battered and defeated looking.
+<</if>>
+<</nobr>>
+You currently have <<=$pc.power>> power.
+
+Currently, the Major is \
+<<nobr>>
+<<if $majorAttack === "charge">>
+	hunkering down and preparing to charge into you!
+<<elseif $majorAttack === "stand">>
+	squaring up with you and prepared to go toe-to-toe!
+<<elseif $majorAttack === "powerblow">>
+	pulling back and preparing to deliver a heavy blow!
+<<else>>
+	ERROR:  couldn't find Major action.
+<</if>>
+<</nobr>>
+
+What would you like to do?
+<<nobr>>
+<<if $pc.path === "Virility">>
+	<<click "Invoke the Spirit of the Ram">>
+		<<set $pc.power -= 2>>
+		<<switch $majorAttack>>
+			<<case "charge">>
+				<<set $majorHPs -=12>>
+				<<set $majorResults = "You call upon the Mother for the power of the Ram.  He charges towards you, but you set your head and a wave of power forms around you.  When he reaches you he butted away, shaking and looking stunned.">>
+			<<case "stand">>
+				<<set $majorHPs -= 1>>
+				<<set $majorResults = "You call upon the Ram as he squares up.  His longer reach allows his glowing fists to batter you over and over while you attempt to butt in vain.">>
+			<<case "powerblow">>
+				<<set $majorHPs -= 3>>
+				<<set $majorResults = "He swings back mightily and you rear back to butt him with the power of the Ram.  Both of you unleash and both are hurt... you more than him.">>
+		<</switch>>
+		
+		<<if $pc.power < 1>>
+			<<goto "Major Bad End">>
+		<<elseif $majorHPs < 1>>
+			<<goto "The Major is Vanquished">>
+		<<else>>
+			<<goto "Fight the Major">>
+		<</if>>
+
+	<</click>>
+	<br>
+	<<click "Invoke the Spirit of the Bull">>
+		<<set $pc.power -= 4>>
+		<<switch $majorAttack>>
+			<<case "charge">>
+				<<set $majorHPs -= 6>>
+				<<set $majorResults = "You ask the mother for the strength of the Bull.  As the Major charges, you do too, and the resulting crash stuns both of you.">>
+			<<case "stand">>
+				<<set $majorHPs -= 4>>
+				<<set $majorResults = "Invoking the Mother for the Bull Spirit, you charge only to be caught by his ready fists.  He fends you off for the most part.">>
+			<<case "powerblow">>
+				<<set $majorHPs -= 13>>
+				<<set $majorResults = "He swings back mightily and you hasitly manifest the Bull Spirit.  Before he can deliver his blow, your charge catches him saquare, sending him flying.">>
+		<</switch>>
+		
+		<<if $pc.power < 1>>
+			<<goto "Major Bad End">>
+		<<elseif $majorHPs < 1>>
+			<<goto "The Major is Vanquished">>
+		<<else>>
+			<<goto "Fight the Major">>
+		<</if>>
+
+	<</click>>
+	<br>
+	<<click "Invoke the Spirit of the Elephant">>
+		<<set $pc.power -= 6>>
+		<<switch $majorAttack>>
+			<<case "charge">>
+				<<set $majorHPs -= 4>>
+				<<set $majorResults = "You manifest the Mighty Elephant, most virile of beasts.  Unfortunately, it makes you a bigger target and his charge slams into you.">>
+			<<case "stand">>
+				<<set $majorHPs -= 18>>
+				<<set $majorResults = "You ask the Mother for vast power, and she delivers.  You are infused with the power of the Elephant, and his fists stand no chance against your awesome power.  He is badly damaged by the time he can disengage.">>
+			<<case "powerblow">>
+				<<set $majorHPs -= 9>>
+				<<set $majorResults = "You call upon the Vast Elephant and meet his mighty blow with tusks of your Mother's power.  Both land, and both suffer.">>
+		<</switch>>
+		
+		<<if $pc.power < 1>>
+			<<goto "Major Bad End">>
+		<<elseif $majorHPs < 1>>
+			<<goto "The Major is Vanquished">>
+		<<else>>
+			<<goto "Fight the Major">>
+		<</if>>
+
+	<</click>>
+	<br>
+
+
+<</if>>
+
+<</nobr>>
+
+
+
+:: The Major is Vanquished[nobr TimeNone]
+	<<set $flags.defeatedMajor = true>>The last blow lays low your opponent.  Wow, that Major dude was a real beast.  And who the fuck was controlling him?  It has to have been Barbara Yargarian, the local access game show host... but how does that make sense?  He said something about her being "Baba".  Weird.<br>
+	<br>
+	<<set $pc.magicLevel = 2>>
+	<<run $corruptedBabaYaga.push('Hot "Dogs"')>>
+	<<if $pc.path === "Vitality">>
+		Your vanquished oponent is nothing if not vital... you're sure Mother can use that.  You chant a few words and she appears.  <br>
+		"Well done, little pervert.  You actually spoke the Words correctly, and you bring a proper gift.  You show promise."  Just like that, she's gone.  Jesus, watch a movie, gods... there are special effects for that.  At least you don't have to kill anyone or try to dispose of a body.  You feel power flow through you... you've acheived a stronger connection with the @@.virility;Mother of Virility!@@
+	<</if>> /* path */
+	<br>
+	[[Talk to the Mall Cop]]

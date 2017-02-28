@@ -1,0 +1,41 @@
+:: North Wing[mall]
+	This is the north wing of the mall.  Old people linger on the benches and the one small fountain has a few unhealthy looking carp.  There's a Duller Image, Sky Mall, and Brain Reliant store here.  Or, you know, the stairs, or the anchor... Sears.  Why does anyone go to Sears, anyway?
+
+	Go to another area of the mall?
+	[[East Food Court]] 
+	[[West Food Court]] 
+	[[South Food Court]] 
+
+	Or visit a shop?
+	[[Duller Image]]
+	[["Tobacco" Smoke Shop]]
+	[[Brain Reliant]]
+	[[Sears... but why would you?|Sears]]
+
+:: Duller Image[mall]
+	This is a "high end" personal gadget store.  There seems to be one in every mall... some of the items are more "interesting" although labelled things like "personal massager" to be discrete.  You don't feel any need to be discrete though.  
+
+	<<set $itemsForSale = ["Wand Vibrator", "T.E.N.S. Unit", "Blindfold"]>>\
+	<<set $itemsForSaleCosts = [79, 119, 24]>>\
+	<<display "Store">>
+
+	[[North Wing]]
+
+:: "Tobacco" Smoke Shop[mall]
+	Completely "legal" "tobacco" smoking devices are sold here, along with actual tobacco.  
+
+	<<set $itemsForSale = ["Cigarettes", "Glass Pipe"]>>\
+	<<set $itemsForSaleCosts = [8, 22]>>\
+	<<display "Store">>
+
+	[[North Wing]]
+
+:: Brain Reliant[mall hidden]
+	Wait, wasn't this supposed to be Lane Bryant?  Weird.  This place is full of weird looking helmets, small vials, and other mad scientist looking stuff.  You definitely don't remember these products!  But damn, the prices!  Also, is pricing everything five bucks less really going to make you think they're cheap?
+
+	<<set $itemsForSale = ["Cumslut Potion", "Painslut Potion", "Submissiveness Elixer", "Buttslut Suppository (Baseball Sized)", "Cocksucker's Salve (With Applicator)"]>>\
+	<<set $itemsForSaleCosts = [395, 395, 895, 495, 595]>>\
+	<<display "Store">>
+
+	[[North Wing]]
+

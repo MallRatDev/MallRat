@@ -1,0 +1,34 @@
+:: WidgetCum[widget nobr]
+<<widget "cum">>
+	<<set _hole = $args[0] || "pussy">>
+	<<switch _hole>>
+		<<case "mouth">>
+			<<swallow>>
+			<<if $pc.path === "Virility">>
+				The @@.virility;Mother of Virility approves of cum@@ in slave mouths. 
+				<<set $pc.power += random(2) + 1>>
+			<</if>>
+		<<case "ass" "asshole">>
+			<<if $pc.path === "Virility">>
+				The @@.virility;Mother of Virility approves of cum@@ in slave assholes. 
+				<<set $pc.power += random(2) + 1>>
+			<</if>>
+		<<case "pussy" "cunt">>
+			<<if !$slaves[$csi].isPregnant>>
+				<<if $pc.path === "Virility">>
+					<<if random(50) < 4>>
+						<<impregnate>>
+					<</if>>
+				<<else>>
+					<<if random(50) < 2>>
+						<<impregnate>>
+					<</if>>
+				<</if>>
+			<</if>>
+			<<if $pc.path === "Virility">>
+				The @@.virility;Mother of Virility strongly approves of cum@@ in slave cunts. 
+				<<set $pc.power += random(4) + 2>>
+			<</if>>			
+	<</switch>>
+
+<</widget>>

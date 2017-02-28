@@ -1,0 +1,116 @@
+:: Tracy Stats[widget]
+	<<if typeof $characters === 'undefined'>>
+		<<set $characters = []>>
+	<</if>>
+
+	<<run $characters.push({
+		name:"Tracy",
+		gender:"female",
+		relationship:0,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		description:"She simultaneously appears studious and wanton; while 18, she looks much younger although well developed.  She wears librarian glasses.",
+		bodySize:2,
+		bodyTone:1,
+		face:"cute and young-looking",
+		skin:"pale",
+		facialPeircings:"a nose stud",
+		hairColor:"red",
+		hairLength:"long",
+		hairCut:"casual but attractive",
+		titsSize:7,
+		titsShape:"full",
+		nippleSize:"large and protruding",
+		nippleColor:"brown",
+		nippleAreolae:"large",
+		nipplePeircings:"",
+		navelPiercings:"a small stud",
+		pussySize:3,
+		pussyHairStyle:1,
+		pussyHairColor:"red",
+		pussyLips:2,
+		pussyClit:3,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:3,
+		assholeStyle:0,
+		assholeColor:0,
+		
+		
+		clothingRevealing:false,
+		clothingTop:2,  	
+		clothingBottom:2,
+		clothingWrists:2,
+		clothingAnkles:-1,
+		clothingCollar:-1,
+		clothingShoes:2,
+
+		plugToy:0,
+		dildoToy:0,
+		nippleToy:0,
+		waistToy:0,
+		breastToy:0,
+		crotchToy:0,
+		gagToy:0,
+		
+		
+		obedience:0,
+		fear:0,
+		sexDrive:18,
+		
+		
+		pain:0,
+		lust:0,
+		position:0, 
+		
+	
+		oral:0,
+		cum:0,
+		deepthroat:0,
+		penetration:1,  
+		anal:1,
+		painal:0,
+		
+		begging:1,
+		humiliation:1,
+		bondage:0,
+		masochism:0,
+		housework:0,
+		submission:1,
+		
+		resistOral:15,
+		resistCum:20,
+		resistDeepthroat:35,
+		resistPenetration:50,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:12,
+		resistHumiliation:35,
+		resistBondage:40,
+		resistMasochism:55,
+		resistHousework:25,
+		resistSubmission:40,
+		
+		
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,		
+		
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	})>>

@@ -1,0 +1,34 @@
+:: Introduction[TimeNone]
+	<em>Version: $version</em>
+
+	Update on this version:  Under the "settings" on the menu bar is the ability to change the font and appearance of the game.  I'd appreciate feedback, either on the dev blog or via email: <a href="mailto:mallratdev@gmail.com">mallratdev@gmail.com</a>.
+	
+	This is an adult game.  It tells the tale of a young man who receives some unusual gifts from his eccentric magician uncle, and the (mis-)uses he puts them to. 
+
+	It contains magic, bondage, malls, rape, explicit sexual descriptions, and BDSM.  If those things are problems, you should stop now.
+
+	This is an alpha version.  It is incomplete and doubtless contains bugs.  The story is incomplete.
+
+	[[I am 18 and want to play|Game Intro]]
+
+
+:: Game Intro
+	Your 18th birthday was a week ago, and yesterday your parents left for a one month trip to Europe without you.  Since it's summer and you aren't even enrolled in school, you have nothing to do.  It'll be great!  
+
+	Well, that's what you thought.  Yesterday was fun when the UPS guy brought a small chest from your uncle that turned out to contain a few trinkets, a note, and a bottle of whisky.  Half a bottle of whisky later you passed out, and you can't even remember if you read the note.
+
+	Now, though, you're hung over and bored.  Drinking the other half bottle doesn't appeal by yourself.  Maybe you should get out of bed and see if you can find some people to hang out with.
+
+	[[First, a dream|Dream]]
+
+	<<if $debugging>>
+	<<click "Go right to enslaving Eva">>
+	<<enslave "Eva">>
+	<</click>>
+	[[Just get the note (testing)|The Note]]
+	<<set $currentCharacter = $characters[0]>>[[Describe Eva (testing)|Describe Character]]
+
+	[[Spencer's Gifts]]<</if>> 
+
+
+

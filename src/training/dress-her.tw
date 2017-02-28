@@ -1,0 +1,80 @@
+:: Dress Her[TimeNone nobr]
+	<<replace "#training-text">>
+		She is wearing on her top: <span id="clothing-top" style="strong"><<if $slaves[$csi].clothingTop === -1>>Nothing<<else>><<=$clothingTop[$slaves[$csi].clothingTop]>><</if>></span>
+		<br>Make her wear: 
+		<<click "Nothing">><<run Game.setClothing($csi, -1, "Top")>><<replace "#clothing-top">>Nothing<</replace>><</click>> | 
+		<<for _i = 0; _i < $pc.clothingTopOwned.length; _i++>>
+		<<='
+			<<click "' + $clothingTop[_i] + '">>
+				<<run Game.setClothing(' + $csi + ', ' + _i + ', ' + '"Top"' + ')>>
+				<<replace "#clothing-top">>
+				' + $clothingTop[_i] + '
+				<</replace>>
+			<</click>>
+		'>> | 
+		<</for>>
+
+		<br><br>
+		She is wearing on her bottom: <span id="clothing-bottom" style="strong"><<if $slaves[$csi].clothingBottom === -1>>Nothing<<else>><<=$clothingBottom[$slaves[$csi].clothingBottom]>><</if>></span>
+		<br>Make her wear: 
+		<<click "Nothing">><<run Game.setClothing($csi, -1, "Bottom")>><<replace "#clothing-bottom">>Nothing<</replace>><</click>> | 
+		<<for _i = 0; _i < $pc.clothingBottomOwned.length; _i++>>
+		<<='
+			<<click "' + $clothingBottom[_i] + '">>
+				<<run Game.setClothing(' + $csi + ', ' + _i + ', ' + '"Bottom"' + ')>>
+				<<replace "#clothing-bottom">>
+				' + $clothingBottom[_i] + '
+				<</replace>>
+			<</click>>
+		'>> | 
+		<</for>>
+
+		<br><br>
+		She is wearing on her wrists: <span id="clothing-wrists" style="strong"><<if $slaves[$csi].clothingWrists === -1>>Nothing<<else>><<=$clothingWrists[$slaves[$csi].clothingWrists]>><</if>></span>
+		<br>Make her wear: 
+		<<click "Nothing">><<run Game.setClothing($csi, -1, "Wrists")>><<replace "#clothing-wrists">>Nothing<</replace>><</click>> | 
+		<<for _i = 0; _i < $pc.clothingWristsOwned.length; _i++>>
+		<<='
+			<<click "' + $clothingWrists[_i] + '">>
+				<<run Game.setClothing(' + $csi + ', ' + _i + ', ' + '"Wrists"' + ')>>
+				<<replace "#clothing-wrists">>
+				' + $clothingWrists[_i] + '
+				<</replace>>
+			<</click>>
+		'>> | 
+		<</for>>
+
+		<br><br>
+		She is wearing on her ankles: <span id="clothing-ankles" style="strong"><<if $slaves[$csi].clothingAnkles === -1>>Nothing<<else>><<=$clothingAnkles[$slaves[$csi].clothingAnkles]>><</if>></span>
+		<br>Make her wear: 
+		<<click "Nothing">><<run Game.setClothing($csi, -1, "Ankles")>><<replace "#clothing-ankles">>Nothing<</replace>><</click>> | 
+		<<for _i = 0; _i < $pc.clothingAnklesOwned.length; _i++>>
+		<<='
+			<<click "' + $clothingAnkles[_i] + '">>
+				<<run Game.setClothing(' + $csi + ', ' + _i + ', ' + '"Ankles"' + ')>>
+				<<replace "#clothing-ankles">>
+				' + $clothingAnkles[_i] + '
+				<</replace>>
+			<</click>>
+		'>> | 
+		<</for>>
+
+		<br><br>
+		She is wearing on her feet: <span id="clothing-shoes" style="strong"><<if $slaves[$csi].clothingShoes === -1>>Nothing<<else>><<=$clothingShoes[$slaves[$csi].clothingShoes]>><</if>></span>
+		<br>Make her wear: 
+		<<click "Nothing">><<run Game.setClothing($csi, -1, "Shoes")>><<replace "#clothing-shoes">>Nothing<</replace>><</click>> | 
+		<<for _i = 0; _i < $pc.clothingShoesOwned.length; _i++>>
+		<<='
+			<<click "' + $clothingShoes[_i] + '">>
+				<<run Game.setClothing(' + $csi + ', ' + _i + ', ' + '"Shoes"' + ')>>
+				<<replace "#clothing-shoes">>
+				' + $clothingShoes[_i] + '
+				<</replace>>
+			<</click>>
+		'>> | 
+		<</for>>
+	<</replace>>
+	<<replace "#links-text">>
+		<br><br>
+		<<return>>
+	<</replace>>

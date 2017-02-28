@@ -1,0 +1,45 @@
+:: Enslave Bree[TimeNone autosave]
+	You have a seat and pull out the collar.  You start toying with it idly, pretending to ignore Bree and her friends.  After a few minutes, she steps over.
+	"Hey, loser!  What's that?"
+	<<if Game.isSlave("Eva")>>\
+		"Oh, just something Eva gave me."
+		"Ha!  She give that to you so you'd let her suck your cock?"
+		"No.  She does that whenever I want anyway."
+		"I bet.  God, you two are gross losers."
+		"Whatever.  Anyway, you'd never wear anything like this."
+		"Duh.  You and your fat girlfriend may be into weird bondage shit, but not me."
+		"No, I mean because you couldn't."
+		"It's not like it's difficult."
+		"It's too small for you.  Eva's a really thin girl, this thing would never fit you."
+		"Bullshit!  She a cow!" Her voice is up at least two octaves.  Some of her little friends look over in surprise.  Hmm... this seems to be working.
+		"No, she's at least two sizes smaller."
+	<<else>>\
+		"It's a collar."
+		"Weird."
+		"It looks really good on girls with thin necks."
+		"Whatever, I'd never wear any weird goth shit like that."
+		"You mean you couldn't."
+		"What do you mean?" Her voice rises a bit, becoming shrill.
+		"I mean, it's not for big girls. Like I said, thin necks."
+		"I'm thin!"
+		"I mean, you're not quite at plus sizes... yet."
+	<</if>>\
+	"I'M A TWO, ASSHOLE!" Her friends are definitely looking at the two of you now.
+	"I was talking about dress sizes.  But your ass is a nine at least.  I like 'em big."
+	"Fuck you!"  She's noticed her friends and has lowered her voice to a dull hiss, but doubled the venom.
+	"You'd never be able to put this on.  It'd never buckle."
+	"Give me that!"  Ah ha!
+	She wraps the leather around her neck and the clasp does it's self buckling thing, instantly securing itself around her neck.  She looks at you in shock and opens her mouth, but before she can say anything, you bark out, "Shut up!"
+	She stands, stunned, in front of your table.
+	<<if Game.inventoryQuantity("Leash")>>\
+	"Get on your hands and knees."
+	She doesn't have any idea of what's going on so she doesn't even try to resist.  She gets on her hands and knees right beside your table, struggling to speak but your order prevents it.  You snap the leash on the collar, stand up, and as her friends look on in shock, you say "Heel" in a firm voice and walk away, tugging on the leash to make her follow you.  People laugh and point.  Young men, and more than a few older ones, watch as she crawls away, her short skirt riding up and revealing her pink thong.  
+	Mall security looks askance but don't figure out what to do before you've left.  The sidewalk and parking lot aren't doing great things for her knees, and the high heels look ridiculous, but you're just amused.  You lead her up to your basement. 
+	Eva's mouth opens in shock as you lead her bully into the room.  You unclip the leash, pull her skirt over her hips and pull her panties down so her cunt and asshole are visible from behind.  "Go ahead and talk to Eva, slut.  I'm sure she has some things to discuss with you.  I'll be back later."
+	Bree immediately starts spewing invectives which you promptly ignore.  You slip out of the house with the sounds of Eva taunting Bree.<<enslave "Bree" 15>><<set $flags.publicDominence += 2>>
+	<<else>>\
+	You tell her to follow you, take her to your house, and tell her to get on her hands and knees.  She's too stunned from the events of the last few minutes to resist and gets on her hands and knees.  You pull her skirt over her hips and pull her panties down so her cunt and asshole are visible from behind.  "Go ahead and talk to Eva, slut.  I'm sure she has some things to discuss with you.  I'll be back later."
+	Bree immediately starts spewing invectives which you promptly ignore. <<enslave "Bree">><<set $flags.publicDominence += 3>>
+	<</if>>
+
+	[[Mall Entrance]] 

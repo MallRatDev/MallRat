@@ -1,0 +1,203 @@
+:: Fuck Her Ass[nobr]
+	<<append "#training-text">>
+	You prepare to fuck her slave ass.  You line up your cock to her <<describehole "asshole">> and push your $pc.cockLength inch cock against it, then thrust it deep into her. 
+	<<if $slaves[$csi].hasAssFucked === 0>>
+		This is the first time you've taken her ass.  She can't help but feel that you own her, like it or not.  <<set $slaves[$csi].obedience += random(3,6)>>
+		<<if $slaves[$csi].relationship > 0>>
+			She feels @@.relationship-good;thankful@@ that you held off taking her ass until later in the training, and @@.trust-good;trusts@@ you more. 
+			<<set $slaves[$csi].relationship += random (4,12)>>
+			<<set $slaves[$csi].fear -= random(2,8)>>
+		<<else>>
+			Taking her ass so early in training makes her @@.fear-low;fear her future@@ as your slave.
+			<<set $slaves[$csi].fear += random(3,9)>>
+		<</if>>
+
+	<</if>>
+	<<penetrate "asshole" "cock">>
+	<br>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].pain - $o.pain > $slaves[$csi].lust - $o.lust>>
+			<<link "If she thinks that hurt...">>
+				<<display "Painal">>
+			<</link>><br>
+		<<elseif $slaves[$csi].lust > 0>>
+			<<link "Let her enjoy it">>
+				<<display "Enjoyable Buttsex">>
+			<</link>><br>
+		<</if>>
+		<<link "Pound her">>
+			<<display "Hard Buttfucking">>
+		<</link>><br>
+
+		
+	<</replace>>
+
+:: Painal[nobr]
+	<<append "#training-text">>
+	Taking her squeeling as encouragement, you pull all the way out and thrust back in, ramming your cock deep into her ass.  She releases a deep, pained grunt ending in a little shriek as you bottom out.  You pound her <<describehole "asshole">> roughly, angling each thrust to make her hurt. Judging from her grunting and shrieking, it's working.  She struggles to escape your cock, but each time you thrust fully in. 
+	<<set $slaves[$csi].pain += random($pc.cockLength + 3)>>
+	<<set $slaves[$csi].fear += random($slaves[$csi].pain - $o.pain) + random($pc.cockLength)>>
+
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].lust - $o.lust + $slaves[$csi].lust/10 > 5>>
+			<<link "Pound her until she comes">>
+				<<display "Anal Orgasm">>
+			<</link>><br>
+		<</if>>
+		
+		<<link "Cum in her ass">>
+			<<display "Anal Cum Inside">>
+		<</link>><br>
+		<<link "Pull out and cum in her mouth">>
+			<<display "Anal Cum Mouth">>
+		<</link>>
+	<</replace>>
+
+:: Anal Cum Inside[nobr]
+	<<append "#training-text">>
+		<br>
+		You reach the point of no return, and with a few long thrusts into her asshole you shoot your cum deep into her ass.
+		<<if $slaves[$csi].rulesSwallowCum>>
+			<<if random(25) + random (25) < $slaves[$csi].obedience + $slaves[$csi].relationship + ($slaves[$csi].oral + $slaves[$csi].humiliation + $slaves[$csi].cum) * 15>>
+				Exhausted you pull out.  She minds the rule you've set for her and uses her fingers to pull the cum out of her ass and lick it off her fingers.  It takes her a few minutes but finally she's done.
+				<<set $slaves[$csi].obedience + random (4)>>
+				<<exercisekink "humiliation" 4>>
+				<<cum "mouth">>
+			<<else>>
+				You pull out, leaving cum dripping from her asshole.  She remains numb, not moving, and you remind her of the rule she has to eat all your cum.  She refuses, shuddering at the idea of eating cum out of her own ass.
+				<<set $slaves[$csi].obedience -= random(6)+2>>
+				<<set $slaves[$csi].brokeRule = true>>
+			<</if>>
+		<<else>>
+			You reach a climax and thrust deep into her ass, pumping it full of cum.
+			<<cum "asshole">>
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Back to Training">>
+			<<display "Finish Anal">>
+		<</link>><br>
+
+		
+	<</replace>>
+
+:: Hard Buttfucking[nobr]
+	<<append "#training-text">>
+		After fully seating your cock in her <<describehole "asshole">> you pull almost completely out then thrust deep.  Setting a rapid pace, you pound her hole over and over, eliciting grunts and moans. Despite some resistance your continued pounding begins to result in more moaning.
+		<<if $slaves[$csi].lust - $o.lust > 5>>
+			Soon her moaning gets louder, then becomes an extended wailing as your cock pounds her ass.  You feel her asshole begin to pulse around your cock with each deep thrust.
+		<</if>>
+		<<if $slaves[$csi].pain - $o.pain > 8>>
+			She's @@.fear-low;afraid@@ you're going to keep shoving your cock up her ass.
+			<<set $slaves[$csi].fear += random(6) + 2>>
+		<</if>>
+
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].lust - $o.lust + $slaves[$csi].lust/10 > 5>>
+			<<link "Pound her until she comes">>
+				<<display "Anal Orgasm">>
+			<</link>><br>
+		<</if>>
+		
+		<<link "Cum in her ass">>
+			<<display "Anal Cum Inside">>
+		<</link>><br>
+		<<link "Pull out and cum in her mouth">>
+			<<display "Anal Cum Mouth">>
+		<</link>>
+	<</replace>>
+
+:: Anal Orgasm[nobr]
+	<<append "#training-text">>
+		You fuck her ass until she can't take it anymore.  
+		<<if $slaves[$csi].lust < 60>>
+			It takes quite some time.  She's struggling with pain and taking a cock in her ass but you don't give up.  You tell her that you're fucking her until she comes and she whimpers, then resumes grunting and moaning as you redouble your pace.  It takes her <<= 60 - $slaves[$csi].lust>> minutes of having your cock shoved up her ass until she finally reaches the edge of climax.
+			<<set $slaves[$csi].lust = random(30) + 30>>
+		<<else>>
+			She responds enthusiastically and starts screaming and whimpering as your cock penetrates her slave asshole over and over. Soon her hole is pulsing around your cock and she's yelling encouragement while you thrust into her.
+		<</if>>
+		<<if $slaves[$csi].rulesNoOrgasm === 1>>
+			<<if random(50) + 50 < $slaves[$csi].lust>>
+				She can't take it.  She knows she's not supposed to come but the buttfucking you're delivering is just too much for her.  She gives in and shrieks in a mind-blowing orgasm. 
+				<<set $slaves[$csi].brokeRule = true>>
+				<<set $slaves[$csi].obedience -= random(2,6)>>
+				<<orgasm "asshole">>
+			<<else>>
+				She knows she's not supposed to come. It's almost too much for her, but she manages to hold out even as your cock pounds her.  She's @@.relationship-bad;frustrated@@ but @@.obedience-good;obedient@@ and doesn't come.
+				<<set $slaves[$csi].relationship -= random(2, 10)>>
+				<<set $slaves[$csi].obedience += random(1,6)>>
+				<<set $slaves[$csi].lust += random(10)>>
+			<</if>>
+		<<elseif $slaves[$csi].rulesNoOrgasm === 2>>
+			She shrieks out, "Master! Can I come?".<br>
+			You hold off answering, and she repeats, "Master, please can I come?"<br>
+			You say, "Come from what?"<br>
+			"Please, Master, can I come from you fucking my ass?"<br>
+			"Yes.  Come for me, slut!"<br>
+			She starts coming, and you pound her hard while she does.  
+			<<orgasm "asshole">>
+		<<else>>
+			Her asshole clenches around your cock while she comes, screaming.  You pound away while she does and it takes her a long time to finish.
+			<<orgasm "asshole">>
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Cum in her ass">>
+			<<display "Anal Cum Inside">>
+		<</link>><br>
+		<<link "Pull out and cum in her mouth">>
+			<<display "Anal Cum Mouth">>
+		<</link>>
+
+	<</replace>>
+
+:: Finish Anal[nobr]
+	/* placeholder */
+	<<goto "Train Slave">>
+
+:: Anal Cum Mouth[nobr]
+	<<append "#training-text">>
+		Finally you're ready to come.  You pull out of her ass and grab her hair, pulling her mouth onto your cock, and thrust deep into her throat and pump her mouth full of cum.  While she helplessly struggles to swallow your load, you fuck the cum into her throat.  Who says you aren't a helpful master?
+		<<cum "mouth">>
+			
+
+
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Finish">>
+			<<display "Finish Anal">>
+		<</link>>
+		
+	<</replace>>
+
+:: Enjoyable Buttsex[nobr]
+	<<append "#training-text">>
+		When she moans as your cock plunged into her ass, you decide to give her a good buttfucking.  You slowly withdraw almost completely, then smoothly sink back in until she just starts to show signs of pain, then do it again, constantly letting her ride the edge between pain and pleasure.  You pick up the pace and soon your fucking her in the ass hard, going almost balls deep.  A few minutes of that she she's moaning and whimpering, clearly on the edge of orgasm.  You start thrusting all the way in, bringing little grunts and whimpers as you do.
+		<<set $slaves[$csi].lust += random(8) + 4>>
+		<<set $slaves[$csi].relationship += random(4)>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<if $slaves[$csi].lust - $o.lust + $slaves[$csi].lust/10 > 5>>
+			<<link "Pound her until she comes">>
+				<<display "Anal Orgasm">>
+			<</link>><br>
+		<</if>>
+		
+		<<link "Cum in her ass">>
+			<<display "Anal Cum Inside">>
+		<</link>><br>
+		<<link "Pull out and cum in her mouth">>
+			<<display "Anal Cum Mouth">>
+		<</link>>
+	<</replace>>
+

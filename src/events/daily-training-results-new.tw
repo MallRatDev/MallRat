@@ -1,0 +1,178 @@
+:: Daily Training New[nobr TimeNone]
+	/* should only be called with at least one slave. */
+	/* $csi is set to the current slave, or $csi=0 on first call */
+
+	<<=$slaves[$csi].name>> is recovering from her training.  <br><br>
+		/* check if slave is in love or broken */
+
+
+	<<if $slaves[$csi].relationship > 100 && $slaves[$csi].obedience > 100 && !$slaves[$csi].isBroken && !$slaves[$csi].isInLove>>
+		<<set $slaves[$csi].isInLove = true>>
+		<<set $enslavedPassageString = $slaves[$csi].name + " In Love">>
+		<<if tale.has($enslavedPassageString)>>
+			<<display $enslavedPassageString>>
+			
+		<<else>>
+			<<set $csi = Game.getSlaveIndex($slaves[$csi].name)>>
+			<<display "Generic Slave In Love">>
+		<</if>>
+		<br><br>
+	<<elseif $slaves[$csi].fear > 100 && $slaves[$csi].obedience > 100 &&  !$slaves[$csi].isBroken && !$slaves[$csi].isInLove>>
+		<<set $slaves[$csi].isBroken = true>>
+		<<set $enslavedPassageString = $slaves[$csi].name + " Is Broken">>
+		<<if tale.has($enslavedPassageString)>>
+			<<display $enslavedPassageString)>>
+		<<else>>
+			<<set $csi = Game.getSlaveIndex($slaves[$csi].name)>>
+			<<display "Generic Slave Is Broken">>
+		<</if>>
+		<br><br>
+	<</if>>
+
+	/* pregnancy */
+	<<if $slaves[$csi].isPregnant>>
+		<<if $slaves[$csi].relationship > 0>>
+			Being pregnant makes her @@.obedience-good;more resigned@@ to life as your slave and a little @@.relationship-good;happier to be with you.@@
+			<<set $slaves[$csi].relationship += random (4) + 4>>
+			<<set $slaves[$csi].obedience += random (3) + 3>>
+		<<else>>
+			Being pregnant makes her @@.fear-low;afraid@@ she'll never escape from being your slave and more @@.obedience-good;resigned to her fate.@@
+			<<set $slaves[$csi].fear += random (4) + 4>>
+			<<set $slaves[$csi].obedience += random (3) + 3>>	
+		<</if>>
+	<</if>>
+
+	/* sex drive */
+	<<set $slaves[$csi].lust += random($slaves[$csi].sexDrive) + $slaves[$csi].sexDrive>>
+
+	/* masturbation */
+	<<if $slaves[$csi].lust > 60>>
+		<<switch $slaves[$csi].rulesNoMasturbate>>
+			<<case 0>>
+				She's incredibly horny, and masturbates furiously.  
+				<<switch $slaves[$csi].rulesNoOrgasm>>
+					<<case 0>>
+						She comes hard, fingering her pussy and rubbing her clit.  She's a little @@.fear-low;more relaxed@@ and @@.relationship-good;happy.@@
+						<<set $slaves[$csi].fear -= random (4) + 4>>
+						<<set $slaves[$csi].relationship += random (3) + 3>>
+						<<set $slaves[$csi].lust -= random (10) + 10>>	
+					<<case 1>>
+						She's not allowed to orgasm.  She struggles with self control, trying to slow down her fingers.
+						<<if random(200 - $slaves[$csi.lust]) < $slaves[$csi].obedience + ($slaves[$csi].fear > $slaves[$csi].relationship ? $slaves[$csi].fear : $slaves[$csi].relationship)>>
+							She controls herself, whimpering in @@.relationship-bad;frustration@@ and @@.lust-good;lust@@ but @@.obedience-good;more submissive.@@
+							<<set $slaves[$csi].lust += random (6) + 6>>
+							<<set $slaves[$csi].relationship -= random (3) + 3>>	
+							<<set $slaves[$csi].obedience += random (3) + 3>>
+						<<else>>
+							She can't stand it and comes, screaming, and even though she's @@.fear-low;afraid of punishment@@, she's glad she @@.obedience-bad;broke the rules.@@
+							<<set $slaves[$csi].fear += random (6) + 6>>
+							<<set $slaves[$csi].brokeRule = true>>	
+							<<set $slaves[$csi].obedience -= random (3) + 1>>
+							<<set $slaves[$csi].lust -= random (10) + 10>>	
+						<</if>>
+					<<case 2>>
+						She has to ask permission to come, so the takes a long time but finally becomes frantic.
+						<<if random(150 - $slaves[$csi.lust]) < $slaves[$csi].obedience + ($slaves[$csi].fear > $slaves[$csi].relationship ? $slaves[$csi].fear : $slaves[$csi].relationship)>>
+							She can't handle it anymore, and comes, crawling to you, begging to be allowed to come.  You make her play with herself, whimper and beg, but finally give her release.  She comes screaming, and despite herself, is @@.relationship-good;thankful@@ and @@.obedience-good;more obedient.@@
+							<<set $slaves[$csi].lust -= random (8) + 8>>
+							<<set $slaves[$csi].relationship += random (3) + 3>>	
+							<<set $slaves[$csi].obedience += random (3) + 3>>
+						<<else>>
+							She isn't willing to lower herself to ask you, and comes quietly, hoping she can @@.obedience-bad;get away with@@ breaking the rules and @@.relationship-bad;angry@@ you're trying to control her.
+							<<set $slaves[$csi].lust -= random (6) + 6>>
+							<<set $slaves[$csi].brokeRule = true>>	
+							<<set $slaves[$csi].obedience -= random (3) + 1>>
+							<<set $slaves[$csi].relationship -= random (3) + 3>>
+						<</if>>	
+				<</switch>>
+			<<case 1>>
+				<<if random(200 - $slaves[$csi.lust]) < $slaves[$csi].obedience + ($slaves[$csi].fear > $slaves[$csi].relationship ? $slaves[$csi].fear : $slaves[$csi].relationship)>>
+					You've ordered her not to come at all, ever.  She's @@.fear-low;too afraid@@ to disobey, but she's @@.relationship-bad;furious@@ and @@.lust-good;incredibly horny.@@
+					<<set $slaves[$csi].fear += random (4) + 4>>
+					<<set $slaves[$csi].relationship -= random (4) + 4>>
+					<<set $slaves[$csi].lust += random (10) + 10>>	
+				<<else>>
+					She tries to come silently, hoping you @@.obedience-bad;won't notice@@ and @@.fear-low;afraid you'll punish her.@@
+					<<set $slaves[$csi].fear += random (4) + 4>>
+					<<set $slaves[$csi].obedience -= random (3) + 1>>
+					<<set $slaves[$csi].lust -= random (10) + 10>>	
+					<<set $slaves[$csi].brokeRule = true>>	
+				<</if>>
+		<</switch>>
+	<</if>>
+
+	/* fetishwear */
+	<<if $slaves[$csi].plugToy > 0>>
+		<<if $slaves[$csi].anal < 0>>
+			<<if $slaves[$csi].humiliation > 0>> /* hates anal but likes humiliation */
+				<<switch $slaves[$csi].plugToy>>
+					<<case 1>> /* small plug */
+						She's plugged all night with a small buttplug.  She @@.relationship-bad;hates@@ her ass being penetrated and it's uncomfortable, but the humiliation makes her @@.obedience-good;more submissive@@ and @@.fear-low;frightened.@@
+						<<set $slaves[$csi].fear += random (4) + 2>>
+						<<set $slaves[$csi].obedience += random (3) + 1>>
+						<<set $slaves[$csi].relationship -= random (3) + 1>>								
+					<<case 2>> /* large plug */
+					<<case 3>> /* cock plug */
+				<</switch>>
+			<<else>> 
+				<<switch $slaves[$csi].plugToy>>
+					<<case 1>> /* small plug */
+						She's plugged all night, and hates things up her ass.  The pain and discomfort make her @@.relationship-bad;angry@@ and @@.fear-low;afraid@@ you're going to keep abusing her.
+						<<set $slaves[$csi].fear += random (4) + 2>>
+						<<set $slaves[$csi].relationship -= random (3) + 1>>
+					<<case 2>> /* large plug */
+					<<case 3>> /* cock plug */
+				<</switch>>	
+			<</if>>			
+		<<elseif $slaves[$csi].anal === 0>>
+			<<switch $slaves[$csi].plugToy>>
+				<<case 1>> /* small plug */
+					You keep her ass plugged all night with a small buttplug.  It's a constant reminder @@.obedience-good;she's yours@@ and you can @@.fear-low;do what you want@@ with her.
+					<<set $slaves[$csi].fear += random (3) + 1>>
+					<<set $slaves[$csi].obedience += random (3) + 1>>						
+				<<case 2>> /* large plug */
+				<<case 3>> /* cock plug */
+			<</switch>>	
+		<<else>>
+			<<switch $slaves[$csi].plugToy>>
+				<<case 1>> /* small plug */
+					You keep her ass plugged all night with a small buttplug.  She @@.relationship-good;loves@@ her ass full because it makes her @@.obedience-good;feel submissive and dirty.@@
+					<<set $slaves[$csi].obedience += random (3) + 1>>
+					<<set $slaves[$csi].relationship += random (3) + 1>>						
+				<<case 2>> /* large plug */
+				<<case 3>> /* cock plug */
+			<</switch>>	
+		<</if>>		
+	<</if>>
+
+	/* lose hatreds */
+	<<if $slaves[$csi].anal < 0 && random(-50 * $slaves[$csi].anal) < $slaves[$csi].hasAssFucked>>
+		She hates being fucked in the ass, but you've pounded her poor little slave asshole so many times that she's now @@.good;resigned that her asshole if another hole to fuck.@@
+		<<set $slaves[$csi].anal = 0>>
+	<</if>>
+
+	<<if $slaves[$csi].cum < 0 && random(-50 * $slaves[$csi].cum) < $slaves[$csi].hasSwallowedCum>>
+		She hates the taste and humiliation of swallowing cum but you've fucked so many loads down her throat @@.good;she's lost her hatred of swallowing cum.@@
+		<<set $slaves[$csi].cum = 0>>
+	<</if>>		
+
+	/* etc, etc */
+
+	/* work */
+	<<if $slaves[$csi].isWorkingAt>>
+		<br><br>
+		<<display "Working At Corrupted " + isWorkingAt>>
+	<</if>>
+
+	<br><br>
+	/* set up next slave link */
+	<<if $csi < $slaves.length - 1>>
+		<<='[[Next Slave|Daily Training New][$csi += 1]]"'>>
+	<<else>>
+
+		[[Day End Report]]
+	<</if>>
+
+:: Day End Report[nobr TimeNone]
+	/* for right now, just go to the room. */
+	<<goto "Your Room">>

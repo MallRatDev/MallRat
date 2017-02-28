@@ -1,0 +1,109 @@
+:: Talk to Tracy[TimeNone]
+<<if $flags.publicDominence === 0>>\
+You sit down at her table and try to make conversation.
+"Hi!  Whatcha doing?"  Ok, maybe not the best pick up line.
+"Research," she says, in a bored tone, not even looking up from her notebook.
+"What kind of research?"
+"Human sexuality and mating."
+"I could help!"  The words burst out of you mouth before you can stop them.
+That attracts her attention.  She looks at you through her cute librarian glasses and looks at you in a clinical way, suddenly looking much older.  "Hmm... how old are you?"
+"18."
+"Oh."  She looks back at her notebook, bored again.  "I already fucked an 18 year old.  Not great, he only wanted head and pussy and didn't even cum in my mouth, and anyway, I have the data I need for that demographic."
+"Data?"
+"Yeah, I'm collecting data on every age from 18 to 65.  But like I said I already have 18."
+"But..."
+"Look, you're interfering with my work, here.  Do you mind?"
+"Sorry."  You get up and leave.  What a weird chick.
+
+[[South Food Court]] 
+<<elseif $flags.publicDominence < 4>>\
+You sit down at her table.
+"Hi!  Whatcha doing?"
+"Research."  She's looking at you with a measured gaze, seemingly trying to look into your soul.  "Hey, didn't I see you doing some weird humiliating stuff to some chick?"
+"Um... yeah, I guess," you say.  Damn, your reputation might get to be a problem.
+"Interesting.  Was that a BDSM thing?  I haven't had a chance to research that."
+"Really?  Interesting?  Yeah, I mean I guess it's a BDSM thing.  That's with slaves and spanking, right?"
+She rolls her eyes and starts to look bored again.  "Yeah."
+"Well, yeah, I made a girl or two my slave."
+She looks at you skeptically, and says, "I'm not really talking about kinky stuff you do with your girlfriend.  I'm more looking for real slavery stuff.  If I was even researching it now, which I'm not.  I've still got a lot of data to collect."
+"Well, do you want to try it?  I've got a collar that makes girls my slave with magic."
+"Magic?  Pft.  I'm a scientist, not an idiot.  Get lost, ok?"
+"But..."
+"I'm kind of busy here."  She turns back to her notebook.  You wait a moment but she's ignoring you.  You get up and leave.
+
+[[South Food Court]] 
+<<else>>\
+You sit down at her table.
+"Hey!  I heard you've got a couple girls to walk through this place in really humiliating ways!  Is that you?"
+"Yeah..."  You're not sure you like where this is going.
+"So, they're like your slaves?"
+"Um... yes."
+"Really?  Like sex slaves?"
+"Uh... I mean..."
+"Come on, man!  I'm trying to get some data here.  Try to be direct."
+"Ok, then yes, sex slaves."
+"So you make them crawl, do humiliating stuff?"
+"Well, yes."
+"And they have to obey you?  Do you punish them if they don't?"  She's scribbling in her notebook now, looking intensly interested... She's also looking rather aroused, and her nipples are poking through her bra.
+"Yes."
+"Oh... that's good information!"  She's definitely interested.  "So, do you make them do things they wouldn't like?"
+"Well, yeah.  I mean, if I want to, like fuck their ass and they're not into that, I make them."
+"Wow!  So, is that what you get out of it?  I mean is that your motivation?"  She's breathing heavily, and she keeps glancing at you with interest and excitement as she writes.
+"No.  I mean, I like that stuff, but the punishments and the like are to train them."
+"Oh... ok, yeah.  Train them?  To be good at sex, or what?"
+"Well, of course, but I train them to be obedient.  So I can use them any way I need to in the future."
+"Oh wow.  That's really interesting.  So you want to have them as followers?"
+"Yeah, I guess that's one way to put it."
+"Huh... maybe I should put aside my current studies.  Do you think you could train me?"
+"What do you mean?  You want me to punish you and make you my slave?"
+"It's not about what I want.  I'd like to gather data about what it's like to be trained like that.  What it's like to have that kind of sexual and psychological pressure applied."  Although she looks like she kind of wants it... you can't mistake her dialated pupils, quick breathing, and blush as anything else.
+<<if Game.inventoryQuantity("Leather Collar") != -1>>\
+"You're sure about this?"
+"Completely sure.  I'm very curious about the mental conditioning aspect, and frankly, the idea is interesting and exciting."
+"Ok, then you've heard about how this works."  You produce the collar and set it on the table.  "Put this on."
+"Ok... should I call you Sir or Master or something?"  She hasn't made a move towards the collar yet, but her eyes haven't left it since you set it on the table.
+"Yes.  Call me Master.  Put on the collar."
+"In just a moment... Master.  Are you going to make me go back to your place in a humiliating way?"  Her tone is surprisingly neutral.
+"Yes."
+"Oh... ah..."  she's squirming.  "Yes, Master."  And just like that she puts on the collar, seeming more interested than surprised when the buckle closes itself.  "Wow... that's... strange."
+"Take off your bra," you order, and enjoy her surprised look as she reaches behind her under her shirt and does that thing girls do where she takes her bra off under her shirt.
+"Wow.  I had to do that.  I mean, I didn't have any choice.  This is going to be interesting, Master."  She hands you the bra when you stick out your hand.
+<<if Game.inventoryQuantity("Leash") != -1>>\
+You clip the leash on the collar and gesture her to stand up.  She does so, her huge tits bouncing freely under her thin shirt and her nipples poking through.  It's totally obvious she's not wearing a bra, even if you weren't dangling the bra from your free hand.  
+"Put your hands behind your head."
+She does so, and what it does to her tits is amazing.  You tug on the leash, and start the walk back to the house.  Her tits sway and bounce, and gawkers look on in amazement as you lead her through the mall, one hand on the leash and the other holding her bra.
+You get back to the house, and put her in your dungeon.  She looks around in appreciation.
+"Wow.  So this is where you're going to train me?"
+"Yes."
+"Ok.  Come back soon, ok?  I can't wait to start gathering data!"
+"I will.  Start playing with and tugging on your nipples.  Make sure you tug and pinch them hard enough to hurt a little."
+She looks like she's trying to resist, but her hands go to her large nipples anyway and start tugging.
+"Uh... Oh... wow!  You can really make me do stuff, huh, Master?"
+"Yes.  This is just a start.  Enjoy your wait, slut."
+"Oh... Ouch... ah.... yes, Master.  I will find this very interesting."
+You head back to the mall.  Tracy ought to be interesting.
+<<enslave "Tracy" 20>>\
+<<run Save.autosave.save("Enslaved Tracy")>>\
+
+[[South Food Court]] 
+<<else>>\
+"Grab your tits and come with me."
+"Yes, Master," and with that she walks back to your house, holding her tits while they bounce in her hands.  You lead her into her dungeon.
+"You're going to train me here, Master?"
+"Yes.  Start tugging and pinching your nipples, and keep it up until I return.  Make sure you do it hard enough to hurt."
+"Uh... oh.... yes, Master."
+You return to the mall.  Tracy seems like she should be fun.
+<<enslave "Tracy">>
+[[South Food Court]] 
+<</if>>\
+<<else>>\
+"Damn, my collar is in use right now."
+"Oh.  Do you need that?"
+"I'm afraid so... it's... symbolic."
+"Interesting."  She makes a note in her book.  "Well, as soon as you can, bring it back here, ok?  I'm very interested in doing this research."
+From the way she's squirming, you can tell she is.  "Ok, I'll be back soon."
+"Good... Sir."  She blushes prettily, but it's not embarrasment... you can only imagine there'll be a puddle when she stands up.
+
+[[South Food Court]] 
+<</if>>
+<</if>>

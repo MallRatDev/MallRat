@@ -1,0 +1,108 @@
+:: StoryInit
+<<set $version = "0.2.2">>
+
+
+<<set $day = 0>>
+<<set $hour = 0>>
+<<set $minute = 0>>
+
+
+
+<<set $flags = {
+	defeatedMajor:false,
+	shownBreeAndEva:false,
+	visitedDungeon:false,
+	knowsAboutSecretEntrance:false,
+	evaIsTaggingAlong:false,
+	publicDominence:0,
+	hiredGasStation:false,
+	
+}>>
+
+<<set $corruptedPc = []>>
+<<set $corruptedBabaYaga = []>>
+
+<<set $pc = 
+{
+	readNote:0,
+	mageSight:0,
+	ritual:"",
+	path:"Normal",
+	magicLevel:0,
+	power:0,
+	isKickedOut:false,
+	beenArrested:0,
+	
+	name:"Anonymous",
+	cockLength:6,
+	
+	
+	
+	
+	clothingTopOwned:[],
+	clothingBottomOwned:[],
+	clothingWristsOwned:[],
+	clothingAnklesOwned:[],
+	clothingShoesOwned:[],
+
+	
+}>>
+
+<<if $debugging>>
+	<<set $money = 2000>>
+	<<set $pc.power = 100>>
+	<<set $flags.visitedDungeon = true>>
+	<<set $pc.path = "Virility">>
+	<<set $pc.mageSight = true>>
+<<else>>
+	<<set $money = 0>>
+<</if>>
+
+ <<set $slaves = []>> 
+
+
+
+<<set $csi = 0>>  /* current slave index */
+<<set $cci = 0>>  /* current character index */
+<<set $o = {}>> /* for changes in stats */
+
+
+
+
+
+<<set $numeralsWithA = ["no", "a", "two", "three", "four", "five", "six"]>>
+
+<<set $clothingTop = ["black blouse, low-cut and reavealing some cleavage", "silk flowing, revealing but tasteful, expensive blouse", "tight t-shirt with a Venn diagram of sexual preferences", "cute anime character t-shirt"]>>
+
+<<set $clothingBottom = ["short, black and gray plaid skirt fastened with a heavy leather belt dotted with metal studs and with a chain running between the hips", "just longer than slutty navy skirt slit up the side to show a just shorter than scandalous amount of thigh", "tight form-fitting jeans", "plaid skirt"]>>
+
+<<set $clothingWrists = ["black leather cuffs set with studs and a heavy metal ring", "a diamond and gold bracelet"]>>
+
+<<set $clothingAnkles = ["black leather cuffs set with studs and a heavy metal ring"]>>
+
+<<set $clothingCollar = ["magical leather collar given to you by your uncle with a heavy buckle and solid metal ring in front"]>>
+
+<<set $clothingShoes = ["black combat boots", "expensive-looking heels", "tennis shoes"]>>
+
+<<set $dreams = [
+	"You dream about a willowy goth girl, naked, crawling in front of you at your orders.  You order her to paint her fingernails.  Black, of course.",
+	"You have a dream of a goth girl painting her fingernails black and smoking.",
+	"Just before you wake up you have a fleeting vision of a black-haired young woman blowing smoke in your face.",
+]>>
+
+<<set $positions = ["standing", "kneeling, with her knees spread wide and tits thrust out", "on all fours, her knees spread wide", "face down and ass up, with her face and tits pressed to the floor and her knees spread wide", "bent over your knees", "standing with her legs spread wide and her hands behind her kneck thrusing out her tits", "bent over with her hands flat on the floor and her feet far apart, her cunt and asshole available and at a convenient height"]>>
+
+<<set $rulesNoMasturbateText = ["allowed to masturbate","not allowed to masturbate"]>>
+<<set $rulesNoOrgasmText = ["allow to orgasm","not allowed to orgasm at all","allowed to orgasm only with permission"]>>
+<<set $rulesSwallowCumText = ["only if you cum in her mouth","always swallow your cum"]>>
+
+<<set $keypadQuestions = ["Is Eva's navel pierced?", "What's Bree's bra size?", "Bree: Do the carpets match the drapes?", "How many guys has Tara slept with to date?", "What's Su's favorite porn?", "Who is Morgan's crush?", "What does Angie give up for weed?", "What kind of pills are Bree taking?"]>>
+
+<<set $keypadAnswers = ["yes", "36dd", "yes", "19", "tentacle", "bree", "anal", "diet"]>>
+
+<<set $keypad = []>>
+
+
+
+
+

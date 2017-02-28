@@ -1,0 +1,27 @@
+:: Run Away![nobr TimeNone]
+<<if $debugging>>keypadAttempts:  <<=$flags.keypadAttempts>><br>Question: <<=$keypadQuestions[$flags.keypadAttempts]>><br>Answer: <<=$keypadAnswers[$flags.keypadAttempts]>><br><br><</if>>
+
+Damn.  Now the alarms are sounding and you've got to get out of here.  You run towards the mechanical room at top speed.  Heavy footsteps pursue you.  You look back, and there's a veritable giant behind you.  He's seven feet tall and built like Mr. Clean.  Same haircut too.  But his eyes glow like a fire built of anger, and his muscles pulse.<br>
+<br>
+Oh.  Shit.  How do you get out of this?<br>
+<br>
+<span id="escape">
+	<<click "Run like hell!">>
+		<<replace "#escape">>
+			<<if random(1,3) === 1>>
+				You feel a hand grab you and pull you back.  
+				The Major pulls you back and you end up in the clutches of Baba Yaga.  <br><br>  [[Major Bad End]]
+			<<else>>
+				You make it to the door and slam it shut just before he gets there.  Jesus.  Finally, you make the street and head home.  You don't stop until you reach your room.  <br><br>[[Your Room]]
+			<</if>>
+		<</replace>>
+	<</click>>
+	<<if $pc.path === "Virility" && $pc.power > 15>>
+		<<click "Call on the Mother of Virility">>
+			<<replace "#escape">>
+				<<set $pc.power -= 10>>
+					You call on the Mother and her power surges into you.  You feel ALIVE, your muscles surging and your cock hard.  Your flight seems like a casual stroll as you grab the door, batter it away, and almost flow through the passageway.  You've forgotten the brute behind you by the time you make it to your room. <br><br>[[Your Room]]
+			<</replace>>
+		<</click>>
+	<</if>>
+</span>

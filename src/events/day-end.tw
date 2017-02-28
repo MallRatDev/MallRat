@@ -1,0 +1,46 @@
+:: Dream[nobr TimeNone autosave]
+	<<set $day += 1>>
+	<<set $hour = 10>>
+	<<set $minute = 0>>
+
+	<<if Game.getSlaveIndex("Eva") === -1>>
+		<<=either($dreams)>>
+	<</if>>
+
+	<<if $day === 1>>
+		<<run Dialog.setup("Act I")>>
+		<<run Dialog.wiki("In which our intepid hero discovers...<br><strong>The Mall!</strong>")>>
+		<<run Dialog.open()>>
+	<</if>>
+
+	<<if $flags.defeatedMajor && !$flags.shownAct2>>
+		<<set $flags.shownAct2 = true>>
+		<<run Dialog.setup("Act II")>>
+		<<run Dialog.wiki("In which the machinations of a certain witch prove a challenge.<br><br><em>You have completed the finished portion of the game.  The remainder is in active production and unfinished.  Continue at your own risk.")>>
+		<<run Dialog.open()>>
+	<</if>>		
+	
+	/* Events and endings */
+	<<if $pc.isKickedOut && Game.getSlaveIndex("Eva") === -1>>
+	<<goto "Failed to Enslave Eva">>
+	<</if>>
+
+	<<if $flags.evaIsTaggingAlong>>
+		<<set $flags.evaIsTaggingAlong = false>>
+	<</if>>
+
+	/* Daily Effects */
+
+
+	/* Slave Daily Training Results */
+	<<set _useNewTrainingResults = true>>
+	<<if _useNewTrainingResults>>
+		<<if $slaves.length > 0>>
+			<<set $csi = 0>>
+			<<goto "Daily Training New">>
+		<</if>>
+	<<else>>
+		<<display "Daily Training Results">>
+		<br><br>
+		[[Wake up|Your Room]]
+	<</if>>

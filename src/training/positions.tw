@@ -1,0 +1,134 @@
+:: Position Ass Up[nobr]
+	<<replace "#training-text">>
+	<<set _willingness = $slaves[$csi].obedience + $slaves[$csi].lust + $slaves[$csi].fear + $slaves[$csi].pain>>
+	<<if $slaves[$csi].position == 3>>
+	She's already has her ass up with her holes ready for use.
+	<<elseif (_willingness > 20)>>
+	She gets on her knees and presses her face and tits to the floor, then arches her back so her cunt and asshole are available for use.
+	<<set $slaves[$csi].position = 3>>
+	<<if $slaves[$csi].obedience < 12>>
+		<<set $slaves[$csi].obedience += 1>>Having to assume such a vulnerable position has made her <span class="obedience_good">sligtly more obedient</span>.
+	<</if>>
+	<<else>>
+	She refuses.  You can see her struggle against the control of the collar but in the end she wins.
+	<<set $slaves[$csi].obedience -= 2>>
+	<<set $slaves[$csi].refused = 1>>
+	<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>
+
+:: Position Kneel[nobr]
+	<<replace "#training-text">>
+	<<if $slaves[$csi].position == 1>>
+	She's already on her knees.
+	<<else>>
+	She kneels on the floor and spreads her knees to expose her slave pussy.
+	<<set $slaves[$csi].position = 1>>
+
+	<</if>>
+
+	<</replace>>
+	<<replace "#links-text">>
+
+	<br><br>
+	<<return>>
+	<</replace>>
+
+:: Position Stand[nobr]
+	<<replace "#training-text">>
+	<<if $slaves[$csi].position == 0>>
+
+
+	She's already standing.
+	<<else>>
+	You order her to stand with her legs spread.
+	<<set $slaves[$csi].position = 0>>
+	<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>
+
+:: Position All Fours[nobr]
+	<<replace "#training-text">>
+	<<set _willingness = $slaves[$csi].obedience + $slaves[$csi].lust / 20>>
+	<<if $slaves[$csi].position == 2>>
+	She's already on all fours, waiting for what you plan next.
+	<<elseif _willingness > 5>>
+	She takes the lewd position, spreading her knees wide at your order.
+	<<set $slaves[$csi].position = 2>>
+	<<if $slaves[$csi].obedience < 8>>
+		<<set $slaves[$csi].obedience += 1>>Having to assume such an exposed position has made her <span class="obedience_good">sligtly more obedient</span>.
+	<</if>>
+	<<else>>
+	She refuses.  You can see her struggle against the control of the collar but in the end she wins.
+	<<set $slaves[$csi].obedience -= 2>>
+	<<set $slaves[$csi].refused = 1>>
+	<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>
+
+:: Position Over Knee[nobr]
+	<<replace "#training-text">>
+	<<set _willingness = $slaves[$csi].obedience + $slaves[$csi].lust / 20>>
+	<<if $slaves[$csi].position == 4>>
+	She's already over your knee, waiting for you to spank her.
+	<<elseif $slaves[$csi].obedience < 15>>
+	She struggles with the control of the collar, but loses the fight and bends over your knee.  She knows she's about to suffer.
+	<<set $slaves[$csi].position = 4>>
+	<<else>>
+	She bends over your lap.
+	<<set $slaves[$csi].position = 4>>
+	<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>
+
+:: Position Inspection[nobr]
+	<<replace "#training-text">>
+	<<set _willingness = $slaves[$csi].obedience + $slaves[$csi].lust / 20>>
+	<<if $slaves[$csi].position == 5>>
+	She's already standing with her legs wide apart and her hands behind her head, tits thrust out.
+	<<elseif $slaves[$csi].obedience < 15>>
+	She strugles against the collar but loses.  She places her feet wide apart at your orders and puts her hand behind her head.  At a final order she thrusts her tits out.
+	<<set $slaves[$csi].position = 5>>
+	<<else>>
+	She strugles against the collar but loses.  She places her feet wide apart at your orders and puts her hand behind her head.  At a final order she thrusts her tits out.
+	<<set $slaves[$csi].position = 5>>
+	<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>
+
+:: Position Bent Over[nobr]
+	<<replace "#training-text">>
+	<<set _willingness = $slaves[$csi].obedience + $slaves[$csi].lust / 20>>
+	<<if $slaves[$csi].position == 6>>
+	She's already has her hands on the floor and her legs spread, leaving her ass up  with her holes ready for use.
+	<<elseif (_willingness > 20)>>
+	She spreads her legs wide and bends over, placing her hands flat on the floor almost directly between her feet.  This position exposes her cunt and ass.
+	<<set $slaves[$csi].position = 6>>
+	<<if $slaves[$csi].obedience < 12>>
+		<<set _.obedience += 1>>Having to assume such a vulnerable position has made her <span class="obedience_good">sligtly more obedient</span>.
+	<</if>>
+	<<else>>
+	She refuses.  You can see her struggle against the control of the collar but in the end she wins.
+	<<set $slaves[$csi].obedience -= 2>>
+	<<set $slaves[$csi].refused = 1>>
+	<</if>>
+	<</replace>>
+	<<replace "#links-text">>
+	<br><br>
+	<<return>>
+	<</replace>>

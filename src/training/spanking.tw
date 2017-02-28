@@ -1,0 +1,48 @@
+:: Spank Her[nobr]
+<<replace "#training-text">>
+<<set $slaves[$csi].pain += random(10)+5>>
+<<set $slaves[$csi].lust += random(1,5)>>
+<<set $slaves[$csi].obedience += 2>>
+
+/* Is this a punishment for refusing? */
+<<if $slaves[$csi].refused || $slaves[$csi].brokeRule>>After the disobedient slut refuses you, you punish her to show her that she should obey you.  You tell <<=$slaves[$csi].name>> that she brought this on herself.  She <span class="obedience_good">realizes</span> that it's the plain truth.<<set $slaves[$csi].obedience += 4>><<set $slaves[$csi].refused = false>><<set $slaves[$csi].brokeRule = false>><</if>>
+
+/* Effects of Position */
+<<if $slaves[$csi].position == 1 || $slaves[$csi].position == 2 || $slaves[$csi].position == 3 || $slaves[$csi].position == 4 || $slaves[$csi].position == 6>>
+
+<<if $slaves[$csi].position == 0 || $slaves[$csi].position == 5>>She is standing so you step behind her while she nervously strains to avoid turning her head to follow you.<</if>>
+<<if $slaves[$csi].position == 1>>Since her ass is not availble in her kneeling position you slap her tits and thighs.<<set $slaves[$csi].pain -=5>><<set $slaves[$csi].lust -= 5>><</if>>
+
+<<if $slaves[$csi].position == 2 || $slaves[$csi].position == 3 || $slaves[$csi].position == 6>>Being lewdly bent over exposes her <<if $slaves[$csi].lust > 20>>dripping <<elseif $slaves[$csi].lust > 12>>wet <</if>>cunt to be exposed to some of the stinging slaps.  You use this to torture her sex as well as her ass.
+<<if $slaves[$csi].masochism>>She's a masochist and the additional pain to her cunt in this position <span class="good">turns her on</span><<if $slaves[$csi].relationship < 20>> despite herself<</if>> and makes her <span class="obedience_good">more obedient</span>.<</if>>
+<<if $slaves[$csi].submission>>Since she's submissive, the struggle of remaining in the humiliating position while enduring punishment <span class="good">arouse her</span> and make her <span class="obedience_good">more obedient</span>.<</if>>
+<<if $slaves[$csi].humiliation>>She likes being humiliated and the exposed position makes her <span class="good">wet</span> and <span class="obedience_good">feel degraded</span>.<</if>>
+<<set $slaves[$csi].pain += 6>>
+<<set $slaves[$csi].lust += (5 + ($slaves[$csi].masochism * 3) + ($slaves[$csi].submission * 3) + ($slaves[$csi].humiliation * 1))>>
+<<set $slaves[$csi].obedience += ($slaves[$csi].masochism) + ($slaves[$csi].submission) + ($slaves[$csi].humiliation)>>
+<</if>>
+
+<<if $slaves[$csi].position == 4>>
+She's bent over your knees and already waiting for what she knows is coming.
+<<set $slaves[$csi].pain -= 5>> /* less painful position */
+<<if $slaves[$csi].submission>>The submissive position combines with her native submissiveness to <span class="obedience_good">make her more obedient</span>.
+<<set $slaves[$csi].obedience += $slaves[$csi].submission * 3>>
+<</if>>
+<</if>>
+<br><br>
+<</if>>/* End of Position Effects */
+
+
+
+You deliver slap after slap against her quivering ass.  She starts to gasp, then whimper.  Her ass grows red as the beating continues, but you don't stop until dozens of blows have landed on her quivering ass.
+
+
+
+
+
+
+<</replace>>
+<<replace "#links-text">>
+<br><br>
+<<return>>
+<</replace>>

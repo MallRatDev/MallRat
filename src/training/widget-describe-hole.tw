@@ -1,0 +1,5 @@
+:: WidgetDescribeHole[nobr widget]
+<<widget describehole>>
+	<<set _orifaceSize = ["tight, virginal", "tight", "slightly used", "well-used", "loose, gaping", "stretched and permanently gaping"]>>
+	<<=_orifaceSize[$slaves[$csi][$args[0] + "Size"]]>> $args[0]
+<</widget>>
