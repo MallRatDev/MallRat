@@ -1,4 +1,21 @@
 :: Day End Report[nobr TimeNone]
 	/* list each slave and allow assignment to tasks. */
-	
-	<<goto "Your Room">>
+	You can manage what your slaves are assigned to do during the day.
+	<br><br>
+	<<for _i = 0; _ < $slaves.length; _i++>>
+		<<=$slaves[_i].name>> is 
+		<<if $slaves[_i].isBroken>> 
+			broken and available for assignment.
+		<<elseif $slaves[_i].isInLove>>
+			in love with you and available for assignment.
+		<<else>>
+			still in training and only available for punishment.
+		<</if>>
+
+		/* logic to show available jobs here. */
+
+	<</for>>
+
+
+	<br><br>
+	[[Wake Up|Your Room]]
