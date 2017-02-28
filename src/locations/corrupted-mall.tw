@@ -48,7 +48,7 @@
 
 	[[East Food Court]]
 
-:: Work at Corrupted Terrible "Greek"[nobr]
+:: Working At Corrupted Terrible "Greek"[nobr]
 	<<set _customers = random(10) + 10>>
 	<<set _ass = Math_floor(_customers * $slaves[$csi].anal / 2 + random(2))>>
 	<<set _mouth = Math_floor(_customers / 2 + random(2))>>
@@ -78,3 +78,11 @@
 
 	[[North Food Court]]
 
+:: Working At Corrupted America's CLEANEST Fish Tacos[nobr]
+	<<set _customers = random(20) + 20>>
+	<<set _abuse = Math.floor(_customers / (6 - $slaves[$csi].housework - $slaves[$csi].humiliation))>>
+	<<set _money = _abuse + random(25)>>
+	<<=$slaves[$csi].name>> spends her day cleaning pussies with her mouth, eating _customers out while being abused constantly with humiliation, punishments, and cocks in her other two holes.  Her humiliation and the orgasms of the customers generate _abuse power for you, and she receives _money in tips.
+	<<set $pc.power += _abuse>>
+	<<set $money += _money>>
+	
