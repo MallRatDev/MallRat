@@ -184,7 +184,21 @@ body {
 a, a:link, a:visited {
   color: mediumblue;
 }
+.dropdown {
+	width: 100%;
+	display: block;
+}
+.dropdown label {
+	text-align: right;
 
 
+	
+	
+}
 
+.dropdown select {
+	background-color: black;
+	color: #eee;
+
+}
 

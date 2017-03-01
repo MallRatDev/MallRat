@@ -3,6 +3,18 @@
 	You can manage what your slaves are assigned to do during the day.
 	<br><br>
 	<<for _i = 0; _i < $slaves.length; _i++>>
+		<<set $slaves[_i].isWorkingAt = "">>
+	<</for>>
+
+	<<set $jobsOptions = ['<option value="0" selected>(None)</option>']>>
+	<<for _i = 0; _i < $corruptedPc.length; _i++>>
+		<<run $jobsOptions.push('<option value="' + (_i + 1) + '">' + $corruptedPc[_i] + '</option>')>>
+	<</for>>
+
+
+	
+	/* logic to show available jobs here. */
+	<<for _i = 0; _i < $slaves.length; _i++>>
 		<<=$slaves[_i].name>> is 
 		<<if $slaves[_i].isBroken>> 
 			broken and available for assignment.
@@ -10,33 +22,23 @@
 			in love with you and available for assignment.
 		<<else>>
 			still in training and only available for punishment.
-		<</if>>
-		<<set $slaves[_i].isWorkingAt = "">>
-		<br>
-	<</for>>
-	
-	/* logic to show available jobs here. */
-	<<for _i = 0; _i < $slaves.length; _i++>>
+		<</if>>		
 		Assign a punishment or job for <<=$slaves[_i].name>>:<br>
 		<<if $slaves[_i].isInLove || $slaves[_i].isBroken>>
 			/* dropdowns for currently available jobs */
 			/* currently don't do anything, will need a script to update vars, etc */
 			
-			<div>
-				<label for="job">Assign to corrupted food court:</label>
-				<<= '<select name="job" id="slave-job-' + _i + '" class="slave-job">'>>
-					<option value=0 selected="selected">(None)</option>
-					<<for _c = 0; _c < $corruptedPc.length; _c++>>
-						<option value=<<=_c>>><<=$corruptedPc[_c]>></option>
-					<</for>>
-				</select>
+			<div class="dropdown">
+				<label for="job">Job:</label>
+				<<= '<select name="job" id="slave-job-' + _i + '" class="slave-job">' + $jobsOptions.join(" ") + '</select>'>>
 			</div>
-			<br>
+			<br><br>
 		<</if>>
 
 		/* punishments */
-		Assign her to a punishment:<br>
-		<div>
+		
+		<div class="dropdown">
+			<label>Punishment:</label>
 			<<= '<select name="punish" id="slave-punish-' + _i + '" class="slave-punish">' +
 				'<option value=0 selected="selected">(None)</option>' +
 				
