@@ -17,15 +17,17 @@
 	
 	/* logic to show available jobs here. */
 	<<for _i = 0; _i < $slaves.length; _i++>>
+		Assign a punishment or job for <<=$slaves[_i].name>>:<br>
 		<<if $slaves[_i].isInLove || $slaves[_i].isBroken>>
 			/* dropdowns for currently available jobs */
 			/* currently don't do anything, will need a script to update vars, etc */
-			Assign to corrupted food court:<br>
+			
 			<div>
-				<select>
-					<option value=0>(None)</option>
-					<<for _c = 0; _c < $isCorruptedPc.length; _c++>>
-						<option value=<<=_c>>><<=$isCorruptedPc[_c]>></option>
+				<label for="job">Assign to corrupted food court:</label>
+				<<= '<select name="job" id="slave-job-' + _i + '" class="slave-job">'>>
+					<option value=0 selected="selected">(None)</option>
+					<<for _c = 0; _c < $corruptedPc.length; _c++>>
+						<option value=<<=_c>>><<=$corruptedPc[_c]>></option>
 					<</for>>
 				</select>
 			</div>
@@ -35,13 +37,14 @@
 		/* punishments */
 		Assign her to a punishment:<br>
 		<div>
-			<select>
-				<option value=0>(None)</option>
-				/* should be dynamically generated */
-				<option value=1>Wooden Pony</option>
-				<option value=2>Caged</option>
-			</select>
+			<<= '<select name="punish" id="slave-punish-' + _i + '" class="slave-punish">' +
+				'<option value=0 selected="selected">(None)</option>' +
+				
+				'<option value=1>Wooden Pony</option>' +
+				'<option value=2>Caged</option>' +
+			'</select>'>>
 		</div>
+		<br><br>
 	<</for>>
 
 	<br><br>
