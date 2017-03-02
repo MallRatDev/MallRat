@@ -19,8 +19,12 @@
 	
 }>>
 
+/* corruption of vendors arrays */
 <<set $corruptedPc = []>>
 <<set $corruptedBabaYaga = []>>
+
+/* for dungeon upgrades */
+<<set $punishments = []>>
 
 <<set $pc = 
 {

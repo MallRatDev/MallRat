@@ -32,20 +32,28 @@
 				<label for="job">Job:</label>
 				<<= '<select name="job" id="slave-job-' + _i + '" class="slave-job">' + $jobsOptions.join(" ") + '</select>'>>
 			</div>
-			<br><br>
+			<br>
+		<<else>>
+			(There are no available jobs)
+			<br>
 		<</if>>
 
 		/* punishments */
-		
-		<div class="dropdown">
-			<label>Punishment:</label>
-			<<= '<select name="punish" id="slave-punish-' + _i + '" class="slave-punish">' +
-				'<option value=0 selected="selected">(None)</option>' +
-				
-				'<option value=1>Wooden Pony</option>' +
-				'<option value=2>Caged</option>' +
-			'</select>'>>
-		</div>
+		<<if $punishments.length > 0>>
+			<<set $punishmentsOptions = ['<option value="0" selected>(None)</option>']>>
+			<<for _i = 0; _i < $punishments.length; _i++>>
+				<<run $punishmentsOptions.push('<option value="' + (_i + 1) + '">' + $punishments[_i] + '</option>')>>
+			<</for>>
+			<div class="dropdown">
+				<label>Punishment:</label>
+				<<= '<select name="punish" id="slave-punish-' + _i + '" class="slave-punish">' +
+					$punishmentsOptions.join(" ") +
+					'</select>'
+				>>
+			</div>
+		<<else>>
+			(There are no available punishments)
+		<</if>>
 		<br><br>
 	<</for>>
 
