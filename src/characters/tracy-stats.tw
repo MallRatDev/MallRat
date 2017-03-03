@@ -12,6 +12,7 @@
 		isInLove:false,
 		isPregnant:false,
 		isWorkingAt:"",
+		punishment:"",
 		description:"She simultaneously appears studious and wanton; while 18, she looks much younger although well developed.  She wears librarian glasses.",
 		bodySize:2,
 		bodyTone:1,

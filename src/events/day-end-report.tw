@@ -2,17 +2,8 @@
 	/* list each slave and allow assignment to tasks. */
 	You can manage what your slaves are assigned to do during the day.
 	<br><br>
-	<<for _i = 0; _i < $slaves.length; _i++>>
-		<<set $slaves[_i].isWorkingAt = "">>
-	<</for>>
-
-	<<set $jobsOptions = ['<option value="0" selected>(None)</option>']>>
-	<<for _i = 0; _i < $corruptedPc.length; _i++>>
-		<<run $jobsOptions.push('<option value="' + (_i + 1) + '">' + $corruptedPc[_i] + '</option>')>>
-	<</for>>
 
 
-	
 	/* logic to show available jobs here. */
 	<<for _i = 0; _i < $slaves.length; _i++>>
 		<<=$slaves[_i].name>> is 
@@ -23,15 +14,16 @@
 		<<else>>
 			still in training and only available for punishment.
 		<</if>>		
+
 		Assign a punishment or job for <<=$slaves[_i].name>>:<br>
-		<<if $slaves[_i].isInLove || $slaves[_i].isBroken>>
-			/* dropdowns for currently available jobs */
-			/* currently don't do anything, will need a script to update vars, etc */
-			
-			<div class="dropdown">
-				<label for="job">Job:</label>
-				<<= '<select name="job" id="slave-job-' + _i + '" class="slave-job">' + $jobsOptions.join(" ") + '</select>'>>
-			</div>
+		<<if $slaves[_i].isInLove || $slaves[_i].isBroken && $corruptedPc.length > 0>>
+			/* switch to link macros because comboboxes suck */
+
+			<<='Select a job (currently <strong><span id="job-slave-' + _i + '">' + ($slaves[_i].isWorkingAt || "None") + '</span></strong>):<br>'>>
+			<<='<<link "None">><<replace "#job-slave-' + _i + '">>None<</replace>><<set $slaves[' + _i + '].isWorkingAt="">><</link>>'>> | 
+			<<for _j = 0; _j < $corruptedPc.length; _j++>>
+				<<='<<link "' + $corruptedPc[_j] + '">><<replace "#job-slave-' + _i + '">>' + $corruptedPc[_j] + '<</replace>><<set $slaves[' + _i + '].isWorkingAt="' + $corruptedPc[_j] + '">><</link>> | '>>
+			<</for>>
 			<br>
 		<<else>>
 			(There are no available jobs)
@@ -40,17 +32,13 @@
 
 		/* punishments */
 		<<if $punishments.length > 0>>
-			<<set $punishmentsOptions = ['<option value="0" selected>(None)</option>']>>
-			<<for _i = 0; _i < $punishments.length; _i++>>
-				<<run $punishmentsOptions.push('<option value="' + (_i + 1) + '">' + $punishments[_i] + '</option>')>>
+			<<='Select a punishment (currently <strong><span id="punishment-slave-' + _i + '">' + ($slaves[_i].punishment) + '</span></strong>):<br>'>>
+			<<='<<link "None">><<replace "#punishment-slave-' + _i + '">>None<</replace>><<set $slaves[' + _i + '].punishment="">><</link>>'>> | 
+			<<for _p = 0; _p < $punishments.length; _p++>>
+				<<='<<link "' + $punishments[_p] + '">><<replace "#punishment-slave-' + _i + '">>' + $punishments[_p] + '<</replace>><<set $slaves[' + _i + '].punishment="' + $punishments[_p] + '">><</link>> | '>>
 			<</for>>
-			<div class="dropdown">
-				<label>Punishment:</label>
-				<<= '<select name="punish" id="slave-punish-' + _i + '" class="slave-punish">' +
-					$punishmentsOptions.join(" ") +
-					'</select>'
-				>>
-			</div>
+
+
 		<<else>>
 			(There are no available punishments)
 		<</if>>
