@@ -26,8 +26,11 @@
 :: Working At Corrupted Milkshakes to the Yard[nobr]
 	<<set _customers = random(40) + 40>>
 	<<set _orgasms = Math.floor(_customers / (10 - $slaves[$csi].cum - $slaves[$csi].oral / 2 - $slaves[$csi].submission))>>
-	<<set _power = (customers + _orgasms * 2) / 4>>
-	<<=$slaves[$csi].name>> spent the day working at Milkshakes to the Yard.  She's seated on a saddle in an octagonal case, swallowing cum from all the customers; every time a customer comes in her mouth, reciprocating dildos fuck her pussy and ass.  During the day she swallows _customers loads of cum from the customers gathered around the case and orgasms _orgasms times.  Part of the power generated goes to powering the magic corrupting the vendor, but you still generate _power over the course of the day.
+	<<set _power = Math.floor((_customers + _orgasms * 2) / 4)>>
+	<<set _money = _customers * 3 + random(25)>>
+	<<=$slaves[$csi].name>> spent the day working at Milkshakes to the Yard.  She's seated on a saddle in an octagonal case, swallowing cum from all the customers; every time a customer comes in her mouth, reciprocating dildos fuck her pussy and ass.  During the day she swallows _customers loads of cum from the customers gathered around the case and orgasms _orgasms times.  Part of the power generated goes to powering the magic corrupting the vendor, but you still generate _power power over the course of the day, and received $<<=_money>> in tips.
+	<<set $money += _money>>
+	<<set $pc.power += _power>>
 
 :: Baba Yaga Corrupted Terrible "Greek"[mall vendor]
 	This place has been corrupted too.  When you walk in you see that the pretty olive-skinned girl is still here.  She's fastened down onto a pedestal in the center of the space, her forearms, wrists, knees, and ankles in leather shackles.  A padded bar presses down on her back, forcing her ass out.  She's wearing a metal belt with a metal strip running from the belt at the small of her back, through her legs, and back to the belt at her belly, compeltely blocking access to her pussy.  Her ass isn't so lucky; there's a large metal hoop giving access to that.  A strap passes around her neck, too, pushing it down onto what has to be a dildo or magic cock or something.  This place was never as popular as a lot of the other food court vendors, so the flow of customers isn't high, but one enters and undergoes a transformation, losing his clothes and becoming a huge, hulking caracature of a man, covered with hair and muscles.  His brain seem to revert to cave man as well, but his cock becomes huge, one over a foot long and obscenely thick.  As soon as he spots the girl he charges at her while she whimpers with terror.  He grabs her hips and thrusts, at first futilly, against the belt, but then finds the metal ring and the asshole behind it and thrusts in to the muffled shrieks of the poor penetrated girl.  He pounds her mercilessly, grabbing her hips and the belt to give him leverage to thrust his huge cock deep into her ass.  For long minutes her ass is ravaged until he thrusts a few more times in, plants his cock deep in her, and roars, filling her ass with cum.  Done, he just walks away, leaving her ass dripping cum and gaping wide open while she whimpers into the cock.
@@ -44,6 +47,15 @@
 	Yep, this place is sure to generate plenty of energy, and the guys seem to be generous tippers too.  That's the advantage of good service!
 
 	[[East Food Court]]
+
+:: Working At Corrupted Terrible "Greek"[nobr]
+	<<set _customers = random(10) + 10>>
+	<<set _ass = Math_floor(_customers * $slaves[$csi].anal / 2 + random(2))>>
+	<<set _mouth = Math_floor(_customers / 2 + random(2))>>
+	<<set _pussy = Math_floor(_customers / 2 + random(2))>>
+	<<set _power = _ass + random(_mouth + _pussy)>>
+	<<set _money = _power * 2 + random(25)>>
+	<<=$slaves[$csi].name>> is dominantly fucked by customers coming in all day.  They focus on her asshole, and she takes _ass cocks up her ass<<if _ass > _customers>>, so many that many customers fuck her ass more than once a day.<<else>>.<</if>>  By the end of the day, she's also served _mouth customers with her mouth and _pussy have used her cunt.  She generates _power for you and is left _money in tips.
 
 :: Baba Yaga Corrupted America's CLEANEST Fish Tacos![mall vendor]
 	Oh man... as if the regular version of this place wasn't weird enough, it's been corrupted into something from a surrealist porno.  
@@ -66,3 +78,11 @@
 
 	[[North Food Court]]
 
+:: Working At Corrupted America's CLEANEST Fish Tacos[nobr]
+	<<set _customers = random(20) + 20>>
+	<<set _abuse = Math.floor(_customers / (6 - $slaves[$csi].housework - $slaves[$csi].humiliation))>>
+	<<set _money = _abuse + random(25)>>
+	<<=$slaves[$csi].name>> spends her day cleaning pussies with her mouth, eating _customers out while being abused constantly with humiliation, punishments, and cocks in her other two holes.  Her humiliation and the orgasms of the customers generate _abuse power for you, and she receives _money in tips.
+	<<set $pc.power += _abuse>>
+	<<set $money += _money>>
+	
