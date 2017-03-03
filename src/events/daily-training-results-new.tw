@@ -180,6 +180,3 @@
 		[[Day End Report]]
 	<</if>>
 
-:: Day End Report[nobr TimeNone]
-	/* for right now, just go to the room. */
-	<<goto "Your Room">>
