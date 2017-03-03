@@ -83,7 +83,18 @@
 		<br>
 	<</for>>
 	<br><br>
-	Currently, your dungeon has no customizations.
+	<<if $punishments.length === 0>>
+		Currently, your dungeon has no customizations.  [[Customize Dungeon]]
+	<<else>>
+		Customizations:<br>
+		<ul>
+		<<for _i = 0; _i < $punishments.length; _i++>>
+			<li><<=$punishments[_i]>></li>
+		<</for>>
+		</ul>
+		[[Customize Dungeon]]
+	<</if>>
+
 	<br><br>
 	[[Your Room]] <br>
 	[[Head upstairs|Kitchen]] <br>
@@ -177,3 +188,50 @@
 	Of course you'll have to figure something else out when your parents return from Europe, but you've got some time. 
 
 	[[Time to try out this dungeon!|Game Room]]
+
+:: Customize Dungeon[nobr TimeNone]
+	If you have the appropriate instructions and materials, you can customize your dungeon with various ways to punish slaves during the day.  This is mostly useful to break slaves more quickly, although some may cause sharp increases in lust or even have a chance to introduce kinks. <br>
+	<br>
+	<<if Game.inventoryQuantity("Bondage 101 Book")>>
+		<<if $punishments.indexOf("Wooden Pony") === -1>>
+			You can build a wooden pony if you have:<br>
+			<ul>
+				<li>A Four-by-four</li>
+				<li>Two Sawhorses</li>
+			</ul>
+			<<if Game.inventoryQuantity("Four-by-four") > 0 && Game.inventoryQuantity("Sawhorse") >= 2>>
+				<span id="wooden-pony"
+					<<link "Build Wooden Pony">>
+						<<run $punishments.push("Wooden Pony")>>
+						<<run Game.inventoryRemove("Four-by-four", 1)>>
+						<<run Game.inventoryRemove("Sawhorse", 2)>>
+						<<replace "#wooden-pony">>Built.<br><</remove>>
+					<</link>><br>
+				</span>
+			<</if>>
+		<<else>>
+			You've already built a wooden pony from Bondage 101.<br><br>
+		<</if>>
+		
+		<<if $punishments.indexOf("Cage") === -1>>
+			You can install a cage to put slaves in if you have:<br>
+			<ul>
+				<li>A Cage</li>
+				<li>A Hammer</li>
+				<li>Nails</li>
+			</ul>
+			<span id="build-cage">
+				<<if Game.inventoryQuantity("Cage") > 0 && Game.inventoryQuantity("Hammer") > 0 && Game.inventoryQuantity("Nails") > 0>>
+					<<link "Build Cage">>
+						<<run $punishments.push("Cage")>>
+						<<run Game.inventoryRemove("Cage", 1)>>
+						<<replace "#build-cage">>Built.<br><</remove>>
+					<</link>><br>
+			</span>
+		<<else>>
+			You've already installed a cage.<br><br>
+		<</if>>
+	<</if>>
+		
+	<br><br>
+	[[Game Room]]
