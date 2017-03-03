@@ -205,13 +205,33 @@
 						<<run $punishments.push("Wooden Pony")>>
 						<<run Game.inventoryRemove("Four-by-four", 1)>>
 						<<run Game.inventoryRemove("Sawhorse", 2)>>
-						<<replace "#wooden-pony">>Built.<</remove>>
-					<</link>>
+						<<replace "#wooden-pony">>Built.<br><</remove>>
+					<</link>><br>
 				</span>
 			<</if>>
 		<<else>>
-			You've already built a wooden pony from Bondage 101.
+			You've already built a wooden pony from Bondage 101.<br><br>
+		<</if>>
+		
+		<<if $punishments.indexOf("Cage") === -1>>
+			You can install a cage to put slaves in if you have:<br>
+			<ul>
+				<li>A Cage</li>
+				<li>A Hammer</li>
+				<li>Nails</li>
+			</ul>
+			<span id="build-cage">
+				<<if Game.inventoryQuantity("Cage") > 0 && Game.inventoryQuantity("Hammer") > 0 && Game.inventoryQuantity("Nails") > 0>>
+					<<link "Build Cage">>
+						<<run $punishments.push("Cage")>>
+						<<run Game.inventoryRemove("Cage", 1)>>
+						<<replace "#build-cage">>Built.<br><</remove>>
+					<</link>><br>
+			</span>
+		<<else>>
+			You've already installed a cage.<br><br>
 		<</if>>
 	<</if>>
+		
 	<br><br>
 	[[Game Room]]
