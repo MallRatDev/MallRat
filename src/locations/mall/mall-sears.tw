@@ -14,7 +14,7 @@
 :: Hardware[mall]
 	The hardware section has everything you could need for home improvement, and even offers bulk supply delivery to your house for free!  Sweet!
 
-	<<set $itemsForSale = ["Rope", "Lumber", "Sawhorse", "Corner Moulding", "Pipe"]>>\
+	<<set $itemsForSale = ["Rope", "Lumber", "Sawhorse", "Four-by-four", "Pipe"]>>\
 	<<set $itemsForSaleCosts = [15, 95, 125, 65, 140]>>\
 	<<display "Store">>
 
