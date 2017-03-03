@@ -20,11 +20,11 @@
 }>>
 
 /* corruption of vendors arrays */
-<<set $corruptedPc = ['Hot Dogs']>>
+<<set $corruptedPc = []>>
 <<set $corruptedBabaYaga = []>>
 
 /* for dungeon upgrades */
-<<set $punishments = ["Wooden Pony", "Cage", "Stocks"]>>
+<<set $punishments = []>>
 
 <<set $pc = 
 {

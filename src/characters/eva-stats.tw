@@ -10,7 +10,7 @@
 		relationship:0,
 		enslaved:0,
 		isBroken:false,
-		isInLove:true,
+		isInLove:false,
 		isPregnant:false,
 		isWorkingAt:"",
 		punishment:"",
