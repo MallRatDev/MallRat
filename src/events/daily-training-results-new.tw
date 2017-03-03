@@ -159,10 +159,17 @@
 	/* etc, etc */
 
 	/* work */
-	<<if $slaves[$csi].isWorkingAt>>
+	<<if $slaves[$csi].isWorkingAt != "">>
 		<br><br>
-		<<display "Working At Corrupted " + isWorkingAt>>
+		<<display "Working At Corrupted " + $slaves[$csi].isWorkingAt>>
 	<</if>>
+
+	/* punishment */
+	<<if $slaves[$csi].punishment != "">>
+		<br><br>
+		<<display "Punishment " + $slaves[$csi].punishment>>
+	<</if>>
+
 
 	<br><br>
 	/* set up next slave link */
