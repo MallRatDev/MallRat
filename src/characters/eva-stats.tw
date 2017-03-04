@@ -13,6 +13,7 @@
 		isInLove:false,
 		isPregnant:false,
 		isWorkingAt:"",
+		punishment:"",
 		description:"She oozes teenage angst.",
 		bodySize:2,
 		bodyTone:1,

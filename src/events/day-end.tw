@@ -9,7 +9,7 @@
 
 	<<if $day === 1>>
 		<<run Dialog.setup("Act I")>>
-		<<run Dialog.wiki("In which our intepid hero discovers...<br><strong>The Mall!</strong>")>>
+		<<run Dialog.wiki("In which our intepid hero receives a bequest from a long lost relative, makes an alliance with Powers Man Was Not Meant To Know, inflicts certain indignities upon patrons of a local establishment, and discovers...<br><strong>The Mall!</strong><br><br><<button 'Ready!'>><<run Dialog.close()>><</button>>")>>
 		<<run Dialog.open()>>
 	<</if>>
 
@@ -38,6 +38,9 @@
 		<<if $slaves.length > 0>>
 			<<set $csi = 0>>
 			<<goto "Daily Training New">>
+		<<else>>
+			<br><br>
+			[[Wake up|Your Room]]
 		<</if>>
 	<<else>>
 		<<display "Daily Training Results">>

@@ -13,6 +13,7 @@
 		isInLove:false,
 		isPregnant:false,
 		isWorkingAt:"",
+		punishment:"",
 		description:"A petite and nerdy-looking asian girl, she's very thin but completely filled out.",
 		bodySize:1,
 		bodyTone:1,

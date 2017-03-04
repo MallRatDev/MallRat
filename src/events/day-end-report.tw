@@ -1,0 +1,69 @@
+:: Day End Report[nobr TimeNone]
+	/* list each slave and allow assignment to tasks. */
+	You can manage what your slaves are assigned to do during the day.
+	<br><br>
+
+
+	/* logic to show available jobs here. */
+	<<for _i = 0; _i < $slaves.length; _i++>>
+		<<=$slaves[_i].name>> is 
+		<<if $slaves[_i].isBroken>> 
+			broken and available for assignment.
+		<<elseif $slaves[_i].isInLove>>
+			in love with you and available for assignment.
+		<<else>>
+			still in training and only available for punishment.
+		<</if>>		
+
+		Assign a punishment or job for <<=$slaves[_i].name>>:<br>
+		<<if $slaves[_i].isInLove || $slaves[_i].isBroken && $corruptedPc.length > 0>>
+			/* switch to link macros because comboboxes suck */
+
+			<<='Select a job (currently <strong><span id="job-slave-' + _i + '">' + ($slaves[_i].isWorkingAt || "None") + '</span></strong>):<br>'>>
+			<<='<<link "None">><<replace "#job-slave-' + _i + '">>None<</replace>><<set $slaves[' + _i + '].isWorkingAt="">><</link>>'>> | 
+			<<for _j = 0; _j < $corruptedPc.length; _j++>>
+				<<='<<link "' + $corruptedPc[_j] + '">><<replace "#job-slave-' + _i + '">>' + $corruptedPc[_j] + '<</replace>><<set $slaves[' + _i + '].isWorkingAt="' + $corruptedPc[_j] + '">>' + 
+				'<<set $slaves[' + _i + '].punishment="">><<replace "#punishment-slave-' + _i + '">>None<</replace>>' + 
+				'<<for _count = 0; _count < $slaves.length; _count++>>' +
+				'<<if $slaves[ _count].isWorkingAt === "' + $corruptedPc[_j] + '" && _count != ' + _i + '>>' +
+				'<<set $slaves[_count].isWorkingAt = "">><<set _repl = "#job-slave-" + _count>><<replace _repl>>None<</replace>>' +
+				'<</if>>' + 
+				'<</for>>' +
+
+				'<</link>> | '>>
+			<</for>>
+			<br>
+		<<else>>
+			(There are no available jobs)<<='<span id="job-slave-' + _i +'" style="display:none;"></span>'>>
+			<br>
+		<</if>>
+
+		/* punishments */
+		<<if $punishments.length > 0>>
+			<<='Select a punishment (currently <strong><span id="punishment-slave-' + _i + '">' + ($slaves[_i].punishment || "None") + '</span></strong>):<br>'>>
+			<<='<<link "None">><<replace "#punishment-slave-' + _i + '">>None<</replace>><<set $slaves[' + _i + '].punishment="">><</link>>'>> | 
+			<<for _p = 0; _p < $punishments.length; _p++>>
+				<<='<<link "' + $punishments[_p] + '">><<replace "#punishment-slave-' + _i + '">>' + $punishments[_p] + '<</replace>><<set $slaves[' + _i + '].punishment="' + $punishments[_p] + '">>' +
+				'<<set $slaves[' + _i + '].isWorkingAt="">><<replace "#job-slave-' + _i + '">>None<</replace>>' + 
+				'<<for _count = 0; _count < $slaves.length; _count++>>' +
+				'<<if $slaves[ _count].punishment === "' + $punishments[_p] + '" && _count != ' + _i + '>>' +
+				'<<set $slaves[_count].punishment = "">><<set _repl = "#punishment-slave-" + _count>><<replace _repl>>None<</replace>>' +
+				'<</if>>' + 
+				'<</for>>' +
+
+				'<</link>> | '>>
+
+
+
+				
+			<</for>>
+
+
+		<<else>>
+			(There are no available punishments)<<='<span id="punishment-slave-' + _i +'" style="display:none;"></span>'>>
+		<</if>>
+		<br><br>
+	<</for>>
+
+	<br><br>
+	[[Wake Up|Your Room]]

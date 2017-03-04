@@ -1,5 +1,5 @@
 :: StoryInit
-<<set $version = "0.2.2">>
+<<set $version = "0.3.0">>
 
 
 <<set $day = 0>>
@@ -19,8 +19,12 @@
 	
 }>>
 
+/* corruption of vendors arrays */
 <<set $corruptedPc = []>>
 <<set $corruptedBabaYaga = []>>
+
+/* for dungeon upgrades */
+<<set $punishments = []>>
 
 <<set $pc = 
 {
@@ -98,7 +102,7 @@
 
 <<set $keypadQuestions = ["Is Eva's navel pierced?", "What's Bree's bra size?", "Bree: Do the carpets match the drapes?", "How many guys has Tara slept with to date?", "What's Su's favorite porn?", "Who is Morgan's crush?", "What does Angie give up for weed?", "What kind of pills are Bree taking?"]>>
 
-<<set $keypadAnswers = ["yes", "36dd", "yes", "19", "tentacle", "bree", "anal", "diet"]>>
+<<set $keypadAnswers = ["yes|yeah", "36dd", "yes|yeah", "19|nineteen", "tentacle|anime|manga|hentai|tentacle porn|tentacle rape", "bree", "anal|ass|asshole|anal sex|butt sex", "diet|weight loss"]>>
 
 <<set $keypad = []>>
 
