@@ -6,17 +6,17 @@
 	<<set $keypadCurrentQuestions = []>>
 	<<set $keypadCurrentAnswers = []>>
 
-	<<set _r = random(0,$keypadQuestions.length)>>
-		<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
-		<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
+	<<set _r = random(0,$keypadQuestions.length - 1)>>
+	<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
+	<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
 
-		<<set _r = random(0,$keypadQuestions.length)>>
-		<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
-		<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
+	<<set _r = random(0,$keypadQuestions.length) - 1>>
+	<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
+	<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
 
-		<<set _r = random(0,$keypadQuestions.length)>>
-		<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
-		<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
+	<<set _r = random(0,$keypadQuestions.length) - 1>>
+	<<run $keypadCurrentQuestions.push($keypadQuestions[_r])>>
+	<<run $keypadCurrentAnswers.push($keypadAnswers[_r])>>
 
 	<</nobr>>
 	Try to answer?
@@ -33,9 +33,10 @@
 	<<elseif $flags.keypadAttempts === 3>>
 		<<goto "The Major">>
 	<<elseif $keypadResponse.toLowerCase() === $keypadCurrentAnswers[$flags.keypadAttempts - 1]>>
+	<<elseif $keypadCurrentAnswers[$flags.keypadAttempts - 1].split("|").indexOf($keypadResponse.toLowerCase()) != -1>>
 	/* pass */
 	<<else>>
-		<<goto "The Major">> //* TODO: this has been set so the player always succeeds due to faulty questions. */
+		<<goto "Run Away!">> //* TODO: this has been set so the player always succeeds due to faulty questions. */
 	<</if>>
 
 	<<if $debugging>><<click "Get 100 power">><<set $pc.power += 100>><</click>><</if>>

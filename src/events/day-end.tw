@@ -38,6 +38,9 @@
 		<<if $slaves.length > 0>>
 			<<set $csi = 0>>
 			<<goto "Daily Training New">>
+		<<else>>
+			<br><br>
+			[[Wake up|Your Room]]
 		<</if>>
 	<<else>>
 		<<display "Daily Training Results">>
