@@ -7,6 +7,7 @@
 	<<else>>
 		<<set $livingroom = $pc.path + " Living Room">>
 		<<display $livingroom>>
+		<<display "Ritual Magic">>
 		<br><br>
 	<</if>>
 
@@ -33,9 +34,6 @@
 		<<set $pc.path = "Change">>
 		You light the proper candles, draw the diagrams on the floor, and chant the correct words.  Your cock grows, then grows some more... damn.  You were pretty average, but now, well, is 9" average? 
 	<</if>>
-
-
-		
 
 	<br><br>
 	[[Kitchen]]
@@ -107,3 +105,17 @@ No one tells you about this side of the magic game.  Chocolate frogs?  Please.  
 <</click>>
 </span>
 
+:: Ritual Magic[nobr TimeNone]
+	Here in your Place of Power, you can draw upon your patron to perform rituals.  The rituals currently available:<br>
+	<br>
+	<<if $pc.power > 50>>
+		<span id="create-collar">
+			<<link "Create another collar">>
+				<<replace "#create-collar">>
+					<<set $pc.power -= 50>>
+					<<run Game.inventoryAdd("Leather Collar", 1)>>
+					Created another collar.  Look out, mall rats!<br>
+				<</replace>>
+			<</link>><br>
+		</span>
+	<</if>>
