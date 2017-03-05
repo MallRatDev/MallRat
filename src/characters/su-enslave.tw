@@ -46,7 +46,7 @@
 		<<elseif $slaves.length > 2>>\
 			You tell her she has to get permission from all your other slaves to come, and if one of them say no, she can't.
 		<</if>>\
-		<<enslave "su">>\
+		<<enslave "Su">>\
 		<<run Save.autoslave.save("Enslaved Su")>>\
 	<<else>>\
 		"Come on... I know you want to see what I can make you do."
