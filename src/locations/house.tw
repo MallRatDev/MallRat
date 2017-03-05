@@ -227,6 +227,7 @@
 						<<run Game.inventoryRemove("Cage", 1)>>
 						<<replace "#build-cage">>Built.<br><</remove>>
 					<</link>><br>
+				<</if>>
 			</span>
 		<<else>>
 			You've already installed a cage.<br><br>
