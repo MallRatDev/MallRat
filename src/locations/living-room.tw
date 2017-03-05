@@ -1,3 +1,46 @@
+:: Living Room[hidden nobr]
+
+
+	<<if $pc.magicLevel < 1>>
+		<<display "Normal Living Room">>
+		<br><br>
+	<<else>>
+		<<set $livingroom = $pc.path + " Living Room">>
+		<<display $livingroom>>
+		<br><br>
+	<</if>>
+
+	/*  TODO:  items for rituals and fill out the rituals.  This is just a placeholder */
+	<<if $pc.ritual == "Darkness">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.ritual = "">>
+		<<set $pc.path = "Darkness">>
+		You summon up a slut, stick a couple fingers in her ass, and draw out some patterns. 
+	<<elseif $pc.ritual == "Soul">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.ritual = "">>
+		<<set $pc.path = "Soul">>
+		You light the proper candles, draw the diagrams on the floor, and chant the correct words.  
+	<<elseif $pc.ritual == "Virility">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.path="Virility">>
+		<<set $pc.ritual = "">>
+		<<set $pc.cockLength=9>>
+		<<goto "Virility Ritual">>
+	<<elseif $pc.ritual == "Change">>
+		<<set $pc.magicLevel = 1>>
+		<<set $pc.ritual = "">>
+		<<set $pc.path = "Change">>
+		You light the proper candles, draw the diagrams on the floor, and chant the correct words.  Your cock grows, then grows some more... damn.  You were pretty average, but now, well, is 9" average? 
+	<</if>>
+
+
+		
+
+	<br><br>
+	[[Kitchen]]
+	<br>
+	[[Outside|Outside House]]
 
 :: Soul Living Room[TimeNone nobr]
 Sensuous pictures cover the walls.  A soft tiger skin covers the floor, and the furniture is all ottomans and plush couches, some the height of a kneeling person and some a standing woman could bend over.  A warm, happy glow fills the room.  For some reason, you get hard just standing here.  Your patron is close, and she will have your back.  Hail She Who Pleases!
@@ -64,5 +107,3 @@ No one tells you about this side of the magic game.  Chocolate frogs?  Please.  
 <</click>>
 </span>
 
-:: Soul Ritual
-You 
