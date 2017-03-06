@@ -10,7 +10,7 @@
 	"Like be your girlfriend?"
 	"No, like be my slave fucktoy."
 	"Woah, man... that's crazy."
-	<<if Game.inventoryQuantity("Leather Collar")>>\
+	<<if Game.inventoryQuantity("Leather Collar") > 0>>\
 		"Want to try on my collar?  Just for fun?"
 		"Well..."  She glances over to the table, then decides to ignore them.
 		"Fine, but we're going to have to talk about anything more."
