@@ -1,0 +1,120 @@
+:: Charlotte Stats[widget]
+	<<if typeof $characters === 'undefined'>>
+		<<set $characters = []>>
+	<</if>>
+
+	<<run $characters.push({
+	
+		name:"Charlotte",
+		gender:"female",
+		relationship:0,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		punishment:"",
+		description:"A petite and nerdy-looking asian girl, she's very thin but completely filled out.",
+		bodySize:1,
+		bodyTone:1,
+		face:"exotic and attractive",
+		skin:"light brown",
+		facialPeircings:"a lip ring",
+		hairColor:"black",
+		hairLength:"short",
+		hairCut:"with bangs",
+		titsSize:3,
+		titsShape:"perky",
+		nippleSize:"small",
+		nippleColor:"brown",
+		nippleAreolae:"small",
+		nipplePeircings:"bars",
+		navelPiercings:"",
+		pussySize:1,
+		pussyHairStyle:0,
+		pussyHairColor:"black",
+		pussyLips:1,
+		pussyClit:3,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:0,
+		assholeStyle:0,
+		assholeColor:0,
+		
+		
+		clothingRevealing:false,
+		clothingTop:3,  	
+		clothingBottom:3,
+		clothingWrists:3,
+		clothingAnkles:-1,
+		clothingCollar:-1,
+		clothingShoes:2,
+
+		plugToy:0,
+		dildoToy:0,
+		nippleToy:0,
+		waistToy:0,
+		breastToy:0,
+		crotchToy:0,
+		gagToy:0,
+		
+		dayLastSpokenTo: -1,
+		
+		obedience:0,
+		fear:0,
+		sexDrive:8,
+		
+		
+		pain:0,
+		lust:0,
+		position:0, 
+		
+	
+		oral:0,
+		cum:0,
+		deepthroat:0,
+		penetration:0,  
+		anal:0,
+		painal:0,
+		
+		begging:1,
+		humiliation:1,
+		bondage:1,
+		masochism:0,
+		housework:0,
+		submission:2,
+		
+		resistOral:5,
+		resistCum:10,
+		resistDeepthroat:15,
+		resistPenetration:30,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:5,
+		resistHumiliation:15,
+		resistBondage:25,
+		resistMasochism:55,
+		resistHousework:10,
+		resistSubmission:20,
+		
+		
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,		
+		
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+	})>>
+

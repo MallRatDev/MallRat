@@ -1,0 +1,21 @@
+:: Punishment Wooden Pony[nobr TimeNone]
+	<<=$slaves[$csi].name>> is being punished on the wooden pony.  A four-by-four is suspended between two sawhorses, diagonal to the floor so the edges point up and down and to the sides.  She's straddling it and her body weight presses her pussy cruelly down on the edge of the wood.  The height is adjusted so that she has to stand on tip toes to lift her poor pussy off the wooden edge, while nipple clamps pull her body forward, making the weigh come down on her clit.  She can lift her weight off her abused pussy by standing higher on her tip toes, or move the weight off her clit by pulling back, but at the cost of her calves or nipples, respectively.  She struggled back and forth all day, helpless to avoid her suffering, only able to change what part of her body suffers.
+	She's @@.fear-moderate;terrifed@@ and @@.relationship-bad;angry@@ at being made to @@.pain-moderate;suffer@@ like this.
+	<<set $slaves[$csi].fear += random(20) + 20>>
+	<<set $slaves[$csi].pain += random(20) + 20>>
+	<<set $slaves[$csi].relationship -= random(20) + 20>>
+	<<set $slaves[$csi].obedience += random(10) + 10>>
+
+:: Punishment Cage[nobr TimeNone]
+	You've left <<=$slaves[$csi].name>> confined, naked, in a cage all day.  She has little room to move and can only consider her future.  
+	<<if $slaves[$csi].submission + $slaves[$csi].humiliation > 0>>
+		Being kept like an animal in a cage @@.lust-good;excites@@ the kinky slut.
+		<<set $slaves[$csi].lust += random(20) + 20>>
+	<<else>>
+		She's @@.relationship-bad;angry@@ at being treated like an animal.
+	<</if>>
+	She's also @@.obedience-good;willing to obey@@ if this is what she has to look forward to when she's not being trained.
+	<<set $slaves[$csi].obedience += random(10) + 10>>
+	<<exercisekink "humiliation">>
+	<<exercisekink "submission">>
+	
