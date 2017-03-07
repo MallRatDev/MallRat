@@ -25,16 +25,8 @@
 		</span>
 		
 	<<else>>
-		<<if Game.inventoryQuantity("Leather Collar") > 0>>
 		<<display "Enslave Eva">>
 		<<enslave "Eva">>\
-	<<else>>
-		"Hey, man.  How's it going?"<br>
-		"Cool cuffs you have there."<br>
-		"Thanks!" She smiles and blushes, and you notice there are metal rings set in them.<br>
-		"Have you ever tried a collar?"<br>
-		"No, but I'd love to!" She blushes harder.<br>
-		Damn, you've got to check back with her when you have a collar around!<br>
 	<</if>>
 
 	<br><br>

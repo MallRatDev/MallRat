@@ -1,14 +1,66 @@
-:: Talk to the Mall Cop[TimeNone]
-The poor woman that the Major was assraping and torturing with the taser, <<describe "Charlotte" "Charlotte">> is still huddling in the corner.
+:: Talk to Charlotte Post Major[TimeNone]
+	"Hi! how are you?" She seems happy, or maybe relieved, to see you.
+	"How are things?  I see you're keeping an eye on things."
+	Her expression turns dark.  "Yeah.  Well, I have, and it isn't good.  I catch a glimpse sometimes of stuff happening.  Weird, unpleasant stuff.  That hot dog place, for example... I keep seeing some poor girl bound up and repeatedly fucked, then I focus and it's business as usual. <<if $corruptedBabaYaga.length > 1>>And some of the other food court vendors are seeming wrong, too, somehow."<<else>>"<</if>>
+	"I'm pretty sure you're seeing the truth. <<if $corruptePc.length > 0>>Something is using the energy of the people trapped in those places to fuel their own powers."<<else>>"<</if>>
+	"Yeah, I was getting that impression, somehow.  Are you going to be able to do anything about it?"
+	"I'm working on it.  I'm going to need help."
+	"I'll help, if I can."
 
-<<set $pc.isKickedOut = false>>\
-<<if Game.inventoryQuantity("Leather Collar")>>[[Try to put the collar on her]]<</if>>
-[[Talk to her|Talk to Charlotte]]
+	<<if Game.inventoryQuantity("Leather Collar") > 0>>[[Well, put this collar on then|Ask Charlotte to Wear Collar]]<br><</if>>\
+	[[Thanks, I'll let you know|Central Security Hallway]]
 
+:: Ask Charlotte to Wear Collar[TimeNone]
+	"Try this collar on."
+	She gives you a hard look and makes an almost growling noise. "Look, kid, we need to talk."
+	"Um... ok." She's pretty frightening, angry.
+	"I'm going to take a break, and we're going to have a chat." She turns to the monitors and locks her workstation and the monitors all go out.  She hits a couple keys, leads you out of the room, and the keypad-protected door locks.  You walk to her car and end up at a burger joint.  You order and find a seat in the corner.
+	"Ok, now, about that collar.  I don't know what you're thinking, and I'd have slapped you silly if you hadn't saved me before, but how the hell do you think you're going to put a slave collar on me without even a chat?"
+	"Um... well... wait, you know it's a slave collar?" Damn.  That kind of slipped out.
+	"Yeah.  I mean, it's for BDSM play.  You knew that, of course."  It's not a question.
+	"Yeah.  I just didn't think you'd know."
+	She laughs.  "You young wanna-be Doms are funny.  This is why I usually prefer men a few years older than me, and not wet behind the ears kids.  Yeah, I know.  I've been a slave most of my adult life.  I just recently ended it with my last Dom.  Master, really.  He ended up wanting more than just me and it was a problem."
+	You look at her, a little shocked.  Maybe it's her personality or the uniform, but you have a hard time imagining her being a sex slave.
+	"What?  Can't a girl have a little fun?" She giggles.  "So, you said you need help.  I'm guessing from the collar that the help you need involves sex."
+	"Yeah... I have a kind of patron.  I get power through sex acts."
+	"Ok... um, wow." She's a little flushed. "You were trying to get me to wear the collar to give you magic energy?"
+	"That's right."
+	"Well, I want this solved and like I said, I'm between masters right now.  You sure you're up for topping me though?" She gives you an arch smile.
+	"I'm up for it." You manage to sound confident and she seems suitably impressed.
+	"I just put on the collar and go to your place nights?  How'd you get those other girls to agree?"
 
+	Do you want to tell her the truth about the collar?
+	[[Tell her the truth|Tell Charlottle About the Collar]]
+	[[Lie to her|Lie to Charlotte About the Collar]]
 
-:: Try to put the collar on her[TimeNone]
-You know it's a dick move, but while she's weeping in the corner, you sneak up on her and slap the collar around her neck.  It fastens itself on, and you take her home.
-It's late, and you've had a long day.  You leave Charlotte in the dungeon and get ready to go to bed.
+:: Tell Charlotte About the Collar[TimeNone]
+	"Well... the collar is magic.  It exerts control over you."
+	"So you were trying to trick me?  You asshole!"
+	"Wait, no.  Not exactly.  I mean, I need help or whatever's happening is going to get worse."
+	"That's true I guess.  So this is mind control?"
+	"Not completely.  I mean, it influinces but you have to agree, even if it makes it hard to resist."
+	She looks thoughtful. "So if I wore it, I'd be kind of helpless, but I could still refuse?  If I tried hard?"
+	"Yeah, that's just about right."
+	"Oh, fuck.  That's kind of hot.  So why wouldn't I just take it off, if I really wanted to refuse?"
+	"Well..."
+	"What?" She's got that sharp look again.
+	"You can't take it off.  Or me either, really, unless you've become completely obedient."
+	"Hmm... completely obedient has an interesting sound.  So how do I know you'll treat me well?  I mean, not just try to break my spirit or whatever?"
+	"I guess you don't.  I mean, I could tell you whatever you want to hear now, but the truth is you'd be at my mercy after you put on the collar, no matter what."
+	She squirms in her seat.  "Yeah.  I guess that about sums it up.  Well... can I see it?"
+	"Sure." You hand over the collar and she looks it over, touching the runes in the leather with her fingertips.  She's breathing quickly and a bit flushed.
+	"So I put this on, and you can make me do anything?"
+	"Not exactly at first, but yeah, that's close enough."
+	"Ok.  Well, there are a couple things I should mention I guess.  First, if you want me to work in the mall security office, I'm perfectly willing and I'll report on whatever I see."
+	"Understood."
+	She makes sudden eye contact, although it's obviously hard for her. "And... well, I'm kind of a humiliation slut.  I like being made to feel like a dirty whore.  So that might help." Abruptly she puts the collar on and it fastens itself.  She gasps although she knew the idea.
+	"Ok, well I think I understand.  Let's go back to the mall, we'll want to leave your car there."
+	"Yes, Master."
+	You stand up and start walking out with her behind you.  You make sure to say "Good girl" where the wait staff can hear.
+	Once back at her office, you order her to remove her bra and panties, which makes her strip in front of you.  
+	"You'll need to come to my house when your shift is over."  You give her the address.  "Once you're in your car, undo all the buttons on your shirt and remove your pants.  Drive to my house, park in the driveway, and remove your shirt as well.  Keep the hat, though, I like it.  Then get out of your car, crawl across the front yard to the basement entrance, open the door, enter only five feet in, and leave the door open.  Get face down ass up facing away from the door and spread your ass and wait for me like that.  It usually takes me less than an hour to get home."
+	She gulps.  "I... I guess you are up for this, Master.  I sure hope you've got some mojo in case I get arrested."
+	"Have fun at work, slut.  See you later."
 
-[[Your Room][$hour=25]]
+	<<enslave "Charlotte">>\
+	[[Surveillance Room]]

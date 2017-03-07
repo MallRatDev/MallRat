@@ -10,7 +10,7 @@
 	"You're welcome, slave."  She blushes more furiously, and smiles.  She gets on her hands and knees and crawls up to you.
 	"Master... you don't need this collar any more.  I mean, with me.  I know you have uses for it, and I want to help you any way I can."
 	You can tell it's the truth.  For one thing, she's ordered to tell the truth, but for her it goes deeper.  She really loves obeying you.
-	"Thank you, Eva.  That's very thoughtful."  You remove the collar and set it aside.  
+	"Thank you, Eva.  That's very thoughtful."  You remove the collar and set it aside.  <<run Game.inventoryAdd("Black Leather Collar")>>
 	"And, Master?  I know there's something weird at the mall.  I know a way in that I don't think anyone else does.  There's a weird panel behind the dumpster, you know the smoking area?  I figured out how to open it, and it lets you into a service tunnel to the service passage, and to the security offices below.  I know they patrol the mall at night, but maybe the security offices... I don't know.  I just wanted you to know."  <<set $flags.knowsAboutSecretEntrance = true>>
 	"Thank you, Eva.  You're a good girl."
 	"Oh, and Master..."
