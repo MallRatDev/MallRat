@@ -26,7 +26,7 @@
 			The only question is what kind of experimental subject?
 			<br><br>\
 			<<link "Test her holes">>\
-				<<goto "Tracy Special Holes">>\
+				<<display "Tracy Special Holes">>\
 			<</link>>
 			/* in future link to Test Limits goes here.  */		
 		<</replace>>\	
@@ -92,9 +92,7 @@
 	<</append>>\
 	<<replace "#links-text">>\
 		<br><br>\
-		<<link "All done">>\
-			<<goto "Train Slave">>\
-		<</link>>\
+		[[Train Slave]]
 	<</replace>>\
 
 :: Tracy Special Limits[TimeNone]

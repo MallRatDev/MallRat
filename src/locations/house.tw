@@ -200,7 +200,7 @@
 				<li>Two Sawhorses</li>
 			</ul>
 			<<if Game.inventoryQuantity("Four-by-four") > 0 && Game.inventoryQuantity("Sawhorse") >= 2>>
-				<span id="wooden-pony"
+				<span id="wooden-pony">
 					<<link "Build Wooden Pony">>
 						<<run $punishments.push("Wooden Pony")>>
 						<<run Game.inventoryRemove("Four-by-four", 1)>>
@@ -213,7 +213,7 @@
 			You've already built a wooden pony from Bondage 101.<br><br>
 		<</if>>
 		
-		<<if $punishments.indexOf("Cage") === -1>>
+		<<if $punishments.indexOf("Large Cage") === -1>>
 			You can install a cage to put slaves in if you have:<br>
 			<ul>
 				<li>A Cage</li>
@@ -221,10 +221,10 @@
 				<li>Nails</li>
 			</ul>
 			<span id="build-cage">
-				<<if Game.inventoryQuantity("Cage") > 0 && Game.inventoryQuantity("Hammer") > 0 && Game.inventoryQuantity("Nails") > 0>>
+				<<if Game.inventoryQuantity("Large Cage") > 0 && Game.inventoryQuantity("Hammer") > 0 && Game.inventoryQuantity("Nails") > 0>>
 					<<link "Build Cage">>
 						<<run $punishments.push("Cage")>>
-						<<run Game.inventoryRemove("Cage", 1)>>
+						<<run Game.inventoryRemove("Large Cage", 1)>>
 						<<replace "#build-cage">>Built.<br><</remove>>
 					<</link>><br>
 				<</if>>
