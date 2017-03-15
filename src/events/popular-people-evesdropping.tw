@@ -1,6 +1,6 @@
 :: Sit Near the Popular People[nobr mall TimeLong]
 <<if $flags.knowBreeWeightIssues>>
-	<<if Game.inventoryQuantity("Leather Collar") > 0>>
+	<<if Game.inventoryQuantity("Leather Collar")>>
 		<<goto "Enslave Bree">>
 	<<else>>
 		You know, sitting at a table listening to Bree and her little followers, you have an idea... if you could pretend that she was chubby, maybe by comparing her to Eva, might be able to trick her into trying on the collar...  Worth a thought.  When you can get the collar back, of course.  <br><br>[[West Food Court]]

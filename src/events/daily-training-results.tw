@@ -12,7 +12,6 @@
 
 
 	<<if $slaves[_i].relationship > 100 && $slaves[_i].obedience > 100 && !$slaves[_i].isBroken && !$slaves[_i].isInLove>>
-		<<run Game.inventoryAdd("Leather Collar")>>
 		<<set $slaves[_i].isInLove = true>>
 		<<set $enslavedPassageString = $slaves[_i].name + " In Love">>
 		<<if tale.has($enslavedPassageString)>>
@@ -23,7 +22,6 @@
 			<<display "Generic Slave In Love">>
 		<</if>>
 	<<elseif $slaves[_i].fear > 100 && $slaves[_i].obedience > 100 &&  !$slaves[_i].isBroken && !$slaves[_i].isInLove>>
-		<<run Game.inventoryAdd("Leather Collar")>>
 		<<set $slaves[_i].isBroken = true>>
 		<<set $enslavedPassageString = $slaves[_i].name + " Is Broken">>
 		<<if tale.has($enslavedPassageString)>>

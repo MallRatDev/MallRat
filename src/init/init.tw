@@ -1,5 +1,5 @@
 :: StoryInit
-<<set $version = "0.3.2">>
+<<set $version = "0.3.1">>
 
 
 <<set $day = 0>>
@@ -76,9 +76,9 @@
 
 <<set $numeralsWithA = ["no", "a", "two", "three", "four", "five", "six"]>>
 
-<<set $clothingTop = ["black blouse, low-cut and reavealing some cleavage", "silk flowing, revealing but tasteful, expensive blouse", "tight t-shirt with a Venn diagram of sexual preferences", "cute anime character t-shirt"]>>
+<<set $clothingTop = ["black blouse, low-cut and reavealing some cleavage", "silk flowing, revealing but tasteful, expensive blouse", "tight t-shirt with a Venn diagram of sexual preferences", "cute anime character t-shirt", "a navy blue mall cop long sleeved shirt"]>>
 
-<<set $clothingBottom = ["short, black and gray plaid skirt fastened with a heavy leather belt dotted with metal studs and with a chain running between the hips", "just longer than slutty navy skirt slit up the side to show a just shorter than scandalous amount of thigh", "tight form-fitting jeans", "plaid skirt"]>>
+<<set $clothingBottom = ["short, black and gray plaid skirt fastened with a heavy leather belt dotted with metal studs and with a chain running between the hips", "just longer than slutty navy skirt slit up the side to show a just shorter than scandalous amount of thigh", "tight form-fitting jeans", "plaid skirt", "navy blue slacks"]>>
 
 <<set $clothingWrists = ["black leather cuffs set with studs and a heavy metal ring", "a diamond and gold bracelet"]>>
 

@@ -138,10 +138,10 @@ What would you like to do?
 	<<set $flags.defeatedMajor = true>>The last blow lays low your opponent.  Wow, that Major dude was a real beast.  And who the fuck was controlling him?  It has to have been Barbara Yargarian, the local access game show host... but how does that make sense?  He said something about her being "Baba".  Weird.<br>
 	<br>
 	<<set $pc.magicLevel = 2>>
-	<<run $corruptedBabaYaga.push('Hot "Dogs"')>>
+	<<run $corruptedBabaYaga.push('Hot Dogs')>>
 	<<if $pc.path === "Vitality">>
 		Your vanquished oponent is nothing if not vital... you're sure Mother can use that.  You chant a few words and she appears.  <br>
 		"Well done, little pervert.  You actually spoke the Words correctly, and you bring a proper gift.  You show promise."  Just like that, she's gone.  Jesus, watch a movie, gods... there are special effects for that.  At least you don't have to kill anyone or try to dispose of a body.  You feel power flow through you... you've acheived a stronger connection with the @@.virility;Mother of Virility!@@
 	<</if>> /* path */
 	<br>
-	[[Talk to the Mall Cop]]
+	[[Talk to Charlotte]]

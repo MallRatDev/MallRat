@@ -93,11 +93,11 @@
 	[[Storage Room]]
 
 
-::Surveillance Room[nobr]
+:: Surveillance Room[nobr]
 	You walk into the room.  It's surrounded by monitors, dozens of them.  This is where that pretty security guard, Charlotte, showed you the video after she was raped before the fight with the Mjor.  The room's clean now, and about half the monitors are dark.  You notice none of the ones on show dressing rooms, bathrooms, or the like.<br>
 	<br>
 	<<if Game.getCharIndex("Charlotte") != -1>>
-		"Oh, hey!  It's you.  I hope you're making some progress.  I can't swear it but I feel like more of the food court vendors are getting weird."  Charlotte's here.  <br>
+		"Oh, hey!  It's you.  I hope you're making some progress.  I can't swear it but I feel like more of the food court vendors are getting weird."  Charlotte's here.  [[Talk to her|Talk to Charlotte Post Major]]<br>
 	<</if>>
 	<br>
 	[[Central Security Hallway]]

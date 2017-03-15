@@ -14,7 +14,6 @@
 	<<run $pc.clothingWristsOwned.push(_slave.clothingWrists)>>
 	<<run $pc.clothingAnklesOwned.push(_slave.clothingAnkles)>>
 	<<run $pc.clothingShoesOwned.push(_slave.clothingShoes)>>
-	<<run Game.inventoryRemove("LeatherCollar", 1)>>
 	
 	<<if $args.length > 1>>
 		<<set $slaves[_slaveIndex].obedience += $args[1]>>

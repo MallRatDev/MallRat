@@ -16,7 +16,7 @@
 	<<if $flags.defeatedMajor && !$flags.shownAct2>>
 		<<set $flags.shownAct2 = true>>
 		<<run Dialog.setup("Act II")>>
-		<<run Dialog.wiki("In which the machinations of a certain witch prove a challenge.<br><br><em>You have completed the finished portion of the game.  The remainder is in active production and unfinished.  Continue at your own risk.")>>
+		<<run Dialog.wiki("In which the machinations of a certain witch prove a challenge.<br><br><em>You have completed the finished portion of the game.  The remainder is in active production and unfinished.  Continue at your own risk.</em>")>>
 		<<run Dialog.open()>>
 	<</if>>		
 	
