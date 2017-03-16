@@ -161,13 +161,15 @@
 	/* work */
 	<<if $slaves[$csi].isWorkingAt != "">>
 		<br><br>
-		<<display "Working At Corrupted " + $slaves[$csi].isWorkingAt>>
+		<<set _job = "Working At Corrupted " + $slaves[$csi].isWorkingAt>>
+		<<display _job>>
 	<</if>>
 
 	/* punishment */
 	<<if $slaves[$csi].punishment != "">>
 		<br><br>
-		<<display "Punishment " + $slaves[$csi].punishment>>
+		<<set _punish = "Punishment " + $slaves[$csi].punishment>>
+		<<display _punish>>
 	<</if>>
 
 

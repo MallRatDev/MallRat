@@ -205,7 +205,7 @@
 						<<run $punishments.push("Wooden Pony")>>
 						<<run Game.inventoryRemove("Four-by-four", 1)>>
 						<<run Game.inventoryRemove("Sawhorse", 2)>>
-						<<replace "#wooden-pony">>Built.<br><</remove>>
+						<<replace "#wooden-pony">>Built.<br><</replace>>
 					<</link>><br>
 				</span>
 			<</if>>
@@ -225,7 +225,7 @@
 					<<link "Build Cage">>
 						<<run $punishments.push("Cage")>>
 						<<run Game.inventoryRemove("Large Cage", 1)>>
-						<<replace "#build-cage">>Built.<br><</remove>>
+						<<replace "#build-cage">>Built.<br><</replace>>
 					<</link>><br>
 				<</if>>
 			</span>
