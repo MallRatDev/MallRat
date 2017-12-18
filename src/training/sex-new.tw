@@ -283,6 +283,29 @@
 			<<display "Vag Come Mouth">>
 		<</link>>
 	<</replace>>
+
+:: Vag Ride Rough[nobr TimeNone]
+	<<append "#training-text">>
+		<br>
+		You grab her hips and shove her down on your cock, forcing your entire length down on your cock and then up again, thrusting deeply into her.  You grab her nipples and twist painfully, slapping her tits and grabbing her throat, forcing her to fuck herself on your cock while hurting her tits and nipples.
+		<<set $slaves[$csi].lust += random(9 + $pc.cockLength)>>
+		<<set $slaves[$csi].pain += random($pc.cockLength)>>
+		<<if $slaves[$csi].lust > 30>>
+			She starts bucking faster and you pull her to you, kissing her mouth and neck as you use your hips to slam your cock into her for a few thrusts then letting her grind again until she's panting and saying "Oh god!" over and over, then start slamming her again.
+		<</if>>
+	<</append>>
+	<<replace "#links-text">>
+		<br><br>
+		<<link "Fuck her until she's ready to come">>
+			<<display "Vag Slave Orgasm">>
+		<</link>><br>
+		<<link "Come in her cunt">>
+			<<display "Vag Come Inside">>
+		<</link>><br>
+		<<link "Pull out and come in her mouth">>
+			<<display "Vag Come Mouth">>
+		<</link>>
+	<</replace>>
 	
 
 
