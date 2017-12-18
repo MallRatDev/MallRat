@@ -1,4 +1,4 @@
-:: Inventory[TimeNone]
+:: Inventory[TimeNone noreturn]
 You currently possess:
 <<nobr>>
 <ul>
@@ -13,4 +13,4 @@ You currently possess:
 
 You have $<<=$money>>.
 
-<<return>>
+[[Return|$return]]

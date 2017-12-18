@@ -1,4 +1,4 @@
-:: Slave Stats[TimeNone nobr]
+:: Slave Stats[TimeNone nobr noreturn]
 /* Obedience */
 <<if $slaves[$csi].obedience < 10>>She is <span class="obedience_very_bad">disobedient</span> and will not do anything the collar doesn't force her to. 
 <<elseif $slaves[$csi].obedience < 20>>She is <span class="obedience_bad">very resistant</span> to your orders.

@@ -1,4 +1,4 @@
-:: Describe Clothing[TimeNone nobr]
+:: Describe Clothing[TimeNone nobr noretun]
 <<set _wearingSomething == 0>>
 
 <<He>> 
