@@ -2,7 +2,7 @@
 	<<widget "impregnate">>
 		<<if $pc.path === "Virility">>
 			You seed shoots into her womb, powered by the grace of the @@.virility;Mother of Virility.@@ It finds her egg and with an electric shock through both you and <<=$slaves[$csi].name>> makes her @@.good;pregnant!@@  The power of the @@.virility;Mother@@ is such that both of you are immediately aware and you gain a @@.good;great deal@@ of power and she is <<if $slaves[$csi].relationship > 0>>very<<else>>perversely<</if>> happy!
-			<<set $pc.power += random (16) + 8>>
+			<<set $pc.power += random (16) + 12>>
 			<<set $slaves[$csi].relationship += random(16) + 8>>
 		<<else>>
 			You cum in her pussy.  Your magic reveals that your seed has found her egg.  You tell her, and while she's not sure she believes you,
