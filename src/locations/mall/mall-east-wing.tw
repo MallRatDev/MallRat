@@ -16,7 +16,7 @@
 :: JC Penny's[mall]
 	That weird chain link thing is covering the front of this shop. Guess they're closed.
 
-	<<return>>
+	[[East Wing]]
 
 :: Spencer's Gifts[mall]
 	This is a "funny", "kinky", store for "alternative" youths.
@@ -25,15 +25,15 @@
 	<<set $itemsForSaleCosts = [12, 35]>>\
 	<<display "Store">>
 
-	<<return>>
+	[[East Wing]]
 
 :: Engraving Now![mall]
 	That weird chain link thing is covering the front of this shop. Guess they're closed.
 
-	<<return>>
+	[[East Wing]]
 
-:: Radio Shat[mall]
+:: Radio Shat[mall noreturn]
 	Closed for construction?  Really?  WTF?
 
-	<<return>>
+	[[East Wing]]
 

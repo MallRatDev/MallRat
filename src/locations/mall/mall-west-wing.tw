@@ -19,19 +19,19 @@
 	<<set $itemsForSaleCosts = [12, 60, 185]>>\
 	<<display "Store">>
 
-	<<return>>
+	[[West Wing]]
 
 :: Ambercrombie and Bitch[mall]
 	That weird chain link thing is covering the front of this shop. Guess they're closed.
 
-	<<return>>
+	[[West Wing]]
 
 :: Forever "18"[mall]
 	That weird chain link thing is covering the front of this shop. Guess they're closed.
 
-	<<return>>
+	[[West Wing]]
 
 :: Dillard's[mall]
 	That weird chain link thing is covering the front of this shop. Guess they're closed.
 
-	<<return>>
+	[[West Wing]]

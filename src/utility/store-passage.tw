@@ -1,4 +1,4 @@
-:: Store[nobr]
+:: Store[nobr noreturn]
 	The clerk waits at the register.<br>
 	"<span id="shopkeeper">Hello, Sir. Would you like to purchase something?</span>"<br>
 	<ul>

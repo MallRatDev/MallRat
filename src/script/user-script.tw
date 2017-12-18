@@ -306,7 +306,14 @@ window.Game = {
 	    }
 	    return copy;
 	},
-}
+};
+
+/* workaround for return loops in inventory */
+predisplay["Menu Return"] = function (taskName) {
+	if (! tags().contains("noreturn")) {
+		State.variables.return = passage();
+	}
+};
 
 
 /* self-invoking function to create the $characters and $slaves story variables, so they'll be ready when characters are .push()ed onto them */

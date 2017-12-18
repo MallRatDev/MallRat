@@ -1,6 +1,6 @@
 
 
-:: Describe Character
+:: Describe Character[TimeNone noreturn]
 <<nobr>>
 <<=$currentCharacter.name>> is here.  
 

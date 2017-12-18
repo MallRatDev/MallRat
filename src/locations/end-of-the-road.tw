@@ -21,7 +21,7 @@
 :: No Ragerts Tattoos
 	This is a pretty dirty looking tattoo parlor... it's currently closed.
 
-	<<return>>
+	[[End of the Road]]
 
 :: Zeke's Literate Retreat
 	Despite the name, this looks like it's an adult bookstore and theater.  Rows of DVDs showing busty porn stars taking cocks and eating pussy fill the left side of the store.  The walls are covered with racks of sex toys of every description.  The right side of the store is a little niche with a bookshelf.
@@ -30,7 +30,7 @@
 	<<set $itemsForSaleCosts = [29, 39, 14, 89, 14, 1399, 129, 24]>>\
 	<<display "Store">>
 
-	<<return>>
+	[[End of the Road]]
 
 :: Inside Gas Station
 	This is a dingy place, with rows of old groceries and potato chips in the middle and cases of beer and soda along the walls.  A counter at the front has the register and shelves of cigarettes.  A "Help Wanted" sign is on the wall behind the counter.
