@@ -31,9 +31,12 @@
 	This is the preppy side of the food court.  Popped collars, pastel colors, and yoga pants abound.  Mmmm... yoga pants.  You get a few dirty glares in response to your dirty gazes.
 
 	<<nobr>>
-	<<if Game.getCharIndex("Bree") != -1>>
-		<<if 0 == 0>>
+	<<if Game.getCharIndex("Bree") != -1 && Game.getCharIndex("Morgan") != -1>>
+		<<if Game.getCharIndex("Bree") !=  -1>>
 			<<describe "Bree" "Bree">> is here.  She's hanging out with her friends, her little followers tittering at her every comment.  Seriously, that chick... those tits... yum...  [[Talk to Bree]]
+		<</if>>
+		<<if Game.getCharIndex("Morgan") != -1>>
+			<<describe "Morgan" "Morgan">> is here.  [[Talk to Morgan]]
 		<</if>>
 	<br><br>
 	Have a seat?
