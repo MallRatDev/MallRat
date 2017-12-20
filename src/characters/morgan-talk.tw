@@ -1,0 +1,89 @@
+:: Talk to Morgan[nobr]
+	<<if Game.getSlaveIndex("Bree") == -1>>
+		You sit down beside Morgan.  She's still dressed in her cheerleading costume for some reason.  Maybe there was practice or something.  She pays no attention to you; she's staring at Bree's face and raptly listening to every word she says.  You notice a faint flush in her face and elevated breathing, and... wow!  her nipples are hard.<br>
+		"Hey!" you sly devil, you!  You sure know how to talk to the ladies.<br>
+		"..." You're not sure how that line didn't work.<br>
+		"What's up?" You venture, but at that moment Bree giggles prettily and Morgan shushes you.<br>
+		You realize you're not getting anywhere and stand up.<br>
+		<br>
+		[[West Food Court]]
+	<<else>>
+		<<if Game.inventoryQuantity("Leather Collar")>>
+			You sit down beside Morgan.  She looks downcast, and barely seems to recognize you.<br>
+			"Hey, what's up?" You decide to combine two of your most powerful come-ons to maximize their effect.<br>
+			"She's gone missing." Her voice sounds like it's about to break.<br>
+			"Oh, Bree?" She looks up at you.<br>
+			"How did you know?  We've been looking everywhere!"<br>
+			"She's with me."<br>
+			"What?!? Why?"<br>
+			"Well, um..." That's it, wear her down with witty banter.<br>
+			"Is she ok?" She's looking a little suspicious.<br>
+			"Yeah, she's fine.  Look, it sounds weird, but she decided to come stay with me.  Do you want to see her?"<br>
+			"Ok."<br>
+			"I'll be right back."<br>
+			You head back to your place and drop into the basement.
+			<<if $slaves[Game.getSlaveIndex("Bree")].isBroken>>
+				You remove the ropes, straps, plugs, and clamps from the poor broken slut.  She waits patiently, gasping in pain as the more brutal bindings are removed.  You order her to dress in her ordinary clothes and give her explicit instructions, then order her to follow you.  <<if Game.inventoryQuantity("Set of Anal Toys")>>You choose an anal plug shaped like a penis and a little larger than the average cock, and slide it up her ass to keep her mindful of her place.  She whimpers as it sinks in. <</if>><br>
+				You return to the food court table with Bree in tow.  Her friends jump up and greet her, and she pretends to be happy to see them, all the while making excuses for being away and making sure to give plenty of reasons she'll be away a while longer.  Finally she gets to Morgan, who hugs her and sobs a little.  Bree whispers something in Morgan's ear.  Morgan straightens suddenly and looks at you.  Bree motions and steps away, Morgan in tow, and you follow.  Finding a remote corner you all turn to each other.<br>
+				"Something's really weird here.  What the fuck is happening?" Morgan hisses.<br>
+				"Well, see, it sounds weird but I own Bree now."<br>
+				"Bree!  What is he saying?" <br>
+				"It... it's true.  He enslaved me somehow.  And he made me... well..." Bree looks ashamed as she stammers. <br>
+				"You raped her?!?" Morgan's hiss is much louder than is wise, and draws looks.  <br>
+				"Bree, calm her down." You act fast to keep things quiet.<br>
+				"Morgan, stop, ok?  I don't want you to interfere!"<br>
+				"Why shouldn't I?  I mean he may be able to stop you, but he can't stop me!"
+				That sounds like your cue.  "No, I can't.  But I can give her to you."  Bree looks faintly horrified.<br>
+				Morgan blushes, glances at you sharply, and says, "What?  Give her to me?"<br>
+				"Look at her.  She's beautiful, isn't she?" Morgan does and her blush deepens.  "Bree, give Morgan a kiss.  Make it good."<br>
+				Morgan opens her mouth to protest, but Bree swoops in.  If Morgan sees her faintly disgusted look, she pays no attention as Bree's tongue thruts in her mouth.  Bree grabs her head and pulls her in, pulling her body close.  Morgan melts into her as Bree's hands roam over her body.  Mall patrons and the cheerleaders' friends look on in amazement.  Finally the kiss ends and Bree steps away; Morgan is shuddering.<br>
+				"You can have that.  And not just kisses.  She'll do anything you want.  If she can make you feel like that with a kiss, imagine her pretty blond head between your legs."  She visibly did, melting a little with a little whimper.  Bree, on the other hand, shuddered.<br>
+				"Well... uh..." She looks at Bree, and despite the look on the blonde's face, licks her lips.<br>
+				"What do I have to do?"  Bree looks on in horror.<br>
+				"Just put this on." You extend the collar, and seeming not to know what she's doing, reaches out and takes the collar.<br>
+				"I just put this on?  And I can... well... have her?" She glances over to Bree's face.<br>
+				"Yes.  Try it on."<br>
+				Her hands move mechanically to her neck, and it fastens itself on.  She's in such a haze she doesn't even flnch.  
+				<<if Game.inventoryQuantity("Leash")>>
+					You clip the leash on her, tell her to grab Bree's hand, then lead both of them back to your basement while the mall patrons look on in astonishment.  <<set $flags.publicDominance += 1>>
+				<<else>>
+					You lead her and Bree back to the basement.
+				<</if>>
+			<<else>>
+				Bree is waiting for you, and when you explain what you intend she seems puzzled.  You explain that Morgan has a thing for her and you need her help.  She's shocked, but willing, and quickly dresses.  <br>
+				You return to the food court table with Bree in tow.  Her friends jump up and greet her, and she pretends to be happy to see them, all the while making excuses for being away and making sure to give plenty of reasons she'll be away a while longer.  Finally she gets to Morgan, who hugs her and sobs a little.  Bree whispers something in Morgan's ear.  Morgan straightens suddenly and looks at you.  Bree motions and steps away, Morgan in tow, and you follow.  Finding a remote corner you all turn to each other.<br>
+				"Bree, where have you been?  What did you want to tell me?"  Morgan's hushed voice is anxious.<br>
+				"I just need a favor from you, honey," Bree says in a sultry voice, batting her eyes.  "It's going to sound a little weird though."<br>
+				Morgan is flustered, but answers, "Of course... but weird how?  Is everything ok?"<br>
+				"It's great!  I'm fine.  I want you to put his collar on."  She nods at you, never taking her eyes off of Morgan's, and licks her lips.<br>
+				"Collar?  What?" Bree shifts her hips in a suggestive way and it's Morgan's turn to lick her lips.<br>
+				"You know honey, like in those weird porn things with slaves and stuff." She takes a half step and thrusts her chest out so her tits rub against Morgan's.  "I tried it and really," and another pelvis twist pushes them together, "really liked it." <br>
+				"Slave?  The fuck!  No, I'm not doing that!"  She looks disgusted but still aroused.  It's a good look on her.<br>
+				"Please?  Pwetty pweese?" She leans her head forward, looking in Morgan's eyes, her lips almost brushing Morgan's.  "I'll do anything."<br>
+				That draws a gasp from Morgan.  "What?  I don't want to do any weird kinky stuff."  Her voice is trembling, though, and you're pretty sure she means she doesn't want to do any kinky stuff with you.  Bree's another matter.<br>
+				"He made me do things, you know," Bree says as she licks her lips even more suggestively, "very dirty stuff.  And now I'm his, and I'll do anything," she says as she slides her hand up the inside of Morgan's thigh, "anything," letting her voice get husky, "he wants.  And he told me he really wants me to do those dirty," her hand reaches up Morgan's skirt and draws a gasp from her, "dirty things to you.  I can't wait." Bree shifts her head forward, brushes Morgan's lips softly, then turns her head to the side and kisses her neck right under her ear.  You see a little tongue as she licks a little along the line of Morgan's throat.<br>
+				"But... ah... but Bree... I don't know him... ah... and I've never..."<br>
+				"He said he wanted me to lick you all over," and her tongue is more obvious, licking down Morgan's neck and back up, "wanted to watch me make you come with my mouth," she moves her lips lightly across the other girl's chin to brush and lightly lick her lips, "my fingers," and the front of Morgan's cheerleading skirt moves as Bree's hand works under it, "and to give myself to you.  I mean it Morgan," who by this point was panting and moaning, "I'll do anything.  He said you could have me if you go with him." She continues her lips' assault on the poor brunette's neck.<br>
+				"Oh God... Have you?  ah... Oh my God... What..."<br>
+				"I mean you'll own me.  You can lick or suck me anywhere, or have me lick or suck you, or well... anything else you can think of... and he's going to train you to be able to think of a lot."  Bree steps back a small step, grabs Morgan's hair and chin with each hand, and locks eyes with her.  "I'll be your lover, your bitch, your slave.  Whatever you want, whenever you want.  Forever."  Her face softens, she flutters her eyes, and says, "Please?  Make me yours?"<br>
+				Morgan grabs the collar from your hand, slaps it around her neck, and the two cheerleaders kiss.
+				<<if Game.inventoryQuantity("Leash")>>
+					You attach the leash to Bree's belly button piercing, put Morgan's hand on it, and together you lead the blone out of the mall. <<set $flags.publicDominance += 1>>
+				<</if>>
+
+
+			<</if>>
+			<<enslave "Morgan">>
+			<<run Save.autosave.save("Enslave Morgan")>>
+		<<else>>
+			You sit down beside Morgan.  She looks downcast, and barely seems to recognize you.<br>
+			"Hey, what's up?" You decide to combine two of your most powerful come-ons to maximize their effect.<br>
+			"She's gone missing." Her voice sounds like it's about to break.<br>
+			Man, if you had the collar, and Bree, you could really make something out of that.<br>
+			<br>
+			[[West Food Court]]
+		<</if>>
+	<</if>>
+
+			
+			

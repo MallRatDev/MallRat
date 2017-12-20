@@ -1,0 +1,122 @@
+:: Morgan Stats[widget]
+	<<if typeof $characters === 'undefined'>>
+		<<set $characters = []>>
+	<</if>>
+
+	<<run $characters.push(
+
+	{
+		name:"Morgan",
+		gender:"female",
+		relationship:-25,
+		enslaved:0,
+		isBroken:false,
+		isInLove:false,
+		isPregnant:false,
+		isWorkingAt:"",
+		punishment:"",
+		description:"A cheerleader flunky of Bree.",
+		bodySize:2,
+		bodyTone:2,
+		face:"sensual",
+		skin:"tanned",
+		facialPeircings:"",
+		hairColor:"brunette with highlights",
+		hairLength:"long",
+		hairCut:"beautifully",
+		titsSize:6,
+		titsShape:"perky",
+		nippleSize:"small",
+		nippleColor:"pink",
+		nippleAreolae:"small",
+		nipplePeircings:"",
+		navelPiercings:"a small ring",
+		pussySize:0,
+		pussyHairStyle:1,
+		pussyHairColor:"blonde",
+		pussyLips:1,
+		pussyClit:3,
+		pussyClitPeircing:0,
+		pussyLabiaRingsNumber:0,
+		pussyLabiaHeavyRingsNumber:0,
+		pussyLabiaStudsNumber:0,
+		pussyLabiaZipperNumber:0,
+		assholeSize:0,
+		assholeStyle:0,
+		assholeColor:0,
+		
+			
+		clothingRevealing:0,
+		clothingTop:5,  	
+		clothingBottom:5,
+		clothingWrists:-1,
+		clothingAnkles:-1,
+		clothingCollar:-1,
+		clothingShoes:1,
+
+		plugToy:0,
+		dildoToy:0,
+		nippleToy:0,
+		waistToy:0,
+		breastToy:0,
+		crotchToy:0,
+		gagToy:0,
+		
+		/* slave training stats */
+		obedience:-25,
+		fear:0,
+		sexDrive:12,
+		
+		/* sex training accumulation */
+		pain:0,
+		lust:0,
+		position:0,  /*  standing, all fours, ass up, etc. */
+		
+		/* sex trainings progress */
+		oral:1,
+		cum:0,
+		deepthroat:0,
+		penetration:-1,  // large objects, painful pounding
+		anal:0,
+		painal:0,
+		
+		begging:0,
+		humiliation:0,
+		bondage:0,
+		masochism:0,
+		housework:0,
+		submission:1,
+		
+		resistOral:5,
+		resistCum:30,
+		resistDeepthroat:35,
+		resistPenetration:50,
+		resistAnal:55,  		
+		resistPainal:75,
+		resistBegging:20,
+		resistHumiliation:25,
+		resistBondage:35,
+		resistMasochism:55,
+		resistHousework:35,
+		resistSubmission:20,
+		
+		/*  Flags and stuff related to sex training */
+		doneInspection:0,
+		refused:0,
+		brokeRule:0,
+		doneSpecialTraining:false,
+				
+		/* Counters for various events */
+		hasSucked:0,
+		hasPussyFucked:0,
+		hasAssFucked:0,
+		hasSwallowedCum:0,
+		
+		
+		/* Rules */
+		rulesNoMasturbate:0,
+		rulesNoOrgasm:0,
+		rulesSwallowCum:0,
+
+
+	})>>
